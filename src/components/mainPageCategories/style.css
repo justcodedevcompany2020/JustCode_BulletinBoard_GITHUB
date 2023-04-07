@@ -1,0 +1,50 @@
+.menuCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.menuCategories > h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 38px;
+  cursor: pointer;
+}
+
+.menuCategorySlider {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.eachMenuCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.eachMenuCategory > img {
+  width: 120px;
+  height: 85px;
+}
+
+.eachMenuCategory > span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.categoriesArrows {
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .menuCategories > h2 {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}

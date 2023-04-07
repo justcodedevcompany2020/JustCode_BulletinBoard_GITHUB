@@ -1,0 +1,44 @@
+.registerCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.registerCheckbox > span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.checkbox {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  border: 2px solid #7791f7;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 40px 0;
+}
+
+.registerText > span {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .registerCheckbox > span {
+    width: 80%;
+  }
+}

@@ -1,0 +1,93 @@
+.top {
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  padding: 20px 0;
+}
+
+.eachMenuTop {
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  background: #ffffff;
+}
+
+.eachMenuTop > img {
+  width: 220px;
+  height: 180px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.topPadding > p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.topPadding > span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.topMain {
+  background: #fffbe7;
+}
+
+.mainTop {
+  width: 90%;
+  margin: auto;
+}
+
+.topLocation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.topLocation > span {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.topFavorite {
+  position: absolute;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  bottom: 55px;
+}
+
+.topPadding {
+  padding: 0 10px 20px;
+}
+
+.topArrows {
+  position: relative;
+}
+
+.prevArrTop {
+  z-index: 1;
+  left: -20px;
+  top: 35%;
+}
+
+.nextArrTop {
+  z-index: 1;
+  right: -20px;
+  top: 35%;
+}

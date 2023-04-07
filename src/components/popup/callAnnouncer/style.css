@@ -1,0 +1,122 @@
+.active {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 8px 18px rgba(24, 39, 75, 0.12);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+.inactive {
+  display: none;
+}
+
+.pop {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 8px 18px rgba(24, 39, 75, 0.12);
+  padding: 30px;
+  background: #fff;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin: 20px;
+  border-radius: 8px;
+  width: 370px;
+  position: relative;
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 35px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pop > h1 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  width: 100%;
+}
+
+.callTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.callTop > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.callTop > h5 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16px;
+  color: #7791f7;
+}
+
+.callTop > h6 {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 14px;
+  color: #969696;
+}
+
+.callTop > span {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 11px;
+  color: #969696;
+}
+
+.callPhone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 20px 10px;
+  gap: 10px;
+  width: 244px;
+  height: 41px;
+  background: rgba(119, 145, 247, 0.2);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.callPhone > span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #7791f7;
+}
+
+.CallOther {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.CallOther > span {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 14px;
+}

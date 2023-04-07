@@ -1,0 +1,48 @@
+.footerShadow {
+  border: 1px solid #ebebeb;
+}
+
+.footer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.eachFooterColumn > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.eachFooterColumn > span {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #969696;
+}
+
+.FooterSocialMedia {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eachFooterColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eachFooterColumn > img {
+  width: 140px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.FooterSocialMedia > svg {
+  cursor: pointer;
+}

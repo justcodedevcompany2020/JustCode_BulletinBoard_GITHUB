@@ -1,0 +1,11 @@
+.navCategories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #7791f7;
+  border-radius: 10px;
+  color: #ffffff;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+}

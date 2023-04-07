@@ -1,0 +1,32 @@
+.littleNavs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.eachLittleNav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  border: none !important;
+  padding: 0 !important;
+}
+
+.ReactFlagsSelect-module_flagsSelect__2pfa2 {
+  padding: 0 !important;
+}
+
+.ReactFlagsSelect-module_selectOptions__3LNBJ {
+  width: min-content !important;
+}
+
+@media screen and (max-width: 768px) {
+  .littleNavs {
+    display: none;
+  }
+}
