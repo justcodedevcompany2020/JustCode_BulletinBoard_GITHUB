@@ -1,10 +1,35 @@
-import './App.css';
-import { MyRouter } from './MyRouter';
+import './App.css'
+import { MyRouter } from './MyRouter'
+import { useEffect, useState } from 'react'
+import Context from './components/context/context'
 
 function App() {
+
+  const [windowSize, setWindowSize] = useState(getWindowSize())
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window
+    return { innerWidth, innerHeight }
+  }
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize())
+    }
+    window.addEventListener('resize', handleWindowResize)
+    return () => {
+      window.removeEventListener('resize', handleWindowResize)
+    }
+  }, [])
+
+  const value = {
+    windowSize, setWindowSize
+  }
+
   return (
-    <MyRouter />
-  );
+    <Context.Provider value={value}>
+      <MyRouter />
+    </Context.Provider>
+  )
 }
 
-export default App;
+export default App

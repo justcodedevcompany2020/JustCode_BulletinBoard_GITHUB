@@ -4,7 +4,7 @@ import { CloseIcon, Star } from '../../svg'
 export const TextAnnouncer = ({ open, setOpen }) => {
     return (
         <div className={open ? 'active' : 'inactive'}>
-            <div className='pop'>
+            <div className='pop' style={{ width: '570px' }}>
                 <div className='close' onClick={() => setOpen(false)}>
                     <CloseIcon />
                 </div>
@@ -12,7 +12,7 @@ export const TextAnnouncer = ({ open, setOpen }) => {
                 <div className='loginSeparator' />
                 <div className='callTop'>
                     <img alt='' src={require('../../../public/man.png')} />
-                    <h5>Алексей Т.</h5>
+                    <h5 onClick={() => window.location = `/seller/1`}>Алексей Т.</h5>
                     <h6>на JustCode с 13 мар 2023 </h6>
                     <div className='businessRating'>
                         <Star />

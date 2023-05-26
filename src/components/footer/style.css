@@ -46,3 +46,44 @@
 .FooterSocialMedia > svg {
   cursor: pointer;
 }
+
+.mobileCC {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    width: 95%;
+  }
+  .mobileC {
+    display: none;
+  }
+  .mobileCC {
+    display: flex;
+    width: 95%;
+    margin: 0 auto 20px auto;
+  }
+  .mobileCC > span {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #969696;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .mobileCC {
+    justify-content: center;
+  }
+  .eachFooterColumn {
+    align-items: center;
+  }
+  .navPath > ul {
+    flex-wrap: wrap;
+  }
+}

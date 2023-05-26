@@ -59,7 +59,7 @@ export const Similar = () => {
             <div className='autoServiceSlider'>
                 {advertisement.length > 0 && advertisement.map((e, i) => (
                     <div className='eachMenuTop' key={i}>
-                        <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/single'} />
+                        <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
                             <p>{e.price}</p>
                             <span>{e.description}</span>

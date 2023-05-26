@@ -2,14 +2,14 @@ import './mainNavs.css'
 import { Search } from '../search'
 import { Categories } from '../menuCategories'
 
-export const MainNavs = () => {
+export const MainNavs = ({ openCategories, setOpenCategories }) => {
     return (
         <div className='mainNavs'>
             <div className='eachMainNav' onClick={() => window.location = '/'}>
                 <h1>JustCode</h1>
             </div>
             <div className='eachMainNav'>
-                <Categories />
+                <Categories openCategories={openCategories} setOpenCategories={setOpenCategories} />
             </div>
             <div className='eachMainNav' style={{ width: '65%' }}>
                 <Search />

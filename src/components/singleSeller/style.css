@@ -1,0 +1,54 @@
+.sellerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 20%;
+}
+
+.sellerLeft > h1 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.singlwSellerButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blockSeller {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.blockSeller > p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #969696;
+  cursor: pointer;
+}
+
+.sellerProducts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .sellerLeft {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .singlwSellerButtons {
+    flex-direction: row;
+  }
+  .sellerLeft {
+    width: 100%;
+  }
+}

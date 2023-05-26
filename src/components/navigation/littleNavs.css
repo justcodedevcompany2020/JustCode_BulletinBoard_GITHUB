@@ -12,6 +12,12 @@
   cursor: pointer;
 }
 
+.eachLittleNav > span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+
 .ReactFlagsSelect-module_selectBtn__19wW7 {
   border: none !important;
   padding: 0 !important;

@@ -3,7 +3,7 @@
   align-items: center;
   gap: 5px;
   width: 90%;
-  margin: 20px auto;
+  margin: 5px auto 20px;
 }
 
 .navPath > ul {
@@ -25,11 +25,14 @@
   width: 90%;
   margin: 20px auto 50px auto;
   gap: 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .singleMainLeft {
   width: 80%;
-  margin: 20px 0 50px 0;
+  margin-bottom: 50px;
 }
 
 .singleMainRight {
@@ -43,6 +46,19 @@
   font-weight: 600;
   font-size: 28px;
   line-height: 38px;
+  margin-bottom: 20px;
+}
+
+.singleAds {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.singleAds > img {
+  width: 100%;
+  height: 400px;
 }
 
 .callButton {
@@ -122,6 +138,7 @@
   font-size: 14px;
   line-height: 16px;
   color: #7791f7;
+  cursor: pointer;
 }
 
 .aboutClient > span {
@@ -166,11 +183,13 @@
 
 .mainImage {
   position: relative;
+  width: 100%;
 }
 
 .mainImage > img {
   width: 100%;
-  height: 420px;
+  max-height: 520px;
+  object-fit: contain;
 }
 
 .allSliderImages {
@@ -179,9 +198,10 @@
   overflow: auto;
 }
 
-.allSliderImages > img {
+.allSliderImages > div > img {
   width: 90px;
   height: 90px;
+  cursor: pointer;
 }
 
 .imageCount {
@@ -318,4 +338,162 @@
 .similar {
   width: 90%;
   margin: auto;
+}
+
+.mobileHeart {
+  display: none;
+}
+
+.mobileRightPart {
+  display: none;
+}
+
+.pageBg {
+  background: #fafafa;
+}
+
+.imageSlider:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .nameBlock > h1 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .nameBlock > span {
+    display: none;
+  }
+  .mobileHeart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background: rgba(119, 145, 247, 0.7);
+    border: 1px solid #7791f7;
+    border-radius: 50px;
+  }
+  .singleMainRight > span {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .singleMainPart {
+    width: 95%;
+    gap: 30px;
+    margin: 20px auto 0px auto;
+  }
+  .singleMainLeft {
+    width: 70%;
+  }
+  .singleMainRight {
+    width: 25%;
+  }
+  .postLicense {
+    flex-direction: column;
+  }
+  .autoServiceSlider {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .similar {
+    width: 95%;
+  }
+  .aboutClient > p {
+    font-size: 12px;
+  }
+  .aboutClient > span {
+    font-size: 10px;
+  }
+  .clientRating > p {
+    font-size: 11px;
+  }
+  .clientRating > span {
+    font-size: 11px;
+  }
+  .accountType > span {
+    font-size: 12px;
+  }
+  .clientInfoTop > img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .singleMainPart {
+    flex-direction: column;
+  }
+  .singleMainLeft {
+    width: 100%;
+  }
+  .singleMainRight {
+    display: none;
+  }
+  .nextArrSingle {
+    right: -5px;
+  }
+  .prevArrSingle {
+    left: -5px;
+  }
+  .previousArrow {
+    padding: 6px;
+  }
+  .nextArrow {
+    padding: 6px;
+  }
+  .mobileRightPart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px 0;
+  }
+  .noMobileHeart {
+    display: none;
+  }
+  .nameBlock > h1 {
+    font-size: 18px;
+  }
+  .mobPrice {
+    display: flex;
+    justify-content: space-between;
+  }
+  .mobPrice > span {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+  }
+  .mobBtns {
+    display: flex;
+    gap: 10px;
+  }
+  .mobClientInfoTop > img {
+    width: 50px;
+    height: 50px;
+  }
+  .mobAboutClient > p {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .mobAboutClient > span {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .clientRating > p {
+    font-size: 12px;
+  }
+  .clientRating > span {
+    font-size: 13px;
+  }
+  .accountType > span {
+    font-size: 14px;
+  }
+  .eachInfo {
+    gap: 10px;
+    flex-direction: column;
+  }
 }

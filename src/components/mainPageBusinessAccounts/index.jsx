@@ -1,5 +1,5 @@
 import './style.css'
-import { NextArrow, PreviousArrow, RatingFilled, RatingUnfilled } from '../svg'
+import { BiggerSign, NextArrow, PreviousArrow, RatingFilled, RatingUnfilled } from '../svg'
 
 export const MainBusinessAccounts = () => {
     const advertisement = [
@@ -43,7 +43,10 @@ export const MainBusinessAccounts = () => {
 
     return (
         <div className='businessCategories'>
-            <h2>Бизнес страницы &gt;</h2>
+            <div className='pageTitle'>
+                <h2>Бизнес страницы</h2>
+                <BiggerSign />
+            </div>
             <div className='businessArrows'>
                 <div className='menuCategorySlider'>
                     <div className='previousArrow prevArrBusiness'>
@@ -51,7 +54,7 @@ export const MainBusinessAccounts = () => {
                     </div>
                     {advertisement.length > 0 && advertisement.map((e, i) => (
                         <div className='eachMenuBusiness' key={i}>
-                            <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/single'} />
+                            <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                             <span>{e.title}</span>
                             <div className='businessRating'>
                                 <RatingFilled />

@@ -1,5 +1,6 @@
 import './style.css'
-import { Heart, HeartFilled, NextArrow, PreviousArrow } from '../svg'
+import { BiggerSign, Heart, HeartFilled, NextArrow, PreviousArrow } from '../svg'
+import { Tooltip } from '@mui/material'
 
 export const MainTop = () => {
     const advertisement = [
@@ -62,7 +63,10 @@ export const MainTop = () => {
     return (
         <div className='topMain'>
             <div className='mainTop'>
-                <h2>Топ Обявления &gt;</h2>
+                <div className='pageTitle'>
+                    <h2>Топ Обявления</h2>
+                    <BiggerSign />
+                </div>
                 <div className='topArrows'>
                     <div className='menuCategorySlider'>
                         <div className='previousArrow prevArrTop'>
@@ -70,7 +74,7 @@ export const MainTop = () => {
                         </div>
                         {advertisement.length > 0 && advertisement.map((e, i) => (
                             <div className='eachMenuTop' key={i}>
-                                <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/single'} />
+                                <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                                 <div className='topPadding'>
                                     <p>{e.price}</p>
                                     <span>{e.description}</span>
@@ -78,12 +82,18 @@ export const MainTop = () => {
                                 <div className='topLocation'>
                                     <span>Ереван</span>
                                 </div>
-                                <div className='topFavorite'>
-                                    {e.liked ?
-                                        <HeartFilled />
-                                        : <Heart />
-                                    }
-                                </div>
+                                {e.liked ?
+                                    <Tooltip title="Удалить из избранного" placement="top-end" arrow>
+                                        <div className='topFavorite'>
+                                            <HeartFilled />
+                                        </div>
+                                    </Tooltip>
+                                    : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
+                                        <div className='topFavorite'>
+                                            <Heart />
+                                        </div>
+                                    </Tooltip>
+                                }
                             </div>
                         ))}
                         <div className='nextArrow nextArrTop'>

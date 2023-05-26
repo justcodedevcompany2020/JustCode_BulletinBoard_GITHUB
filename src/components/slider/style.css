@@ -4,9 +4,7 @@
 
 .slider {
   display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  padding: 0 10px;
+  /* padding: 0 10px; */
   margin: 40px 0;
 }
 
@@ -51,6 +49,14 @@
   top: 32%;
   z-index: 1;
 }
+
+.styles-module_item-tracker__3bypy {
+  gap: 20px;
+}
+
+/* .styles-module_item-tracker__3bypy{
+  transform: translateX(-1140.57px);
+} */
 
 @media screen and (max-width: 768px) {
   .slider {

@@ -1,5 +1,5 @@
 import './style.css'
-import { Heart, HeartFilled } from '../svg'
+import { BiggerSign, Heart, HeartFilled } from '../svg'
 
 export const AutoService = () => {
     const advertisement = [
@@ -55,11 +55,14 @@ export const AutoService = () => {
 
     return (
         <div>
-            <h2>Автосервис &gt;</h2>
+            <div className='pageTitle'>
+                <h2>Автосервис</h2>
+                <BiggerSign />
+            </div>
             <div className='autoServiceSlider'>
                 {advertisement.length > 0 && advertisement.map((e, i) => (
                     <div className='eachMenuTop' key={i}>
-                        <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/single'} />
+                        <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
                             <p>{e.price}</p>
                             <span>{e.description}</span>

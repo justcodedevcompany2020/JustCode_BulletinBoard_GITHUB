@@ -1,5 +1,5 @@
-import { FooterFacebook, FooterInstagram, FooterLinkedIn } from '../svg'
 import './style.css'
+import { FooterFacebook, FooterInstagram, FooterLinkedIn } from '../svg'
 
 export const Footer = () => {
     return (
@@ -23,9 +23,12 @@ export const Footer = () => {
                     <img alt='' src={require('../../public/googlePlay.png')} />
                     <img alt='' src={require('../../public/appStore.png')} />
                 </div>
-                <div className='eachFooterColumn'>
+                <div className='eachFooterColumn mobileC'>
                     <span>© 2023 JustCode</span>
                 </div>
+            </div>
+            <div className='mobileCC'>
+                <span>© 2023 JustCode</span>
             </div>
         </div>
     )

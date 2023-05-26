@@ -1,10 +1,12 @@
 import './style.css'
+import Context from '../context/context'
 import { Star, VerifiedAccount } from '../svg'
-import { useState, useEffect } from 'react'
 import { CallAnnouncer } from '../popup/callAnnouncer'
 import { TextAnnouncer } from '../popup/textAnnouncer'
+import { useState, useEffect, useContext } from 'react'
 
 export const SingleAnnouncementRightPart = () => {
+    const context = useContext(Context)
     const [call, setCall] = useState(false)
     const [text, setText] = useState(false)
 
@@ -17,6 +19,18 @@ export const SingleAnnouncementRightPart = () => {
             }
         }
     }, [call, text])
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY >= 370 && context.windowSize.innerWidth > 425) {
+                document.querySelector('.singleAds').style.position = 'sticky';
+                document.querySelector('.singleAds').style.top = '83px';
+            } else if (window.scrollY < 370 && context.windowSize.innerWidth > 425) {
+                document.querySelector('.singleAds').style.position = 'relative';
+                document.querySelector('.singleAds').style.top = '0';
+            }
+        })
+    }, [window.scrollY])
 
     return (
         <div className='singleMainRight'>
@@ -35,7 +49,7 @@ export const SingleAnnouncementRightPart = () => {
                 <div className='clientInfoTop'>
                     <img alt='' src={require('../../public/man.png')} />
                     <div className='aboutClient'>
-                        <p>Алексей Т. (10 обьявлений)</p>
+                        <p onClick={() => window.location = `/seller/1`}>Алексей Т. (10 обьявлений)</p>
                         <span>на JustCode с 13 мар 2023</span>
                         <div className='clientRating'>
                             <p>5.0</p>
@@ -50,8 +64,10 @@ export const SingleAnnouncementRightPart = () => {
                     <span>Подтверждённый профиль</span>
                 </div>
             </div>
-            <img alt='' src={require('../../public/ad.png')} />
-            <img alt='' src={require('../../public/ad.png')} />
+            <div className='singleAds'>
+                <img alt='' src={require('../../public/ad.png')} />
+                <img alt='' src={require('../../public/ad.png')} />
+            </div>
         </div>
     )
 }

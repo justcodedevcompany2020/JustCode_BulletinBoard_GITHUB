@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 80px);
   justify-content: center;
   gap: 50px;
 }
@@ -145,6 +145,56 @@
 
 .loginSocialHover {
   cursor: pointer;
+}
+
+.loginNav {
+  max-width: 80%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.loginNav > h1 {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 29px;
+}
+
+.loginFooter {
+  width: 100%;
+  margin: auto;
+  padding: 25px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  bottom: 0;
+  position: absolute;
+}
+
+.loginFooter > span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #969696;
+}
+
+.loginFooterLeftPart {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.loginFooterLeftPart > a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration-line: underline;
+  color: #969696;
 }
 
 @media screen and (max-width: 1024px) {

@@ -1,5 +1,6 @@
 import './style.css'
 import { NextArrow, PreviousArrow } from '../svg'
+import { useEffect } from 'react';
 
 export const MainCategories = () => {
     const categories = [
@@ -40,6 +41,18 @@ export const MainCategories = () => {
             image: 'realEstate.png'
         },
     ]
+
+    useEffect(() => {
+        const background = document.querySelectorAll('.eachMenuCategory');
+        background.forEach(e => {
+            e.onmouseover = function () {
+                e.style.background = '#' + Math.floor(Math.random() * 1677721).toString(16);
+            }
+            e.onmouseleave = function () {
+                e.style.background = '#ebebeb';
+            }
+        })
+    }, [document.querySelectorAll('.eachMenuCategory')])
 
     return (
         <div className='menuCategories'>

@@ -1,6 +1,10 @@
 import './style.css'
-import { useState } from 'react'
-import { Camera, NextArrow, PreviousArrow } from '../svg'
+import { useContext, useEffect, useState } from 'react'
+import { MobileRightPart } from './mobileRightPart'
+import { Camera, MobileHeart, NextArrow, PreviousArrow } from '../svg'
+import Flickity from 'flickity'
+import { Carousel } from 'react-carousel-minimal';
+import Context from '../context/context'
 
 export const SingleAnnouncementLeftPart = () => {
     const images = [
@@ -24,6 +28,18 @@ export const SingleAnnouncementLeftPart = () => {
         },
     ]
     const [imageCount, setImageCount] = useState(0)
+    const context = useContext(Context)
+
+    useEffect(() => {
+        const current = document.querySelectorAll('.opacity')
+        current.forEach((e, i) => {
+            if (i === imageCount) {
+                e.style.opacity = '0.5'
+            } else {
+                e.style.opacity = '1'
+            }
+        })
+    }, [imageCount])
 
     function handleImageChange(change) {
         if (change === 'next') {
@@ -41,12 +57,58 @@ export const SingleAnnouncementLeftPart = () => {
         }
     }
 
+    // const data = [
+    //     {
+    //         image: "http://localhost:3000/static/media/shkaf.eea5ab90e54bd712cb11.png",
+    //         // caption: "San Francisco"
+    //     },
+    //     {
+    //         image: "http://localhost:3000/static/media/shkaf2.e3719d5608738c2dee39.png",
+    //         // caption: "Scotland"
+    //     },
+    //     {
+    //         image: "http://localhost:3000/static/media/ad.76307c7d50d0b32657cc.png",
+    //         // caption: "Darjeeling"
+    //     },
+    //     {
+    //         image: "http://localhost:3000/static/media/apartment.cc96864086f9f81c1736.png",
+    //         // caption: "San Francisco"
+    //     },
+    //     {
+    //         image: "http://localhost:3000/static/media/auto.941461f2dcd3115e23c7.png",
+    //         // caption: "Scotland"
+    //     },
+    //     {
+    //         image: "http://localhost:3000/static/media/madeInArmenia.a08d2f8f73591d0abd82.png",
+    //         // caption: "Darjeeling"
+    //     },
+    // ];
+
+    useEffect(() => {
+        window.addEventListener('scroll', (event) => {
+            if (window.scrollY >= 20 && context.windowSize.innerWidth > 425) {
+                document.querySelector('.littleNavs').style.display = 'none';
+                document.querySelector('.navigationShadow').style.position = 'sticky';
+                document.querySelector('.navigationShadow').style.top = '0';
+                document.querySelector('.navigationShadow').style.zIndex = '1';
+            } else if (window.scrollY < 20 && context.windowSize.innerWidth > 425) {
+                document.querySelector('.littleNavs').style.display = 'flex';
+                document.querySelector('.navigationShadow').style.position = 'relative';
+                document.querySelector('.navigationShadow').style.zIndex = '1';
+            }
+        })
+    }, [window.scrollY])
+
     return (
         <div className='singleMainLeft'>
             <div className='nameBlock'>
                 <h1>Шкафы купе от производителя</h1>
                 <span>Добавить в избранное</span>
+                <div className='mobileHeart noMobileHeart'>
+                    <MobileHeart />
+                </div>
             </div>
+
             <div className='imageSlider'>
                 <div className='mainImage'>
                     <img alt='' src={require(`../../public/${images[imageCount].image}`)} />
@@ -63,13 +125,36 @@ export const SingleAnnouncementLeftPart = () => {
                 </div>
                 <div className='allSliderImages'>
                     {images.length > 0 && images.map((e, i) => (
-                        <img alt='' src={require(`../../public/${e.image}`)} key={i} />
+                        <div className='opacity' onClick={() => setImageCount(i)} key={i}>
+                            <img alt='' src={require(`../../public/${e.image}`)} />
+                        </div>
                     ))}
                 </div>
             </div>
+
+            {/* <Carousel
+                data={data}
+                time={2000}
+                width="850px"
+                height="500px"
+                radius="10px"
+                slideBackgroundColor="darkgrey"
+                slideImageFit="cover"
+                thumbnails={true}
+                thumbnailWidth="100px"
+                style={{
+                    textAlign: "center",
+                    maxWidth: "850px",
+                    maxHeight: "500px",
+                    margin: "40px auto",
+                }}
+            /> */}
+
             <div className='urgent'>
                 <span>Срочно!</span>
             </div>
+
+            <MobileRightPart />
 
             <div className='mainInfo'>
                 <div className='eachInfo'>

@@ -16,7 +16,7 @@
   display: flex;
   overflow-x: auto;
   gap: 30px;
-  padding: 20px 0;
+  padding-bottom: 40px;
 }
 
 .eachMenuCategory {
@@ -24,6 +24,15 @@
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  /* cursor: pointer; */
+  width: 101px;
+  height: 101px;
+  background: #ebebeb;
+  border-radius: 50%;
+}
+
+.eachMenuCategory:hover {
+  background: rgba(random(255), random(255), random(255), 15);
   cursor: pointer;
 }
 

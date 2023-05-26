@@ -1,4 +1,4 @@
-import { Heart, HeartFilled } from '../svg'
+import { BiggerSign, Heart, HeartFilled } from '../svg'
 import './style.css'
 
 export const Appartments = () => {
@@ -43,11 +43,14 @@ export const Appartments = () => {
 
     return (
         <div className='autoService'>
-            <h2>Продажа квартир &gt;</h2>
+            <div className='pageTitle'>
+                <h2>Продажа квартир</h2>
+                <BiggerSign />
+            </div>
             <div className='autoServiceSlider'>
                 {advertisement.length > 0 && advertisement.map((e, i) => (
                     <div className='eachMenuTop' key={i}>
-                        <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/single'} />
+                        <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
                             <p>{e.price}</p>
                             <span>{e.description}</span>

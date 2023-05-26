@@ -11,10 +11,10 @@
   gap: 10px;
   position: relative;
   background: #ffffff;
+  width: 220px;
 }
 
 .eachMenuTop > img {
-  width: 220px;
   height: 180px;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
@@ -37,7 +37,7 @@
 }
 
 .mainTop {
-  width: 90%;
+  max-width: 90%;
   margin: auto;
 }
 
@@ -70,6 +70,7 @@
   align-items: center;
   right: 10px;
   bottom: 55px;
+  cursor: pointer;
 }
 
 .topPadding {
@@ -90,4 +91,36 @@
   z-index: 1;
   right: -20px;
   top: 35%;
+}
+
+@media screen and (max-width: 768px) {
+  .eachMenuTop {
+    width: 150px;
+  }
+  .eachMenuTop > img {
+    height: 130px;
+  }
+  .topPadding > p {
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .topPadding > span {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .findUs {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .autoAndApartment {
+    flex-direction: column;
+  }
+  .autoAndApartmentLeftPart {
+    width: 100%;
+  }
+  .autoAndApartmentRightPart {
+    width: 100%;
+  }
 }

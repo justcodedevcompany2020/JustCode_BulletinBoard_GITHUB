@@ -1,0 +1,44 @@
+.ratePopSpan {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #969696;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.singleReviews {
+  height: 420px;
+  overflow: auto;
+  width: 100%;
+}
+
+.eachReview {
+  border-bottom: 1px solid #ebebeb;
+  justify-content: space-between;
+  display: flex;
+  padding: 15px 0;
+}
+
+.eachReviewLeft {
+  display: flex;
+  gap: 10px;
+}
+
+.eachReviewLeft > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.eachRevLeRight {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.eachRevLeRight > p {
+  word-break: break-word;
+}

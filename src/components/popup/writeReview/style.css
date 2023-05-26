@@ -1,0 +1,9 @@
+.yourRating {
+    width: 100%;
+}
+
+.yourRating > h2 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
