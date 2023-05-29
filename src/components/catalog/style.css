@@ -5,6 +5,10 @@
   gap: 20px;
 }
 
+.catalogItems > img {
+  width: 100%;
+}
+
 .changeCat {
   display: flex;
   flex-direction: column;
@@ -17,4 +21,19 @@
   font-size: 14px;
   line-height: 19px;
   color: #969696;
+}
+
+@media screen and (max-width: 768px) {
+  .catalogImages {
+    width: 155px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .catalogImages {
+    width: 130px;
+  }
+  .catalogItems {
+    justify-content: space-between;
+  }
 }

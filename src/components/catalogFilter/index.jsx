@@ -1,14 +1,117 @@
 import './style.css'
+import Switch from '@mui/material/Switch'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FooterFacebook, FooterInstagram, FooterLinkedIn } from '../svg'
+import { ArrowUp, ArrowDown, GreaterThan, LessThan, FooterFacebook, FooterInstagram, FooterLinkedIn, SearchIcon } from '../svg'
 
 export const CatalogFilter = () => {
+    const [subCategory, setSubCategory] = useState(true)
+    const [showMoreSubCategory, setShowMoreSubCategory] = useState(false)
+    const subCategories = ['Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары']
+
+    const [brand, setBrand] = useState(true)
+    const [showMoreBrands, setShowMoreBrands] = useState(false)
+    const brands = ['Dolce & Gabbana', 'Nike', 'Adidas', 'Reebok', 'Versace', 'Emporio Armani']
+
+    const [safeDeal, setSafeDeal] = useState(false)
+    const [sale, setSale] = useState(true)
+    const [shop, setShop] = useState(false)
+    const [placement, setPlacement] = useState(true)
+
     return (
         <div className='catalogFilter'>
-            <div className='autoAndApartmentRightPart'>
-                <div className='findUs'>
+            {subCategories.length > 0 && <div className='subCategory'>
+                <h3 onClick={() => {
+                    setSubCategory(!subCategory)
+                    setShowMoreSubCategory(false)
+                }}>Уточнить подкатегорию {subCategory ? <GreaterThan /> : <LessThan />}</h3>
+                {subCategory && subCategories?.map((e, i) => {
+                    if (!showMoreSubCategory) {
+                        if (i < 4) {
+                            return (
+                                <span>{e}</span>
+                            )
+                        }
+                    }
+                    else {
+                        return (
+                            <span>{e}</span>
+                        )
+                    }
+                })}
+                {(subCategory && !showMoreSubCategory) && <span onClick={() => setShowMoreSubCategory(true)}>Все категории <ArrowDown /></span>}
+                {(subCategory && showMoreSubCategory) && <span onClick={() => setShowMoreSubCategory(false)}>Скрыть <ArrowUp /></span>}
+            </div>}
+            {brands.length > 0 && <div className='subCategory brand'>
+                <h3 onClick={() => {
+                    setBrand(!brand)
+                    setShowMoreBrands(false)
+                }}>Бренд {brand ? <GreaterThan /> : <LessThan />}</h3>
+                {brand && <div className='searchBrand'>
+                    <SearchIcon /> <input placeholder='Поиск..' />
+                </div>}
+                {brand && brands?.map((e, i) => {
+                    // <p><input type='checkbox' className='brandCheckbox' value={e} />{e}</p>
+                    if (!showMoreBrands) {
+                        if (i < 4) {
+                            return (
+                                <p><input type='checkbox' className='brandCheckbox' value={e} />{e}</p>
+                            )
+                        }
+                    }
+                    else {
+                        return (
+                            <p><input type='checkbox' className='brandCheckbox' value={e} />{e}</p>
+                        )
+                    }
+                })}
+                {(brand && !showMoreBrands) && <span onClick={() => setShowMoreBrands(true)}>Все категории <ArrowDown /></span>}
+                {(brand && showMoreBrands) && <span onClick={() => setShowMoreBrands(false)}>Скрыть <ArrowUp /></span>}
+            </div>}
+            <div className='subCategory'>
+                <h3> Безопасная сделка
+                    <Switch
+                        checked={safeDeal}
+                        onChange={e => setSafeDeal(e.target.checked)}
+                    />
+                </h3>
+            </div>
+            <div className='subCategory'>
+                <h3> Товары со скидкой
+                    <Switch
+                        checked={sale}
+                        onChange={e => setSale(e.target.checked)}
+                    />
+                </h3>
+            </div>
+            <div className='subCategory'>
+                <h3> Товары из магазинов
+                    <Switch
+                        checked={shop}
+                        onChange={e => setShop(e.target.checked)}
+                    />
+                </h3>
+            </div>
+            <div className='subCategory'>
+                <h3 onClick={() => {
+                    setPlacement(!placement)
+                }}>Срок размещения {placement ? <GreaterThan /> : <LessThan />}</h3>
+                {placement && <>
+                    <label>
+                        <input type='radio' name='placement' /> За 24 часа
+                    </label>
+                    <label>
+                        <input type='radio' name='placement' defaultChecked /> За 7 дней
+                    </label>
+                    <label>
+                        <input type='radio' name='placement' />За всё время
+                    </label>
+                </>}
+            </div>
+            <div className='categoriesAds'>
+                <div className='findUs findInCategories'>
                     <h2>JustCode в соцсетях</h2>
-                    <div className='FooterSocialMedia'>
+                    <div className='FooterSocialMedia' style={{ margin: '10px 0' }}>
                         <FooterFacebook />
                         <FooterInstagram />
                         <FooterLinkedIn />
@@ -18,7 +121,6 @@ export const CatalogFilter = () => {
                     <Link to=''>Помощь</Link>
                 </div>
                 <div className='webAd'>
-                    <img alt='' src={require('../../public/ad.png')} />
                     <img alt='' src={require('../../public/ad.png')} />
                 </div>
                 <div className='mobileAd'>

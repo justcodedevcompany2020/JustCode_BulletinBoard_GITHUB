@@ -33,3 +33,7 @@
   line-height: 22px;
   cursor: pointer;
 }
+
+.catalogHam {
+  display: flex;
+}

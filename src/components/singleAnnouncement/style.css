@@ -3,6 +3,7 @@
   align-items: center;
   gap: 5px;
   width: 90%;
+  max-width: 1440px;
   margin: 5px auto 20px;
 }
 
@@ -23,6 +24,7 @@
 .singleMainPart {
   display: flex;
   width: 90%;
+  max-width: 1440px;
   margin: 20px auto 50px auto;
   gap: 40px;
   background: #fff;
@@ -337,6 +339,7 @@
 
 .similar {
   width: 90%;
+  max-width: 1440px;
   margin: auto;
 }
 

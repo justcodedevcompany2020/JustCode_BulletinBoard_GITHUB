@@ -1,5 +1,5 @@
 import './style.css'
-import{ Heart, HeartFilled } from '../svg'
+import { Heart, HeartFilled } from '../svg'
 
 export const CatalogItems = () => {
     const advertisement = [
@@ -130,10 +130,11 @@ export const CatalogItems = () => {
             location: 'Ереван'
         },
     ]
+
     return (
         <div className='catalogItems'>
             {advertisement.length > 0 && advertisement.map((e, i) => (
-                <div className='eachMenuTop' key={i}>
+                <div className='eachMenuTop catalogImages' key={i}>
                     <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                     <div className='topPadding'>
                         <p>{e.price}</p>
