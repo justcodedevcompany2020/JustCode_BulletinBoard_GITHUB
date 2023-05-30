@@ -1,9 +1,9 @@
 import './style.css'
+import Context from '../context/context'
+import { useContext } from 'react'
 import { Similar } from '../similar'
 import { SingleAnnouncementLeftPart } from './leftPart'
 import { SingleAnnouncementRightPart } from './rightPart'
-import { useContext } from 'react'
-import Context from '../context/context'
 
 export const SingleAnnouncement = () => {
     const context = useContext(Context)

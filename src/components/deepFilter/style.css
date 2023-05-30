@@ -1,0 +1,13 @@
+.deepFilter {
+  width: 100%;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deepFilter > h2 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;        
+}

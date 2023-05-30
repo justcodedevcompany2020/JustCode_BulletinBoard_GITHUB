@@ -1,5 +1,5 @@
 import './mainNavs.css'
-import { Search } from '../search'
+import { Searchbar } from '../searchbar'
 import { MobileCategories, NavigationCamera } from '../svg'
 
 export const MobileNavs = () => {
@@ -15,7 +15,7 @@ export const MobileNavs = () => {
                 </div>
             </div>
             <div className='eachMainNav'>
-                <Search />
+                <Searchbar />
             </div>
         </div>
     )

@@ -1,12 +1,12 @@
 import { Main } from './containers/main'
 import { Login } from './containers/login'
 import { Layout } from './containers/layout'
+import { Seller } from './containers/seller'
+import { Catalog } from './containers/catalog'
 import { Register } from './containers/register'
 import { ForgotPassword } from './containers/forgotPassword'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SingleAnnouncement } from './components/singleAnnouncement'
-import { Seller } from './containers/seller'
-import { Catalog } from './containers/catalog'
 
 export const MyRouter = () => {
     if (window.location.pathname === '/login' || window.location.pathname === '/register' || window.location.pathname === '/forgotPassword') {

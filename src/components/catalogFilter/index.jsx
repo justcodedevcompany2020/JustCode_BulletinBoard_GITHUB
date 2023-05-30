@@ -51,7 +51,6 @@ export const CatalogFilter = () => {
                     <SearchIcon /> <input placeholder='Поиск..' />
                 </div>}
                 {brand && brands?.map((e, i) => {
-                    // <p><input type='checkbox' className='brandCheckbox' value={e} />{e}</p>
                     if (!showMoreBrands) {
                         if (i < 4) {
                             return (

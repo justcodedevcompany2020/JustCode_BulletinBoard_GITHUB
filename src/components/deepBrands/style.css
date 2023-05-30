@@ -1,0 +1,21 @@
+.activeBrands {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+  z-index: 2;
+  position: absolute;
+  top: 60px;
+}
+
+.activeBrands > p {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border-bottom: 1px solid #f5f5f5;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}

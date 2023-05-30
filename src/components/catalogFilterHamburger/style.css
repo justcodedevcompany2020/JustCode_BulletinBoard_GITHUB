@@ -1,8 +1,22 @@
-.inactiveCatFilter {
-  display: none;
-}
-
 .activeCatFilter {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  /* background: rgba(167, 167, 167, 0.25); */
+  /* backdrop-filter: blur(20px); */
+  background: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  overflow-y: auto;
 }

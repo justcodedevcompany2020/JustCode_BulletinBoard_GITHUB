@@ -1,9 +1,9 @@
 import './mainNavs.css'
 import { useState } from 'react'
 import { MainNavs } from './mainNavs'
+import { Link } from 'react-router-dom'
 import { LittleNavs } from './littleNavs'
 import { MobileNavs } from './mobileNavs'
-import { Link } from 'react-router-dom'
 
 export const Navigation = () => {
     const subElectronics = [

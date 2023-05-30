@@ -1,5 +1,5 @@
 import './mainNavs.css'
-import { Search } from '../search'
+import { Searchbar } from '../searchbar'
 import { Categories } from '../menuCategories'
 
 export const MainNavs = ({ openCategories, setOpenCategories }) => {
@@ -12,7 +12,7 @@ export const MainNavs = ({ openCategories, setOpenCategories }) => {
                 <Categories openCategories={openCategories} setOpenCategories={setOpenCategories} />
             </div>
             <div className='eachMainNav' style={{ width: '65%' }}>
-                <Search />
+                <Searchbar />
             </div>
             <div className='eachMainNav'>
                 <button className='navGreenButton'>Разместить обьявление</button>

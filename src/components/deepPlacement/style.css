@@ -1,0 +1,7 @@
+.eachActivePlacement {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border-bottom: 1px solid #f5f5f5;
+}
