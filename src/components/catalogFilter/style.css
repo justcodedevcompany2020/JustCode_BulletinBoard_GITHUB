@@ -30,7 +30,7 @@
   cursor: pointer;
 }
 
-.brand > p {
+.brand > label {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
@@ -38,11 +38,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-}
-
-.brandCheckbox {
-  background: #7791f7;
-  border-radius: 5px;
 }
 
 .subCategory > label {

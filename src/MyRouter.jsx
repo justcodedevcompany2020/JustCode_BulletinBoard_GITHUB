@@ -7,6 +7,8 @@ import { Register } from './containers/register'
 import { ForgotPassword } from './containers/forgotPassword'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SingleAnnouncement } from './components/singleAnnouncement'
+import { ProfileLayout } from './containers/profileLayout'
+import { MyAnnouncements } from './containers/myAnnouncements'
 
 export const MyRouter = () => {
     if (window.location.pathname === '/login' || window.location.pathname === '/register' || window.location.pathname === '/forgotPassword') {
@@ -25,9 +27,14 @@ export const MyRouter = () => {
                 <Routes>
                     <Route path='/' element={<Layout />}>
                         <Route path='/' element={<Main />} />
+                        {/* <Route path='*' element={<Main />} /> */}
                         <Route path='/item/:id' element={<SingleAnnouncement />} />
                         <Route path='/seller/:id' element={<Seller />} />
                         <Route path='/catalog/:id' element={<Catalog />} />
+                        <Route path='/profile' element={<ProfileLayout />} >
+                            <Route path='/profile' element={<MyAnnouncements />} />
+                        </Route>
+
                     </Route>
                 </Routes>
             </BrowserRouter>

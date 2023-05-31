@@ -5,11 +5,9 @@
   min-height: 100vh;
   background: #ffffff;
   z-index: 2;
-  position: absolute;
-  top: 60px;
 }
 
-.activeBrands > p {
+.top60 > label {
   display: flex;
   width: 100%;
   justify-content: space-between;

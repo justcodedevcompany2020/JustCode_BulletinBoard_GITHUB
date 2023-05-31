@@ -3,11 +3,15 @@
   min-height: 100vh;
   background: #ffffff;
   z-index: 3;
-  position: absolute;
-  top: 60px;
 }
 
-.activeSubcategories > h2 {
+.top60 {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+
+.top60 > h2 {
   border-bottom: 1px solid #f5f5f5;
   padding: 15px 25px;
   font-weight: 400;

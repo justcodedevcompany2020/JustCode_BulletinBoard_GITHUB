@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20px;
 }
 
@@ -11,8 +12,8 @@
 
 .changeCat {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 30px;
 }
 
@@ -26,6 +27,9 @@
 @media screen and (max-width: 768px) {
   .catalogImages {
     width: 155px;
+  }
+  .changeCat {
+    margin-top: 20px;
   }
 }
 

@@ -14,9 +14,19 @@
   font-weight: 600;
   font-size: 28px;
   line-height: 38px;
+  word-break: break-all;
 }
 
 .mainCatalog {
   display: flex;
   gap: 20px;
+}
+
+.filter {
+  border: none;
+  background: none;
+  margin: 5px 0;
+  align-self: flex-end;
+  outline: none;
+  color: #333333;
 }

@@ -31,6 +31,18 @@ export const CatalogFilterHamburger = ({ open, setOpen }) => {
                 icon={headerIcon}
                 setOpen={setOpen}
             />
+            <DeepSubcategories
+                open={openSubcategories}
+                setOpen={setOpenSubcategories}
+            />
+            <DeepBrands
+                open={openBrands}
+                setOpen={setOpenBrands}
+            />
+            <DeepPlacement
+                open={placement}
+                setOpen={setPlacement}
+            />
             <div className='filters'>
                 {filterHasSubcategories &&
                     <div onClick={() => setOpenSubcategories(true)}>
@@ -57,21 +69,6 @@ export const CatalogFilterHamburger = ({ open, setOpen }) => {
                     </div>
                 }
             </div>
-            <DeepSubcategories
-                open={openSubcategories}
-                setHeaderTitle={setHeaderTitle}
-                setHeaderIcon={setHeaderIcon}
-            />
-            <DeepBrands
-                open={openBrands}
-                setHeaderTitle={setHeaderTitle}
-                setHeaderIcon={setHeaderIcon}
-            />
-            <DeepPlacement
-                open={placement}
-                setHeaderTitle={setHeaderTitle}
-                setHeaderIcon={setHeaderIcon}
-            />
         </div>
     )
 }

@@ -8,24 +8,6 @@ export const CatalogItems = () => {
             image: 'apartment.png',
             liked: true,
             description: 'Прокат машин',
-            buyMe: true,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: false,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: true,
-            description: 'Прокат машин',
             buyMe: false,
             urgent: true,
             location: 'Ереван'

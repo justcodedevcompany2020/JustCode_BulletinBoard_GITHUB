@@ -1,5 +1,5 @@
 import './style.css'
-import Switch from '@mui/material/Switch'
+import Switch from "react-switch"
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUp, ArrowDown, GreaterThan, LessThan, FooterFacebook, FooterInstagram, FooterLinkedIn, SearchIcon } from '../svg'
@@ -54,13 +54,13 @@ export const CatalogFilter = () => {
                     if (!showMoreBrands) {
                         if (i < 4) {
                             return (
-                                <p><input type='checkbox' className='brandCheckbox' value={e} />{e}</p>
+                                <label><input type='checkbox' value={e} />{e}</label>
                             )
                         }
                     }
                     else {
                         return (
-                            <p><input type='checkbox' className='brandCheckbox' value={e} />{e}</p>
+                            <label><input type='checkbox' value={e} />{e}</label>
                         )
                     }
                 })}
@@ -71,7 +71,14 @@ export const CatalogFilter = () => {
                 <h3> Безопасная сделка
                     <Switch
                         checked={safeDeal}
-                        onChange={e => setSafeDeal(e.target.checked)}
+                        onChange={(e) => setSafeDeal(e)}
+                        offColor='#EBEBEB'
+                        onColor='#7791F7'
+                        uncheckedIcon={false}
+                        checkedIcon={false}
+                        width={40}
+                        height={20}
+                        borderRadius={10}
                     />
                 </h3>
             </div>
@@ -79,7 +86,14 @@ export const CatalogFilter = () => {
                 <h3> Товары со скидкой
                     <Switch
                         checked={sale}
-                        onChange={e => setSale(e.target.checked)}
+                        onChange={(e) => setSale(e)}
+                        offColor='#EBEBEB'
+                        onColor='#7791F7'
+                        uncheckedIcon={false}
+                        checkedIcon={false}
+                        width={40}
+                        height={20}
+                        borderRadius={10}
                     />
                 </h3>
             </div>
@@ -87,7 +101,14 @@ export const CatalogFilter = () => {
                 <h3> Товары из магазинов
                     <Switch
                         checked={shop}
-                        onChange={e => setShop(e.target.checked)}
+                        onChange={(e) => setShop(e)}
+                        offColor='#EBEBEB'
+                        onColor='#7791F7'
+                        uncheckedIcon={false}
+                        checkedIcon={false}
+                        width={40}
+                        height={20}
+                        borderRadius={10}
                     />
                 </h3>
             </div>

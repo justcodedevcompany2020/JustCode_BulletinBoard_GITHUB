@@ -1,6 +1,6 @@
 import './style.css'
+import Switch from "react-switch"
 import { useState } from 'react'
-import Switch from '@mui/material/Switch'
 
 export const SwitchFilter = ({ open, title }) => {
     const [checked, setChecked] = useState(false)
@@ -10,9 +10,16 @@ export const SwitchFilter = ({ open, title }) => {
             <div className='switchFilter'>
                 <h3> {title}</h3>
                 <Switch
-                    checked={checked}
-                    onChange={e => setChecked(e.target.checked)}
-                />
+                        checked={checked}
+                        onChange={(e) => setChecked(e)}
+                        offColor='#EBEBEB'
+                        onColor='#7791F7'
+                        uncheckedIcon={false}
+                        checkedIcon={false}
+                        width={40}
+                        height={20}
+                        borderRadius={10}
+                    />
             </div>
         </div>
     )

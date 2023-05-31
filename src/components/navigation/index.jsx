@@ -4,8 +4,12 @@ import { MainNavs } from './mainNavs'
 import { Link } from 'react-router-dom'
 import { LittleNavs } from './littleNavs'
 import { MobileNavs } from './mobileNavs'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { GetUser } from '../../Redux/action/auth_action'
 
 export const Navigation = () => {
+    const dispatch = useDispatch()
     const subElectronics = [
         {
             title: 'Женский гардероб',
@@ -94,6 +98,10 @@ export const Navigation = () => {
     ]
     const [openCategories, setOpenCategories] = useState(false)
     const [subcategory, setSubcategory] = useState([])
+
+    useEffect(() => {
+        dispatch(GetUser())
+    }, [dispatch])
 
     return (
         <>

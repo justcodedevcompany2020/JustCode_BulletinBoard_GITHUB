@@ -1,4 +1,5 @@
 import './style.css'
+import { useEffect, useState } from 'react'
 import { CatalogItems } from '../../components/catalog'
 import { CatalogFilter } from '../../components/catalogFilter'
 
@@ -11,6 +12,13 @@ export const Catalog = () => {
             path: 'Мужской гардероб'
         },
     ]
+    const [search, setSearch] = useState('')
+
+    useEffect(() => {
+        if (window.location.search) {
+            setSearch(window.location.search.slice(8))
+        }
+    }, [search])
 
     return (
         <div className='pageBg'>
@@ -31,10 +39,15 @@ export const Catalog = () => {
                         ))}
                     </ul>
                 </div>
-                <h1>Мужской гардероб</h1>
+                <h1>{search ? `Результаты по запросу «${search}»` : 'Мужской гардероб'}</h1>
                 <div className='mainCatalog'>
                     <CatalogFilter />
                     <div className='changeCat'>
+                        <select className='filter'>
+                            <option value={'default'}>По умолчению</option>
+                            <option value={'default'}>По умолчению</option>
+                            <option value={'default'}>По умолчению</option>
+                        </select>
                         <CatalogItems />
                         <span>Измените условия поиска, чтобы увидеть больше товаров</span>
                     </div>
