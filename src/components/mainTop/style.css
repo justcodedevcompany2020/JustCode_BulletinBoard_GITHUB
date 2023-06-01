@@ -40,6 +40,10 @@
   width: 90%;
   max-width: 1440px;
   margin: auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .topLocation {

@@ -1,0 +1,53 @@
+.profileUser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.profileUser > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.profileUserJoin {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.profileUserJoin > span {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #969696;
+}
+
+.userInfoProfile {
+  max-width: 218px;
+  width: 100%;
+  min-width: 120px;
+}
+
+.userInfoProfile > h1 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+@media screen and (max-width: 768px) {
+  .profileUser {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profileUser {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .userInfoProfile {
+    margin-top: 20px;
+  }
+}

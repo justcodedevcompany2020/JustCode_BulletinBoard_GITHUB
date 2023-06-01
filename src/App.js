@@ -1,7 +1,7 @@
 import './App.css'
+import Context from './components/context/context'
 import { MyRouter } from './MyRouter'
 import { useEffect, useState } from 'react'
-import Context from './components/context/context'
 
 function App() {
   const [windowSize, setWindowSize] = useState(getWindowSize())

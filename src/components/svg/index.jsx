@@ -340,10 +340,26 @@ export const GreaterThan = () => {
     )
 }
 
+export const BlueGreaterThan = () => {
+    return (
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.9483 10.9281L8.99831 4.96042C8.92747 4.88958 8.85074 4.83953 8.7681 4.81025C8.68546 4.7805 8.59692 4.76562 8.50247 4.76562C8.40803 4.76562 8.31949 4.7805 8.23685 4.81025C8.15421 4.83953 8.07747 4.88958 8.00664 4.96042L2.03893 10.9281C1.87365 11.0934 1.79102 11.3 1.79102 11.5479C1.79102 11.7958 1.87956 12.0083 2.05664 12.1854C2.23372 12.3625 2.44032 12.451 2.67643 12.451C2.91254 12.451 3.11914 12.3625 3.29622 12.1854L8.50247 6.97917L13.7087 12.1854C13.874 12.3507 14.0775 12.4333 14.3193 12.4333C14.5616 12.4333 14.7712 12.3448 14.9483 12.1677C15.1254 11.9906 15.2139 11.784 15.2139 11.5479C15.2139 11.3118 15.1254 11.1052 14.9483 10.9281Z" fill="#7791F7" />
+        </svg>
+    )
+}
+
 export const LessThan = () => {
     return (
         <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.5512 4.93906L6.35117 9.15156C6.30117 9.20156 6.24701 9.2369 6.18867 9.25756C6.13034 9.27856 6.06784 9.28906 6.00117 9.28906C5.93451 9.28906 5.87201 9.27856 5.81367 9.25756C5.75534 9.2369 5.70117 9.20156 5.65117 9.15156L1.43867 4.93906C1.32201 4.8224 1.26367 4.67656 1.26367 4.50156C1.26367 4.32656 1.32617 4.17656 1.45117 4.05156C1.57617 3.92656 1.72201 3.86406 1.88867 3.86406C2.05534 3.86406 2.20117 3.92656 2.32617 4.05156L6.00117 7.72656L9.67617 4.05156C9.79284 3.9349 9.93651 3.87656 10.1072 3.87656C10.2782 3.87656 10.4262 3.93906 10.5512 4.06406C10.6762 4.18906 10.7387 4.3349 10.7387 4.50156C10.7387 4.66823 10.6762 4.81406 10.5512 4.93906Z" fill="#969696" />
+        </svg>
+    )
+}
+
+export const BlueLessThan = () => {
+    return (
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14.9483 6.07188L8.99831 12.0396C8.92747 12.1104 8.85074 12.1605 8.7681 12.1898C8.68546 12.2195 8.59692 12.2344 8.50247 12.2344C8.40803 12.2344 8.31949 12.2195 8.23685 12.1898C8.15421 12.1605 8.07747 12.1104 8.00664 12.0396L2.03893 6.07188C1.87365 5.9066 1.79102 5.7 1.79102 5.45208C1.79102 5.20417 1.87956 4.99167 2.05664 4.81458C2.23372 4.6375 2.44032 4.54896 2.67643 4.54896C2.91254 4.54896 3.11914 4.6375 3.29622 4.81458L8.50247 10.0208L13.7087 4.81458C13.874 4.64931 14.0775 4.56667 14.3193 4.56667C14.5616 4.56667 14.7712 4.65521 14.9483 4.83229C15.1254 5.00938 15.2139 5.21597 15.2139 5.45208C15.2139 5.6882 15.1254 5.89479 14.9483 6.07188Z" fill="#7791F7" />
         </svg>
     )
 }
@@ -408,6 +424,32 @@ export const Checkmark = () => {
     return (
         <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 10.1538L6.52941 14L15 4" stroke="#7791F7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    )
+}
+
+export const AddToTop = () => {
+    return (
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="25" height="25" rx="5.5" fill="white" />
+            <path d="M13.0039 9.28906V19.7514" stroke="url(#paint0_linear_180_6411)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M8.5 13.75L13 9.25L17.5 13.75" stroke="url(#paint1_linear_180_6411)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M8.5 6.25H17.5" stroke="url(#paint2_linear_180_6411)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+            <rect x="0.5" y="0.5" width="25" height="25" rx="5.5" stroke="#7791F7" />
+            <defs>
+                <linearGradient id="paint0_linear_180_6411" x1="13.5039" y1="9.28906" x2="13.5039" y2="19.7514" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#7791F7" />
+                    <stop offset="1" stopColor="#3771C8" />
+                </linearGradient>
+                <linearGradient id="paint1_linear_180_6411" x1="13" y1="9.25" x2="13" y2="13.75" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#7791F7" />
+                    <stop offset="1" stopColor="#3771C8" />
+                </linearGradient>
+                <linearGradient id="paint2_linear_180_6411" x1="13" y1="6.25" x2="13" y2="7.25" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#7791F7" />
+                    <stop offset="1" stopColor="#3771C8" />
+                </linearGradient>
+            </defs>
         </svg>
     )
 }

@@ -4,5 +4,31 @@
   width: 90%;
   margin: 0 auto;
   max-width: 1440px;
-  height: 100vh;
+}
+
+.profileLayoutOutline {
+  width: 80%;
+}
+
+.mobileSidebarDisplay {
+  display: none;
+}
+
+.sidebarDisplay {
+  display: flex;
+}
+
+@media screen and (max-width: 425px) {
+  .profileLayoutOutline {
+    width: 100%;
+  }
+  .mobileSidebarDisplay {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 10px auto;
+  }
+  .sidebarDisplay {
+    display: none;
+  }
 }

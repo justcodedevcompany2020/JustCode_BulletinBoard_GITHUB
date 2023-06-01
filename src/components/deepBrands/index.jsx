@@ -15,7 +15,7 @@ export const DeepBrands = ({ open, setOpen }) => {
             />
             <div className='top60'>
                 {brand?.map((e, i) => (
-                    <label>{e}<input type='checkbox' value={e} /></label>
+                    <label key={i}>{e}<input type='checkbox' value={e} /></label>
                 ))}
             </div>
         </div>
