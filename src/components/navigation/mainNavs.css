@@ -67,10 +67,12 @@
   width: 90%;
   margin: auto;
   height: 500px;
-  position: initial;
+  position: absolute;
   background: #fff;
   transition: height 2s;
   animation: openModal 0.4s ease-out forwards;
+  z-index: 1;
+  left: 70px;
 }
 
 .closedCategories {

@@ -1,0 +1,59 @@
+.homeLabel > p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 20px;
+}
+
+.homeLabel > p > ul {
+  list-style-position: inside;
+}
+
+.labelPriceList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.eachLabelPrice {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.eachLabelPrice > p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.eachLabelPrice > span {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: #7791f7;
+}
+
+.labelButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.labelButton > button {
+  width: 244px;
+  height: 41px;
+}
+
+.popupScroller {
+  max-height: 510px;
+  overflow-y: auto;
+  width: 100%;
+  padding: 5px;
+}
+
+.urgentLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}

@@ -60,9 +60,9 @@ export const Register = () => {
                     </div>
                 }
                 <div className='loginButton'>
-                    {emailPage && <button onClick={handleEmailPage}>Зарегистрироваться</button>}
-                    {codePage && <button onClick={handleCodePage}>Подтвердить</button>}
-                    {successPage && <button onClick={() => window.location = '/login'}>Войти</button>}
+                    {emailPage && <button className='blueButton' onClick={handleEmailPage}>Зарегистрироваться</button>}
+                    {codePage && <button className='blueButton' onClick={handleCodePage}>Подтвердить</button>}
+                    {successPage && <button className='blueButton' onClick={() => window.location = '/login'}>Войти</button>}
                 </div>
             </div>
         </div>

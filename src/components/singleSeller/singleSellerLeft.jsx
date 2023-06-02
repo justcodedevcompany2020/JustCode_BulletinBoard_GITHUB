@@ -28,7 +28,7 @@ export const SingleSellerLeft = () => {
                     open={writeReview}
                     setOpen={setWriteReview}
                 />
-                <button className='callButton' onClick={() => setReview(true)}>Отзывы</button>
+                <button className='callButton blueButton' onClick={() => setReview(true)}>Отзывы</button>
                 <Reviews
                     open={review}
                     setOpen={setReview}

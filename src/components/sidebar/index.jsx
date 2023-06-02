@@ -1,5 +1,4 @@
 import './style.css'
-import { Star } from '../svg'
 import { useState } from 'react'
 import { NavLink } from "react-router-dom"
 import { ProfileUser } from '../profileUser'

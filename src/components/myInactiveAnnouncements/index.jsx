@@ -2,120 +2,121 @@ import './style.css'
 import { AddToTop, Heart, HeartFilled } from '../svg'
 
 export const MyInactiveAnnouncements = () => {
-    const advertisement = [
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: true,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: true,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: false,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: true,
-            description: 'Прокат машин',
-            buyMe: true,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: false,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: true,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: true,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: false,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: true,
-            description: 'Прокат машин',
-            buyMe: true,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: false,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: true,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: true,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: false,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: true,
-            description: 'Прокат машин',
-            buyMe: true,
-            urgent: false,
-            location: 'Ереван'
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
-            liked: false,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: false,
-            location: 'Ереван'
-        },
-    ]
+    // const advertisement = [
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: true,
+    //         description: 'Прокат машин',
+    //         buyMe: false,
+    //         urgent: true,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: false,
+    //         description: 'Прокат машин',
+    //         buyMe: false,
+    //         urgent: false,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: true,
+    //         description: 'Прокат машин',
+    //         buyMe: true,
+    //         urgent: false,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: false,
+    //         description: 'Прокат машин',
+    //         buyMe: false,
+    //         urgent: false,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: true,
+    //         description: 'Прокат машин',
+    //         buyMe: false,
+    //         urgent: true,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: false,
+    //         description: 'Прокат машин',
+    //         buyMe: false,
+    //         urgent: false,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: true,
+    //         description: 'Прокат машин',
+    //         buyMe: true,
+    //         urgent: false,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: false,
+    //         description: 'Прокат машин',
+    //         buyMe: false,
+    //         urgent: false,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: true,
+    //         description: 'Прокат машин',
+    //         buyMe: false,
+    //         urgent: true,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: false,
+    //         description: 'Прокат машин',
+    //         buyMe: false,
+    //         urgent: false,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: true,
+    //         description: 'Прокат машин',
+    //         buyMe: true,
+    //         urgent: false,
+    //         location: 'Ереван'
+    //     },
+    //     {
+    //         price: '950.000 $',
+    //         image: 'apartment.png',
+    //         liked: false,
+    //         description: 'Прокат машин',
+    //         buyMe: false,
+    //         urgent: false,
+    //         location: 'Ереван'
+    //     },
+    // ]
+    const advertisement = []
 
     return (
         <div className='catalogItems'>
-            {advertisement.length > 0 && advertisement.map((e, i) => (
+            {advertisement.length > 0 ? advertisement.map((e, i) => (
                 <div className='eachMenuTop catalogImages' key={i}>
                     <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                     <div className='topPadding'>
@@ -145,7 +146,10 @@ export const MyInactiveAnnouncements = () => {
                         }
                     </div> */}
                 </div>
-            ))}
+            )) : <div className='noActiveAnnouncements blueButton'>
+                <p>У вас нет неактивных объявлений в данный момент.</p>
+            </div>
+            }
         </div>
     )
 }

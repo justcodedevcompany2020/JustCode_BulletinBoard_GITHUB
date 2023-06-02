@@ -1,3 +1,20 @@
 .css-13xfq8m-MuiTabPanel-root {
   padding: 15px 0 !important;
 }
+
+.webTabs {
+  display: flex;
+}
+
+.mobileTabs {
+  display: none;
+}
+
+@media screen and (max-width: 425px) {
+  .webTabs {
+    display: none;
+  }
+  .mobileTabs {
+    display: flex;
+  }
+}

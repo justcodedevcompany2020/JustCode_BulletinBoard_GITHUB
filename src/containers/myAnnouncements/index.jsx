@@ -6,10 +6,6 @@ import { MyInactiveAnnouncements } from '../../components/myInactiveAnnouncement
 export const MyAnnouncements = () => {
     const tabList = ['Активные', 'Неактивные']
     const tabPanel = [<MyActiveAnnouncements />, <MyInactiveAnnouncements />]
-    
-    return (
-        <div>
-            <Tabs tabList={tabList} tabPanel={tabPanel} />
-        </div>
-    )
+
+    return <Tabs tabList={tabList} tabPanel={tabPanel} />
 }

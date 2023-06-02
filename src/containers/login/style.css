@@ -110,11 +110,6 @@
 .loginButton > button {
   width: 244px;
   height: 41px;
-  background: #7791f7;
-  border-radius: 10px;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;

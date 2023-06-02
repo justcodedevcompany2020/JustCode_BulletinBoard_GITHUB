@@ -31,10 +31,10 @@
   border-radius: 50%;
 }
 
-.eachMenuCategory:hover {
+/* .eachMenuCategory:hover {
   background: rgba(random(255), random(255), random(255), 15);
   cursor: pointer;
-}
+} */
 
 .eachMenuCategory > img {
   width: 120px;

@@ -1,0 +1,88 @@
+#sellSpan {
+  width: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #969696;
+  margin: 8px 0 20px 0;
+}
+
+.toopLabels {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.eachLabel {
+  background: #fafafa;
+  border-radius: 8px;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  cursor: pointer;
+  border: 2px solid #fafafa;
+  position: relative;
+}
+
+.eachLabel:hover {
+  background: #f5f5f5;
+}
+
+.eachLabel > img {
+  width: 30px;
+  height: 30px;
+}
+
+.eachLabelRight {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eachLabelTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.eachLabelTop > p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.eachLabelTop > span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #7791f7;
+}
+
+.eachLabelRight > p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #8b8b8b;
+}
+
+.blueCheckmark {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.selectedLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (max-width: 425px) {
+  .eachLabelTop {
+    flex-direction: column;
+  }
+  .eachLabel {
+    padding: 5px;
+  }
+}

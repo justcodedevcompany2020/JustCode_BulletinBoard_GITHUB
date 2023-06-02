@@ -2,8 +2,8 @@ import './style.css'
 import { Outlet } from 'react-router-dom'
 import { Sidebar } from '../../components/sidebar'
 import { NavPath } from '../../components/navPath'
-import { MobileSidebar } from '../../components/mobileSidebar'
 import { ProfileUser } from '../../components/profileUser'
+import { MobileSidebar } from '../../components/mobileSidebar'
 
 export const ProfileLayout = () => {
     const sidebar = [
@@ -66,7 +66,7 @@ export const ProfileLayout = () => {
             </div>
             <div className='profileLayout'>
                 <div className='sidebarDisplay'>
-                    <Sidebar sidebar={sidebar}/>
+                    <Sidebar sidebar={sidebar} />
                 </div>
                 <div className='profileLayoutOutline'>
                     <Outlet />

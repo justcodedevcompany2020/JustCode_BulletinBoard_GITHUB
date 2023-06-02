@@ -4,3 +4,21 @@
   right: 8px;
   cursor: pointer;
 }
+
+.noActiveAnnouncements {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.noActiveAnnouncements > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.noActiveAnnouncements > button {
+  padding: 9px 20px 10px;
+  width: 228px;
+  height: 41px;
+}
