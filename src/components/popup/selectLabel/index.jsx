@@ -1,6 +1,6 @@
 import './style.css'
-import { CloseIcon } from '../../svg'
 import { useState } from 'react'
+import { CloseIcon } from '../../svg'
 
 export const SelectLabel = ({ open, setOpen, onClick }) => {
     const labels = [
@@ -55,11 +55,28 @@ export const SelectLabel = ({ open, setOpen, onClick }) => {
             background: 'red',
         },
     ]
-    const [selected, setSelected] = useState()
+    const details = [
+        {
+            title: 'Срок действи',
+            price: '1 месяц',
+        },
+        {
+            title: 'Цена',
+            price: '12,000 Р',
+        },
+        {
+            title: 'В кошельке',
+            price: '200 Р',
+        },
+    ]
+    const [active, setActive] = useState(null)
 
-    function chooseLabel(id) {
-        let selectedLabel = labels.find(e => e.id === id)
-        console.log(selectedLabel)
+    function chooseLabel(e) {
+        labels.filter((event, index) => {
+            if (e === event) {
+                setActive(index)
+            }
+        })
     }
 
     return (
@@ -67,6 +84,7 @@ export const SelectLabel = ({ open, setOpen, onClick }) => {
             <div className='pop' style={{ width: '570px' }}>
                 <div className='close' onClick={() => {
                     setOpen(false)
+                    setActive(null)
                 }} >
                     <CloseIcon />
                 </div>
@@ -76,28 +94,22 @@ export const SelectLabel = ({ open, setOpen, onClick }) => {
                 <div className='popupScroller'>
                     <div className='urgentLabels' style={{ marginBottom: '30px' }}>
                         {labels.map((e, i) => (
-                            <div key={i} className={e.background === 'red' ? 'urgent cursor' : 'cursor'} onClick={() => chooseLabel(i + 1)}>
+                            <div key={i} style={active == null ? { background: '#e21003', opacity: '1' } : {}} className={active === i ? 'selectedLabel' : 'otherLabels'} onClick={() => chooseLabel(e)}>
                                 <span>{e.title}</span>
                             </div>
                         ))}
                     </div>
                     <div className='loginSeparator' />
                     <div className='labelPriceList'>
-                        <div className='eachLabelPrice'>
-                            <p>Срок действия</p>
-                            <span>1 месяц</span>
-                        </div>
-                        <div className='eachLabelPrice'>
-                            <p>Цена</p>
-                            <span>12,000 Р</span>
-                        </div>
-                        <div className='eachLabelPrice'>
-                            <p>В кошельке</p>
-                            <span>200 Р</span>
-                        </div>
+                        {details.map((e, i) => (
+                            <div className='eachLabelPrice' key={i}>
+                                <p>{e?.title}</p>
+                                <span>{e?.price}</span>
+                            </div>
+                        ))}
                     </div>
                     <div className='labelButton'>
-                        <button className='blueButton' onClick={onClick}>Купить</button>
+                        <button onClick={() => active !== null && onClick()} style={active === null ? { background: 'rgba(119, 145, 247, 0.3)', color: '#7791F7' } : {}} className='blueButton'>Купить</button>
                     </div>
                 </div>
             </div>

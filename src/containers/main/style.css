@@ -1,11 +1,11 @@
 .mainAndBusiness {
-  width: 90%;
+  width: 80%;
   margin: auto;
   max-width: 1440px;
 }
 
 .autoAndApartment {
-  width: 90%;
+  width: 80%;
   max-width: 1440px;
   margin: 40px auto;
   display: flex;

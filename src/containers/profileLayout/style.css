@@ -1,5 +1,6 @@
 .profileLayout {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   width: 90%;
   margin: 0 auto;

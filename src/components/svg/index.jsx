@@ -462,3 +462,21 @@ export const BlueCheckmark = () => {
         </svg>
     )
 }
+
+export const Idram = () => {
+    return(
+        <img alt='' src={require('../../public/idram.png')} width={75} height={20}/>
+    )
+}
+
+export const Visa = () => {
+    return(
+        <img alt='' src={require('../../public/visa.png')} width={75} height={20}/>
+    )
+}
+
+export const Telcell = () => {
+    return(
+        <img alt='' src={require('../../public/telcell.png')} width={75} height={20}/>
+    )
+}

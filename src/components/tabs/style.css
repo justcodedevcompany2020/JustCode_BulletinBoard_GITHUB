@@ -10,6 +10,21 @@
   display: none;
 }
 
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  /* font-family: "Open Sans" !important; */
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  color: #333333 !important;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #7791f7 !important;
+}
+
 @media screen and (max-width: 425px) {
   .webTabs {
     display: none;

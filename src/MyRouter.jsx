@@ -3,12 +3,16 @@ import { Login } from './containers/login'
 import { Layout } from './containers/layout'
 import { Seller } from './containers/seller'
 import { Catalog } from './containers/catalog'
+import { Reviews } from './containers/reviews'
 import { Register } from './containers/register'
+import { ProfileLayout } from './containers/profileLayout'
 import { ForgotPassword } from './containers/forgotPassword'
+import { MyAnnouncements } from './containers/myAnnouncements'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SingleAnnouncement } from './components/singleAnnouncement'
-import { ProfileLayout } from './containers/profileLayout'
-import { MyAnnouncements } from './containers/myAnnouncements'
+import { Notifications } from './containers/notifications'
+import { Favorites } from './containers/favorites'
+import { Wallet } from './containers/wallet'
 
 export const MyRouter = () => {
     if (window.location.pathname === '/login' || window.location.pathname === '/register' || window.location.pathname === '/forgotPassword') {
@@ -27,14 +31,17 @@ export const MyRouter = () => {
                 <Routes>
                     <Route path='/' element={<Layout />}>
                         <Route path='/' element={<Main />} />
-                        {/* <Route path='*' element={<Main />} /> */}
+                        {/* <Route path='*' element={<404 />} /> */}
                         <Route path='/item/:id' element={<SingleAnnouncement />} />
                         <Route path='/seller/:id' element={<Seller />} />
                         <Route path='/catalog/:id' element={<Catalog />} />
                         <Route path='/profile' element={<ProfileLayout />} >
                             <Route path='' element={<MyAnnouncements />} />
+                            <Route path='/profile/reviews' element={<Reviews />} />
+                            <Route path='/profile/notifications' element={<Notifications />} />
+                            <Route path='/profile/favorites' element={<Favorites />} />
+                            <Route path='/profile/wallet' element={<Wallet />} />
                         </Route>
-
                     </Route>
                 </Routes>
             </BrowserRouter>

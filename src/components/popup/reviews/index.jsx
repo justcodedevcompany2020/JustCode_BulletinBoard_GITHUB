@@ -95,7 +95,10 @@ export const Reviews = ({ open, setOpen }) => {
                                     <p>{e?.description}</p>
                                 </div>
                             </div>
-                            <span>{e?.rating} <Star /></span>
+                            <div className='reviewRating'>
+                                <span>{e?.rating}</span>
+                                <Star />
+                            </div>
                         </div>
                     ))}
                 </div>

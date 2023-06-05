@@ -41,4 +41,33 @@
 
 .eachRevLeRight > p {
   word-break: break-word;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.eachRevLeRight > h2 {
+  color: #7791f7;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.eachRevLeRight > span {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #969696;
+}
+
+.reviewRating {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.reviewRating > span {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
 }

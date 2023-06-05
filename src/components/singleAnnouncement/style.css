@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  width: 90%;
+  width: 80%;
   max-width: 1440px;
   margin: 5px auto 20px;
 }
@@ -23,7 +23,7 @@
 
 .singleMainPart {
   display: flex;
-  width: 90%;
+  width: 80%;
   max-width: 1440px;
   margin: 20px auto 50px auto;
   gap: 40px;
@@ -332,7 +332,7 @@
 }
 
 .similar {
-  width: 90%;
+  width: 80%;
   max-width: 1440px;
   margin: auto;
 }
@@ -347,6 +347,7 @@
 
 .pageBg {
   background: #fafafa;
+  min-height: 736px;
 }
 
 .imageSlider:before {

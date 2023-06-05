@@ -11,7 +11,7 @@
   gap: 10px;
   position: relative;
   background: #ffffff;
-  width: 220px;
+  width: 20%;
 }
 
 .eachMenuTop > img {
@@ -37,7 +37,7 @@
 }
 
 .mainTop {
-  width: 90%;
+  width: 80%;
   max-width: 1440px;
   margin: auto;
   padding-top: 20px;
@@ -98,6 +98,12 @@
   top: 35%;
 }
 
+@media screen and (max-width: 1024px) {
+  .eachMenuTop {
+    width: 30%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .eachMenuTop {
     width: 150px;
@@ -116,6 +122,9 @@
   .findUs {
     align-items: flex-start;
   }
+  .eachMenuTop {
+    width: 20%;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -127,5 +136,8 @@
   }
   .autoAndApartmentRightPart {
     width: 100%;
+  }
+  .eachMenuTop {
+    width: 30%;
   }
 }

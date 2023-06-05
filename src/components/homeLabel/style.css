@@ -1,12 +1,19 @@
+.homeLabel {
+  margin-top: 20px;
+}
+
 .homeLabel > p {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  padding: 20px;
 }
 
-.homeLabel > p > ul {
+.homeLabel > ul {
   list-style-position: inside;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  padding-left: 20px;
 }
 
 .labelPriceList {
@@ -56,4 +63,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+}
+
+@media screen and (max-width: 425px) {
+  .urgentLabels {
+    justify-content: center;
+  }
 }

@@ -1,5 +1,51 @@
-.cursor {
+.selectedLabel {
+  background: #e21003;
+  border-radius: 5px;
+  padding: 10px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   width: 85px;
   height: 25px;
+}
+
+.selectedLabel > span {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.otherLabels {
+  background: #e21003;
+  border-radius: 5px;
+  padding: 10px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 85px;
+  height: 25px;
+  opacity: 0.5;
+}
+
+.otherLabels > span {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 425px) {
+  .otherLabels {
+    width: 67px;
+    height: 21px;
+  }
+  .selectedLabel {
+    width: 67px;
+    height: 21px;
+  }
 }

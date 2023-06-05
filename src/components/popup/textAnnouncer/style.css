@@ -90,6 +90,7 @@
 @media screen and (max-width: 768px) {
   .pop {
     width: 50% !important;
+    padding: 30px 15px;
   }
 }
 

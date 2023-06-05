@@ -1,0 +1,84 @@
+.notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.notifications > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.allNotifications {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.eachNotification {
+  background: #ffffff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eachNotification > h1 {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.eachNotificationCheckbox {
+  display: flex;
+  gap: 20px;
+}
+
+.eachNotificationCheckbox > label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.notificationButton {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.notificationButton > button {
+  width: 244px;
+  height: 41px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@media screen and (max-width: 768px) {
+  .eachNotification {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .notifications {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .notificationButton {
+    justify-content: center;
+  }
+  .notificationButton > button {
+    width: 230px;
+  }
+  .notificationButton > button {
+    width: 230px;
+    height: 35px;
+  }
+}

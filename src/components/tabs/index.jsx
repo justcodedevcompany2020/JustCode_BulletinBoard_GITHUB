@@ -19,7 +19,7 @@ export default function Tabs({ tabList, tabPanel }) {
             <TabContext value={value}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <div className='webTabs'>
-                        <TabList onChange={handleChange} aria-label="lab API tabs example">
+                        <TabList onChange={handleChange}>
                             {tabList.map((e, i) => (
                                 <Tab key={i} label={e} value={i + 1 + ''} />
                             ))}

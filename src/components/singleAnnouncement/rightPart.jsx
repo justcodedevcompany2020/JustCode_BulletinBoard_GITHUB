@@ -35,7 +35,7 @@ export const SingleAnnouncementRightPart = () => {
     return (
         <div className='singleMainRight'>
             <span>28 500 Р</span>
-            <button className='callButton' onClick={() => setCall(true)}>Позвонить</button>
+            <button className='callButton blueButton' onClick={() => setCall(true)}>Позвонить</button>
             <CallAnnouncer
                 open={call}
                 setOpen={setCall}

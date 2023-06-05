@@ -22,3 +22,10 @@
   width: 228px;
   height: 41px;
 }
+
+@media screen and (max-width: 425px) {
+  .noActiveAnnouncements > p {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}

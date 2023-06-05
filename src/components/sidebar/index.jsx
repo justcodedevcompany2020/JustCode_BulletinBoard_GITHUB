@@ -20,10 +20,10 @@ export const Sidebar = ({ sidebar }) => {
             <div className='loginSeparator' />
             <div className='sidebarItems'>
                 {sidebar.map((e, i) => (
-                    <div key={i} onClick={() => window.location = `${e?.path}`} className='eachSidebarItem' onMouseOver={() => setIcon(e)} onMouseLeave={() => setActive(null)} >
+                    <div key={i} onClick={() => window.location = e?.path} className='eachSidebarItem' onMouseOver={() => setIcon(e)} onMouseLeave={() => setActive(null)} >
                         <img alt='' src={require(`../../public/${active === i ? e.active_image : e.image}`)} />
                         <NavLink
-                            to={`${e?.path}`}
+                            to={e?.path}
                             style={{ color: active === i && '#7791f7' }}
                             className={({ isActive }) =>
                                 isActive ? "activey" : "pending"

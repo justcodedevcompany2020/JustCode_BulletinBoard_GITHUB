@@ -1,5 +1,5 @@
 .navigation {
-  width: 90%;
+  width: 80%;
   max-width: 1440px;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@
 
 .openCategories {
   display: flex;
-  width: 90%;
+  width: 80%;
   margin: auto;
   height: 500px;
   position: absolute;
@@ -103,7 +103,7 @@
 
 @keyframes openModal {
   0% {
-    transform: translateY(-90%);
+    transform: translateY(-80%);
   }
   100% {
     transform: translateY(0);

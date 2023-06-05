@@ -146,7 +146,7 @@ export const MyInactiveAnnouncements = () => {
                         }
                     </div> */}
                 </div>
-            )) : <div className='noActiveAnnouncements blueButton'>
+            )) : <div className='noActiveAnnouncements'>
                 <p>У вас нет неактивных объявлений в данный момент.</p>
             </div>
             }

@@ -1,0 +1,86 @@
+.myWallet {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.eachWallet {
+  background: #ffffff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.walletBg {
+  background: linear-gradient(180deg, #7791f7 0%, #b4d1fb 100%);
+  border-radius: 10px;
+  width: 203px;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.walletBg > span {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 41px;
+  color: #fff;
+}
+
+.walletBg > p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.walletInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.walletInfo > h1 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.walletInfo > p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.topUpMyWallet {
+  background: #ffffff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.topUpMyWallet > h1 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@media screen and (max-width: 768px) {
+  .eachWallet {
+    flex-direction: column;
+  }
+  .walletBg {
+    width: 100%;
+  }
+  .WalletInfo > h1 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
