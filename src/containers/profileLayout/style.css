@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   max-width: 1440px;
 }
@@ -17,6 +17,12 @@
 
 .sidebarDisplay {
   display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .profileLayout {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 425px) {

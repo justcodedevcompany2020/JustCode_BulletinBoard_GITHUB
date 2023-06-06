@@ -1,0 +1,61 @@
+.accTypeRadio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.individualType {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.individualType > p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #969696;
+  margin-left: 20px;
+}
+
+.individualType > span {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  margin-left: 20px;
+  color: #7791f7;
+}
+
+.accountTypePrice {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+#accTypeMrg {
+  margin-bottom: 30px;
+}
+
+.noBal {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.noBal > span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.accountTypeButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.accountTypeButton > button {
+  width: 244px;
+  height: 41px;
+}

@@ -1,0 +1,30 @@
+.accountSettings {
+  max-width: 770px;
+  width: 100%;
+}
+
+.accountSettings > span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  max-width: 160px;
+}
+
+.accSet {
+  min-width: 190px !important;
+}
+
+#accountSet {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .accSet {
+    min-width: 100% !important;
+  }
+  .accountSettings {
+    gap: 15px !important;
+  }
+}

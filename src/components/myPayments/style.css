@@ -1,0 +1,44 @@
+.eachPayment {
+  background: #ffffff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eachMyPayment {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 40%;
+  justify-content: space-between;
+}
+
+.eachMyPayment > p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.eachMyPayment > span {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: #7791f7;
+}
+
+@media screen and (max-width: 768px) {
+  .eachPayment {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .eachMyPayment {
+    width: 100%;
+  }
+  #eachPayRight > span {
+    color: #333333;
+  }
+}

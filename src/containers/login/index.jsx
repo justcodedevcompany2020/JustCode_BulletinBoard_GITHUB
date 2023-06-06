@@ -51,7 +51,7 @@ export const Login = () => {
                         <span onClick={() => window.location = '/forgotPassword'}>Забыли пароль?</span>
                     </div>
                     <div className='loginButton'>
-                        <button>Войти</button>
+                        <button className='blueButton'>Войти</button>
                     </div>
                     <div className='loginSeparator' style={{ margin: '20px 0' }} />
                     <div className='loginViaSocialMedia'>

@@ -13,6 +13,7 @@ import { SingleAnnouncement } from './components/singleAnnouncement'
 import { Notifications } from './containers/notifications'
 import { Favorites } from './containers/favorites'
 import { Wallet } from './containers/wallet'
+import { Settings } from './containers/settings'
 
 export const MyRouter = () => {
     if (window.location.pathname === '/login' || window.location.pathname === '/register' || window.location.pathname === '/forgotPassword') {
@@ -41,6 +42,7 @@ export const MyRouter = () => {
                             <Route path='/profile/notifications' element={<Notifications />} />
                             <Route path='/profile/favorites' element={<Favorites />} />
                             <Route path='/profile/wallet' element={<Wallet />} />
+                            <Route path='/profile/settings' element={<Settings />} />
                         </Route>
                     </Route>
                 </Routes>

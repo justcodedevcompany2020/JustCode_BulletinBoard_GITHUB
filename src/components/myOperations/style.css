@@ -1,0 +1,6 @@
+#eachOperRight {
+  justify-content: flex-end;
+}
+#eachOperRight > p {
+  font-weight: 600;
+}

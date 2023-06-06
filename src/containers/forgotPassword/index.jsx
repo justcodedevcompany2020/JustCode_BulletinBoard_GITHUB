@@ -53,9 +53,9 @@ export const ForgotPassword = () => {
                     </>}
                 </div>
                 <div className='loginButton'>
-                    {emailPage && <button onClick={handleEmailPage}>Отправить</button>}
-                    {codePage && <button onClick={handleCodePage}>Подтвердить</button>}
-                    {passwordPage && <button onClick={handlePasswordPage}>Войти</button>}
+                    {emailPage && <button onClick={handleEmailPage} className='blueButton'>Отправить</button>}
+                    {codePage && <button onClick={handleCodePage} className='blueButton'>Подтвердить</button>}
+                    {passwordPage && <button onClick={handlePasswordPage} className='blueButton'>Войти</button>}
                 </div>
             </div>
         </div>

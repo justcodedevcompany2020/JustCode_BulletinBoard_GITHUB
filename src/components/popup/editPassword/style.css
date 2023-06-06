@@ -1,0 +1,26 @@
+.passInfo {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0 40px;
+}
+
+.passInfo > p {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.passInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.passInputs > input {
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  width: 100%;
+  padding: 15px;
+  outline: none;
+}

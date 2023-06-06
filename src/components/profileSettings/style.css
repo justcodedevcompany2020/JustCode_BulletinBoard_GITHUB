@@ -1,0 +1,114 @@
+.profileInfo {
+  background: #ffffff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.eachProfileSetting {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+}
+
+.eachProfileSetting > span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #969696;
+  width: 15%;
+  min-width: 120px;
+}
+
+.eachProfileSetting > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #7791f7;
+  cursor: pointer;
+}
+
+.changeAvatar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 430px;
+  width: 60%;
+}
+
+.changeAvatar > img {
+  width: 35px;
+  height: 35px;
+}
+
+.changeAvatar > span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #7791f7;
+}
+
+.changeAvatar > input {
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  background: none;
+}
+
+.changeAvatar > select {
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  outline: none;
+}
+
+.changeAvatar > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+#profSetting {
+  justify-content: space-between;
+}
+
+#profSetting > div {
+  gap: 50px;
+}
+
+#profSetting > div > span {
+  min-width: 120px;
+  width: 15%;
+  color: #969696;
+}
+
+@media screen and (max-width: 768px) {
+  .eachProfileSetting {
+    flex-direction: column;
+  }
+  .eachProfileSetting {
+    align-items: flex-start;
+  }
+  #profSetting > p {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+  }
+  .eachProfileSetting {
+    gap: 10px;
+  }
+  #profSetting > div {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

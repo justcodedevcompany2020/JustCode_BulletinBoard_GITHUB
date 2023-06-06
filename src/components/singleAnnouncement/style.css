@@ -10,8 +10,9 @@
 .navPath > ul {
   display: flex;
   align-items: center;
-  gap: 5px;
+  flex-wrap: wrap;
   list-style-type: none;
+  gap: 5px;
 }
 
 .navPath > ul > li {
@@ -419,6 +420,9 @@
   .clientInfoTop > img {
     width: 40px;
     height: 40px;
+  }
+  .navPath {
+    width: 90%;
   }
 }
 

@@ -464,19 +464,29 @@ export const BlueCheckmark = () => {
 }
 
 export const Idram = () => {
-    return(
-        <img alt='' src={require('../../public/idram.png')} width={75} height={20}/>
+    return (
+        <img alt='' src={require('../../public/idram.png')} width={75} height={20} />
     )
 }
 
 export const Visa = () => {
-    return(
-        <img alt='' src={require('../../public/visa.png')} width={75} height={20}/>
+    return (
+        <img alt='' src={require('../../public/visa.png')} width={75} height={20} />
     )
 }
 
 export const Telcell = () => {
-    return(
-        <img alt='' src={require('../../public/telcell.png')} width={75} height={20}/>
+    return (
+        <img alt='' src={require('../../public/telcell.png')} width={75} height={20} />
+    )
+}
+
+export const MoreIcons = () => {
+    return (
+        <svg width="21" height="5" viewBox="0 0 21 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="2.5" cy="2.5" r="2.5" transform="matrix(1 0 0 -1 0 5)" fill="#969696" />
+            <circle cx="2.5" cy="2.5" r="2.5" transform="matrix(1 0 0 -1 8 5)" fill="#969696" />
+            <circle cx="2.5" cy="2.5" r="2.5" transform="matrix(1 0 0 -1 16 5)" fill="#969696" />
+        </svg>
     )
 }

@@ -56,7 +56,7 @@ export const Register = () => {
                         <div className='checkbox' onClick={() => setChecked(!checked)} style={checked ? { background: '#7791f7' } : {}}>
                             <Checkbox />
                         </div>
-                        <span>Я соглашаюсь с правилами публикации объявлений и условиями пользования JustCode.</span>
+                        <label>Я соглашаюсь с правилами публикации объявлений и условиями пользования JustCode.</label>
                     </div>
                 }
                 <div className='loginButton'>

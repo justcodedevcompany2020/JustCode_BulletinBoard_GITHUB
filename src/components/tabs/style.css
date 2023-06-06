@@ -25,6 +25,10 @@
   color: #7791f7 !important;
 }
 
+.css-jpln7h-MuiTabs-scroller {
+  overflow: auto !important;
+}
+
 @media screen and (max-width: 425px) {
   .webTabs {
     display: none;
