@@ -1,0 +1,25 @@
+.createAnnouncement {
+  width: 80%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.topStepper {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.topStepperName {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topStepperName>h1 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+}

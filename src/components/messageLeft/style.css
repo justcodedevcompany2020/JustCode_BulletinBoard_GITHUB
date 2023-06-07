@@ -1,0 +1,58 @@
+.chatMembers {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.eachChatMember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.eachChatMember:hover {
+  background: rgba(136, 190, 69, 0.2);
+}
+
+.eachChatMember > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.memberRight {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.memberRight > p {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #969696;
+}
+
+.memberName {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.memberName > h2 {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.memberName > span {
+  font-weight: 400;
+  font-size: 6px;
+  line-height: 8px;
+}

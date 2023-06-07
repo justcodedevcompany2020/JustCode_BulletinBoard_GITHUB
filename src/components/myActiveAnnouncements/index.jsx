@@ -190,7 +190,7 @@ export const MyActiveAnnouncements = () => {
             ))
                 : <div className='noActiveAnnouncements'>
                     <p>У вас нет активных объявлений в данный момент.</p>
-                    <button>Разместить обьявление</button>
+                    <button onClick={() => window.location = '/create'}>Разместить обьявление</button>
                 </div>
             }
         </div>

@@ -8,15 +8,15 @@ export const LittleNavs = () => {
 
     return (
         <div className='littleNavs'>
-            <div className='eachLittleNav'>
+            <div className='eachLittleNav' onClick={() => window.location = '/profile/messages'}>
                 <Message />
                 <span>Сообщения</span>
             </div>
-            <div className='eachLittleNav'>
+            <div className='eachLittleNav' onClick={() => window.location = '/profile/favorites'}>
                 <Favorites />
                 <span>Избранное</span>
             </div>
-            <div className='eachLittleNav'>
+            <div className='eachLittleNav' onClick={() => window.location = '/profile/wallet'}>
                 <Wallet />
                 <span>Кошелёк</span>
             </div>

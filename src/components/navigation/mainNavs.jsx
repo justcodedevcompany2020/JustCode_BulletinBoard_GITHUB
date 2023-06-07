@@ -18,7 +18,7 @@ export const MainNavs = ({ openCategories, setOpenCategories }) => {
                 <Searchbar />
             </div>
             <div className='eachMainNav'>
-                <button className='navGreenButton'>Разместить обьявление</button>
+                <button className='navGreenButton' onClick={() => window.location = '/create'}>Разместить обьявление</button>
             </div>
             {user
                 ? <div className='eachMainNav'>

@@ -1,0 +1,117 @@
+.memberRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightTop {
+  padding: 15px 15px 0 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rightTopLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rightTopLeft > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.rightTopLeft > h2 {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #7791f7;
+}
+
+.rightInnerTop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.rightBottom {
+  background: #fafafa;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.chatInput {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+  padding: 15px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.rightCenter {
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  height: 405px;
+  overflow-y: auto;
+}
+
+.eachMessage {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.eachMessageLeft {
+  display: flex;
+  gap: 10px;
+}
+
+.messageText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.eachMessageLeft > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+
+.messageText > h2 {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  color: #7791f7;
+}
+
+.messageText > p {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #969696;
+  word-break: break-word;
+}
+
+.eachMessage > span {
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 11px;
+  color: #969696;
+}
