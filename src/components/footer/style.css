@@ -54,14 +54,14 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    width: 95%;
+    width: 90%;
   }
   .mobileC {
     display: none;
   }
   .mobileCC {
     display: flex;
-    width: 95%;
+    width: 90%;
     margin: 0 auto 20px auto;
   }
   .mobileCC > span {

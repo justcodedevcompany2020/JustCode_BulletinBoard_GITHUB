@@ -1,5 +1,5 @@
 import './App.css'
-import Context from './components/context/context'
+import Context from './components/context'
 import { MyRouter } from './MyRouter'
 import { useEffect, useState } from 'react'
 

@@ -1,0 +1,14 @@
+.createTemplate {
+  background: #ffffff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.eachTemplateItem {
+  display: flex;
+  gap: 30px;
+}

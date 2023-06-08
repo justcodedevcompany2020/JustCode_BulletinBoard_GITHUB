@@ -1,5 +1,5 @@
 import './style.css'
-import Context from '../context/context'
+import Context from '../context'
 import { useState, useContext } from 'react'
 import { CatalogHamburger, SearchIcon } from '../svg'
 import { CatalogFilterHamburger } from '../catalogFilterHamburger'

@@ -12,8 +12,6 @@ const steps = [
 ]
 
 export const Stepp = ({ currentStep }) => {
-
-
     return (
         <Box sx={{ width: '250px' }}>
             <Stepper activeStep={currentStep} alternativeLabel>

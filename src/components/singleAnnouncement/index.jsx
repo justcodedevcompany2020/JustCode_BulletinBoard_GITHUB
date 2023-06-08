@@ -1,5 +1,5 @@
 import './style.css'
-import Context from '../context/context'
+import Context from '../context'
 import { useContext } from 'react'
 import { Similar } from '../similar'
 import { SingleAnnouncementLeftPart } from './leftPart'

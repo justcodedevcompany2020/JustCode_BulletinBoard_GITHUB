@@ -1,0 +1,60 @@
+.createCategories {
+  background: #ffffff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 380px;
+  height: fit-content;
+}
+
+.eachCreateCat {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.eachCreateCat > img {
+  width: 20px;
+  height: 20px;
+}
+
+.createCategoryPage {
+  display: flex;
+  gap: 20px;
+}
+
+.createMobileCategoryPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.eachMobileCreateCat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.eachMobileCreateCatLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eachMobileCreateCatLeft > img {
+  width: 20px;
+  height: 20px;
+}
+
+.eachMobileCreateCatLeft > span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}

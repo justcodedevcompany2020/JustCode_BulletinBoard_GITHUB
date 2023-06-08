@@ -1,5 +1,5 @@
 import './style.css'
-import Context from '../../components/context/context'
+import Context from '../../components/context'
 import { BlueArrowLeft } from '../../components/svg'
 import { useContext, useState, useEffect } from 'react'
 import { MessageLeft } from '../../components/messageLeft'

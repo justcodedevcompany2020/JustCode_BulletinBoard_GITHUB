@@ -382,7 +382,7 @@
     line-height: 25px;
   }
   .singleMainPart {
-    width: 95%;
+    width: 90%;
     gap: 30px;
     margin: 20px auto 0px auto;
   }
@@ -400,7 +400,7 @@
     overflow-x: auto;
   }
   .similar {
-    width: 95%;
+    width: 90%;
   }
   .aboutClient > p {
     font-size: 12px;

@@ -4,7 +4,7 @@ import { MobileRightPart } from './mobileRightPart'
 import { Camera, MobileHeart, NextArrow, PreviousArrow } from '../svg'
 import Flickity from 'flickity'
 import { Carousel } from 'react-carousel-minimal';
-import Context from '../context/context'
+import Context from '../context'
 
 export const SingleAnnouncementLeftPart = () => {
     const images = [

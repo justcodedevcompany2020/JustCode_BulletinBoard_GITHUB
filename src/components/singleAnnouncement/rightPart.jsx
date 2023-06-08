@@ -1,5 +1,5 @@
 import './style.css'
-import Context from '../context/context'
+import Context from '../context'
 import { Star, VerifiedAccount } from '../svg'
 import { CallAnnouncer } from '../popup/callAnnouncer'
 import { TextAnnouncer } from '../popup/textAnnouncer'
