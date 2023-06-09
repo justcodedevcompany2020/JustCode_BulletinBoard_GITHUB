@@ -17,7 +17,7 @@ export const MobileRightPart = () => {
                 </div>
             </div>
             <div className='mobBtns'>
-                <button className='callButton' onClick={() => setCall(true)}>Позвонить</button>
+                <button className='callButton blueButton' onClick={() => setCall(true)}>Позвонить</button>
                 <CallAnnouncer
                     open={call}
                     setOpen={setCall}

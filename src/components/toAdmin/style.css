@@ -1,0 +1,55 @@
+.toAdminPage {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.toAdmin {
+  background: #ffffff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.adminCheck {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.adminCheck > h1 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.toAdmin > p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.toAdmin > p > span {
+  color: #7791f7;
+}
+
+.toAdminPage > h1 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.toAdmin > h2 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.toAdmin > ul {
+  list-style-position: inside;
+}

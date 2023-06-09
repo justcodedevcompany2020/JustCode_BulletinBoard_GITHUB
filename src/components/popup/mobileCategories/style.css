@@ -1,0 +1,64 @@
+.mobileCategoriesPopup {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.mobileCategoriesPopupTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+}
+
+.mobileCategoriesPopup > div {
+  width: 100%;
+}
+
+.mobileCategoriesPopupTop > h1 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.mobileCategoriesPopupClose {
+  position: absolute;
+  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobilePopupCats {
+  display: flex;
+  flex-direction: column;
+}
+
+.eachMobilePopCat {
+  width: 100%;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eachMobilePopCatLeft > img {
+  width: 20px;
+  height: 20px;
+}
+
+.eachMobilePopCat {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.eachMobilePopCatLeft {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

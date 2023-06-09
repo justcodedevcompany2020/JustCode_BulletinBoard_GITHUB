@@ -1,0 +1,42 @@
+.selectCategory {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.mainCats {
+  display: flex;
+  flex-direction: column;
+}
+
+.selectBorder {
+  border-left: 1px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
+}
+
+.selectBorder > h2 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.mainCats > div > h2 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  padding-left: 10px;
+}
+
+.catImages {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 235px;
+  height: 235px;
+  background: #f5f5f5;
+  border-radius: 50%;
+}

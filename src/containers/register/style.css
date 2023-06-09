@@ -23,6 +23,12 @@
   justify-content: center;
 }
 
+.loginTopLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .registerText {
   display: flex;
   justify-content: center;

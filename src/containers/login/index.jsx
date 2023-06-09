@@ -11,22 +11,6 @@ export const Login = () => {
 
     return (
         <div className='logPage'>
-            <div className='navigationShadow'>
-                <div className='loginNav'>
-                    <h1 onClick={() => window.location = '/'}>JustCode</h1>
-                    <div className='eachLittleNav'>
-                        <ReactFlagsSelect
-                            countries={["RU", "AM", "US"]}
-                            selected={selected}
-                            onSelect={(code) => setSelected(code)}
-                            optionsSize={14}
-                            className='countries'
-                            showOptionLabel={true}
-                            showSelectedLabel={true}
-                        />
-                    </div>
-                </div>
-            </div>
             <div className='loginPage'>
                 <div className='loginTitle'>
                     <h1>JustCode</h1>
@@ -72,14 +56,6 @@ export const Login = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='loginFooter'>
-                <div className='loginFooterLeftPart'>
-                    <Link>Лицензионное соглашение</Link>
-                    <Link>Помощь</Link>
-                    <Link>Реклама на Юле</Link>
-                </div>
-                <span>© 2023 JustCode</span>
             </div>
         </div>
     )

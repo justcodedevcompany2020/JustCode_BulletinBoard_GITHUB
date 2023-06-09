@@ -1,10 +1,10 @@
 import './style.css'
 import Context from '../context'
 import { useContext } from 'react'
+import { NavPath } from '../navPath'
 import { Similar } from '../similar'
 import { SingleAnnouncementLeftPart } from './leftPart'
 import { SingleAnnouncementRightPart } from './rightPart'
-import { NavPath } from '../navPath'
 
 export const SingleAnnouncement = () => {
     const context = useContext(Context)

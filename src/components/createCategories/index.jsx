@@ -11,51 +11,6 @@ export const CreateCategories = ({ setSelectedCategory, setCurrentStep }) => {
             id: 1,
             subCategories: [
                 {
-                    title: 'Женский гардероб',
-                    id: 1,
-                    subSubcategories: [
-                        {
-                            title: 'Category 1',
-                        },
-                        {
-                            title: 'Category 2',
-                        },
-                        {
-                            title: 'Category 3',
-                        },
-                        {
-                            title: 'Category 4',
-                        },
-                        {
-                            title: 'Category 5',
-                        },
-                        {
-                            title: 'Category 6',
-                        },
-                        {
-                            title: 'Category 7',
-                        },
-                        {
-                            title: 'Category 8',
-                        },
-                        {
-                            title: 'Category 9',
-                        },
-                        {
-                            title: 'Category 10',
-                        },
-                        {
-                            title: 'Category 11',
-                        },
-                        {
-                            title: 'Category 12',
-                        },
-                        {
-                            title: 'Category 13',
-                        },
-                    ]
-                },
-                {
                     title: 'Мужской гардероб',
                     id: 2,
                     subSubcategories: [
@@ -692,49 +647,6 @@ export const CreateCategories = ({ setSelectedCategory, setCurrentStep }) => {
             image: 'c1.png',
             id: 2,
             subCategories: [
-                {
-                    title: 'Женский гардероб',
-                    id: 1,
-                    subSubcategories: [
-                        {
-                            title: 'Category 1',
-                        },
-
-                        {
-                            title: 'Category 3',
-                        },
-                        {
-                            title: 'Category 4',
-                        },
-                        {
-                            title: 'Category 5',
-                        },
-                        {
-                            title: 'Category 6',
-                        },
-                        {
-                            title: 'Category 7',
-                        },
-                        {
-                            title: 'Category 8',
-                        },
-                        {
-                            title: 'Category 9',
-                        },
-                        {
-                            title: 'Category 10',
-                        },
-                        {
-                            title: 'Category 11',
-                        },
-                        {
-                            title: 'Category 12',
-                        },
-                        {
-                            title: 'Category 13',
-                        },
-                    ]
-                },
                 {
                     title: 'Детский гардероб',
                     id: 3,

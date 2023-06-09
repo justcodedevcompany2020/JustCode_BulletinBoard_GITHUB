@@ -1,3 +1,10 @@
+.createPage {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 20px 0;
+  min-height: 650px;
+}
+
 .createAnnouncement {
   width: 80%;
   max-width: 1440px;
@@ -16,6 +23,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 100%;
 }
 
 .topStepperName > h1 {
@@ -27,5 +35,11 @@
 @media screen and (max-width: 768px) {
   .createAnnouncement {
     width: 90%;
+    margin: 0 auto;
+  }
+  .topStepper {
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto 25px auto;
   }
 }

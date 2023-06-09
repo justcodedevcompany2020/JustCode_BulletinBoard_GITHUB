@@ -31,6 +31,11 @@ export const Register = () => {
                     <div className='loginTopLeft'>
                         <span>Регистрация</span>
                     </div>
+                    <div className='loginTopRight'>
+                        <div className='loginTopRightBorder'>
+                            <span onClick={() => window.location = '/login'}>Вход</span>
+                        </div>
+                    </div>
                 </div>
                 <div className='loginSeparator' />
                 {codePage &&

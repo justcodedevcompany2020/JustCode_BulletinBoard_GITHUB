@@ -1,0 +1,64 @@
+.watchToSubmit {
+  display: flex;
+  flex-direction: column;
+}
+
+.watchButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+}
+
+.watchButtons > button {
+  padding: 10px;
+  width: 27%;
+  max-width: 270px;
+  color: #7791f7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  background: rgba(119, 145, 247, 0.2);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.watchLeftBtn {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 57%;
+  max-width: 570px;
+}
+
+.watchLeftBtn > button {
+  padding: 10px;
+  width: 100%;
+  max-width: 270px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@media screen and (max-width: 768px) {
+  .watchButtons {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  .watchButtons > button {
+    width: 100%;
+    max-width: 80%;
+  }
+  .watchLeftBtn {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    max-width: 80%;
+  }
+  .watchLeftBtn > button {
+    max-width: 100%;
+  }
+}

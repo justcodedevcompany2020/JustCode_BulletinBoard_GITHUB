@@ -12,3 +12,11 @@
   display: flex;
   gap: 30px;
 }
+
+.seeMyAnnouncement {
+  width: 244px;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+}

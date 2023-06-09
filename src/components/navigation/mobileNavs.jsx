@@ -2,11 +2,13 @@ import './mainNavs.css'
 import { Searchbar } from '../searchbar'
 import { MobileCategories, NavigationCamera } from '../svg'
 
-export const MobileNavs = () => {
+export const MobileNavs = ({ setOpenMobileCategories }) => {
     return (
         <div className='mobileNavigation'>
             <div className='mobileNavs'>
-                <div>
+                <div onClick={() => {
+                    setOpenMobileCategories(true)
+                }}>
                     <MobileCategories />
                 </div>
                 <h1 onClick={() => window.location = '/'}>JustCode</h1>
