@@ -1,6 +1,7 @@
 import './style.css'
 import { useState } from 'react'
 import { FilterHeader } from '../filterHeader'
+import { Checkbox } from '../svg'
 
 export const DeepBrands = ({ open, setOpen }) => {
     const [brand, setBrand] = useState(['Dolce & Gabbana', 'Nike', 'Adidas', 'Reebok', 'Versace', 'Emporio Armani'])
@@ -15,7 +16,12 @@ export const DeepBrands = ({ open, setOpen }) => {
             />
             <div className='top60'>
                 {brand?.map((e, i) => (
-                    <label key={i}>{e}<input type='checkbox' value={e} /></label>
+                    <div className='brandCheckbox' key={i}>
+                        <label>{e}</label>
+                        <div className='checkbox' style={true ? { background: '#7791f7' } : {}}>
+                            <Checkbox />
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>

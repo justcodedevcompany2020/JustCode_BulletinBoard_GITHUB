@@ -11,55 +11,63 @@ export const ProfileLayout = () => {
             title: 'Мои объявления',
             image: 'announcement.png',
             active_image: 'active_announcement.png',
-            path: '/profile',
+            path: '/profile/profile',
+            id: 1
         },
         {
             title: 'Сообщения',
             image: 'messages.png',
             active_image: 'active_messages.png',
             path: '/profile/messages',
+            id: 2
         },
         {
             title: 'Отзывы',
             image: 'reviews.png',
             active_image: 'active_reviews.png',
             path: '/profile/reviews',
+            id: 3
         },
         {
             title: 'Уведомления',
             image: 'notifications.png',
             active_image: 'active_notifications.png',
             path: '/profile/notifications',
+            id: 4
         },
         {
             title: 'Избранные',
             image: 'favorites.png',
             active_image: 'active_favorites.png',
             path: '/profile/favorites',
+            id: 5
         },
         {
             title: 'Кошелёк',
             image: 'wallet.png',
             active_image: 'active_wallet.png',
             path: '/profile/wallet',
+            id: 6
         },
         {
             title: 'Настройки',
             image: 'settings.png',
             active_image: 'active_settings.png',
             path: '/profile/settings',
+            id: 7
         },
         {
             title: 'Выход',
             image: 'logout.png',
             active_image: 'logout.png',
             path: '/profile/logout',
+            id: 8
         },
     ]
 
     return (
         <div className='pageBg'>
-            <NavPath />
+            <NavPath width={'80%'}/>
             <div className='mobileSidebarDisplay'>
                 <MobileSidebar sidebar={sidebar} />
                 <ProfileUser />

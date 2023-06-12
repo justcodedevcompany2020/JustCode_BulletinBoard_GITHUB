@@ -1,5 +1,7 @@
 import './style.css'
 import { useState } from 'react'
+import { Checkbox } from '../../components/svg'
+
 
 export const Notifications = () => {
     const [notifications, setNotifications] = useState([
@@ -29,6 +31,7 @@ export const Notifications = () => {
             phone: false,
         },
     ])
+    const [checked, setChecked] = useState(false)
 
     // function handleChange(event, target) {
     //     if (target === 'email') {
@@ -48,8 +51,18 @@ export const Notifications = () => {
                     <div className='eachNotification' key={i}>
                         <h1>{e.title}</h1>
                         <div className='eachNotificationCheckbox'>
-                            <label><input type='checkbox' />Эл. почта</label>
-                            <label><input type='checkbox' />Телефон</label>
+                            <div className='notificatinCheckbox'>
+                                <div className='checkbox' onClick={() => setChecked(!checked)} style={e?.email ? { background: '#7791f7' } : {}}>
+                                    <Checkbox />
+                                </div>
+                                <label>Эл. почта</label>
+                            </div>
+                            <div className='notificatinCheckbox'>
+                                <div className='checkbox' onClick={() => setChecked(!checked)} style={e?.phone ? { background: '#7791f7' } : {}}>
+                                    <Checkbox />
+                                </div>
+                                <label>Телефон</label>
+                            </div>
                         </div>
                     </div>
                 ))}

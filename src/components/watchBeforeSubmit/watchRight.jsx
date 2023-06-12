@@ -1,11 +1,9 @@
-import Context from '../context'
+import { useState, useEffect } from 'react'
 import { Star, VerifiedAccount } from '../svg'
 import { CallAnnouncer } from '../popup/callAnnouncer'
 import { TextAnnouncer } from '../popup/textAnnouncer'
-import { useState, useEffect, useContext } from 'react'
 
 export const WatchRight = () => {
-    const context = useContext(Context)
     const [call, setCall] = useState(false)
     const [text, setText] = useState(false)
 

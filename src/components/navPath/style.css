@@ -1,0 +1,12 @@
+.navUrl {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navUrl > li {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+}

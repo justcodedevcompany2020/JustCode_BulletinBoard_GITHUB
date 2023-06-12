@@ -5,11 +5,10 @@ import { ProfileUser } from '../profileUser'
 
 export const Sidebar = ({ sidebar }) => {
     const [active, setActive] = useState(null)
-
     const setIcon = (e) => {
-        sidebar.filter((event, index) => {
+        sidebar.filter(event => {
             if (e === event) {
-                setActive(index)
+                setActive(e?.id)
             }
         })
     }
@@ -20,18 +19,17 @@ export const Sidebar = ({ sidebar }) => {
             <div className='loginSeparator' />
             <div className='sidebarItems'>
                 {sidebar.map((e, i) => (
-                    <div key={i} onClick={() => window.location = e?.path} className='eachSidebarItem' onMouseOver={() => setIcon(e)} onMouseLeave={() => setActive(null)} >
-                        <img alt='' src={require(`../../public/${active === i ? e.active_image : e.image}`)} />
-                        <NavLink
-                            to={e?.path}
-                            style={{ color: active === i && '#7791f7' }}
-                            className={({ isActive }) =>
-                                isActive ? "activey" : "pending"
-                            }
-                        >
+                    <NavLink
+                        key={i}
+                        to={e?.path}
+                        style={{ color: active === e?.id ? '#7791f7' : '' }}
+                        className={({ isActive }) => isActive ? "activey" : "pending"}
+                    >
+                        <div className='eachSidebarItem' onMouseOver={() => setIcon(e)} onMouseLeave={() => setActive(null)} >
+                            <img alt='' src={require(`../../public/${active === e?.id ? e.active_image : e.image}`)} />
                             {e.title}
-                        </NavLink>
-                    </div>
+                        </div>
+                    </NavLink>
                 ))}
             </div>
             <div className='loginSeparator' />

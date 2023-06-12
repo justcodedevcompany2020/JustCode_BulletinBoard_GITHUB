@@ -60,6 +60,17 @@
   line-height: 22px;
 }
 
+.notificatinCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notificatinCheckbox > div {
+  width: 20px;
+  height: 20px;
+}
+
 @media screen and (max-width: 768px) {
   .eachNotification {
     flex-direction: column;

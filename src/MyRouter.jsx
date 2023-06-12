@@ -39,7 +39,7 @@ export const MyRouter = () => {
                         <Route path='/seller/:id' element={<Seller />} />
                         <Route path='/catalog/:id' element={<Catalog />} />
                         <Route path='/profile' element={<ProfileLayout />} >
-                            <Route path='' element={<MyAnnouncements />} />
+                            <Route path='/profile/profile' element={<MyAnnouncements />} />
                             <Route path='/profile/reviews' element={<Reviews />} />
                             <Route path='/profile/notifications' element={<Notifications />} />
                             <Route path='/profile/favorites' element={<Favorites />} />

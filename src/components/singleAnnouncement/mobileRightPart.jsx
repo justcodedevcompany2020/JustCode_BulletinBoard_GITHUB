@@ -32,7 +32,7 @@ export const MobileRightPart = () => {
                 <div className='clientInfoTop mobClientInfoTop'>
                     <img alt='' src={require('../../public/man.png')} />
                     <div className='aboutClient mobAboutClient'> 
-                        <p>Алексей Т. (10 обьявлений)</p>
+                        <p onClick={() => window.location = `/seller/1`}>Алексей Т. (10 обьявлений)</p>
                         <span>на JustCode с 13 мар 2023</span>
                         <div className='clientRating'>
                             <p>5.0</p>

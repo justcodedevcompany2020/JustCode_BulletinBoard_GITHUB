@@ -11,7 +11,7 @@ export const SingleAnnouncement = () => {
 
     return (
         <div className='pageBg'>
-            <NavPath />
+            <NavPath width={'80%'}/>
             <div className='singleMainPart'>
                 <SingleAnnouncementLeftPart />
                 <SingleAnnouncementRightPart />

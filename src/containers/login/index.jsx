@@ -1,19 +1,17 @@
 import './style.css'
-import ReactFlagsSelect from 'react-flags-select'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { FacebookIcon, GoogleIcon, MailIcon, VkIcon } from '../../components/svg'
+import { ClosedEye, FacebookIcon, GoogleIcon, JustCode, MailIcon, OpenEye, VkIcon } from '../../components/svg'
 
 export const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [selected, setSelected] = useState("RU")
+    const [showPassword, setShowPassword] = useState(false)
 
     return (
         <div className='logPage'>
             <div className='loginPage'>
-                <div className='loginTitle'>
-                    <h1>JustCode</h1>
+                <div className='cursor' onClick={() => window.location = '/'}>
+                    <JustCode />
                 </div>
                 <div className='mainLogin'>
                     <div className='loginTop'>
@@ -29,7 +27,12 @@ export const Login = () => {
                     <div className='loginSeparator' />
                     <div className='loginInputs'>
                         <input type='email' placeholder='Ваша эл. почта' value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <input type='password' placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <div className='inputEye'>
+                            <input type={showPassword ? 'text' : 'password'} placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <div className='cursor' onClick={() => setShowPassword(!showPassword)}>
+                                {showPassword ? <OpenEye /> : <ClosedEye />}
+                            </div>
+                        </div>
                     </div>
                     <div className='loginForgotPassword'>
                         <span onClick={() => window.location = '/forgotPassword'}>Забыли пароль?</span>

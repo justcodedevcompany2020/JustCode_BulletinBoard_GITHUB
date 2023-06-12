@@ -10,6 +10,7 @@
   font-size: 28px;
   line-height: 38px;
   cursor: pointer;
+  width: fit-content;
 }
 
 .menuCategorySlider {
@@ -24,17 +25,25 @@
   flex-direction: column;
   gap: 30px;
   align-items: center;
-  /* cursor: pointer; */
   width: 101px;
   height: 101px;
   background: #ebebeb;
   border-radius: 50%;
 }
 
-/* .eachMenuCategory:hover {
-  background: rgba(random(255), random(255), random(255), 15);
-  cursor: pointer;
-} */
+.hoverBg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 125px;
+  height: 125px;
+}
+.hoverDiv {
+  width: 125px;
+  height: 125px;
+  position: absolute;
+}
 
 .eachMenuCategory > img {
   width: 120px;

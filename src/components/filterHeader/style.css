@@ -17,8 +17,8 @@
 
 .blueCloseIcon {
   position: absolute;
-  left: 0;
   left: 16px;
+  top: 15px;
   display: flex;
   align-items: center;
 }

@@ -42,7 +42,7 @@ export const LabelLabel = ({ onClick }) => {
             <div className='loginSeparator' />
             <div className='urgentLabels'>
                 {labels?.map((e, i) => (
-                    <div className='selectedLabel'>
+                    <div className='selectedLabel' key={i}>
                         <span>{e?.title}</span>
                     </div>
                 ))}

@@ -28,7 +28,7 @@ export const ContactSettings = () => {
             <div className='allMyContacts'>
                 {contacts.length > 0
                     ? contacts.map((e, i) =>
-                        <div className='eachContact'>
+                        <div className='eachContact' key={i}>
                             <span>{e?.phone}</span>
                             <div className='eachContactConfirmation'>
                                 {e?.confirmed

@@ -2,7 +2,7 @@ import './style.css'
 import Switch from "react-switch"
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowUp, ArrowDown, GreaterThan, LessThan, FooterFacebook, FooterInstagram, FooterLinkedIn, SearchIcon } from '../svg'
+import { ArrowUp, ArrowDown, GreaterThan, LessThan, FooterFacebook, FooterInstagram, FooterLinkedIn, SearchIcon, Checkbox } from '../svg'
 
 export const CatalogFilter = () => {
     const [subCategory, setSubCategory] = useState(true)
@@ -29,13 +29,13 @@ export const CatalogFilter = () => {
                     if (!showMoreSubCategory) {
                         if (i < 4) {
                             return (
-                                <span>{e}</span>
+                                <span key={i}>{e}</span>
                             )
                         }
                     }
                     else {
                         return (
-                            <span>{e}</span>
+                            <span key={i}>{e}</span>
                         )
                     }
                 })}
@@ -54,13 +54,23 @@ export const CatalogFilter = () => {
                     if (!showMoreBrands) {
                         if (i < 4) {
                             return (
-                                <label><input type='checkbox' value={e} />{e}</label>
+                                <div className='notificatinCheckbox' key={i}>
+                                    <div className='checkbox' style={true ? { background: '#7791f7' } : {}}>
+                                        <Checkbox />
+                                    </div>
+                                    <label>{e}</label>
+                                </div>
                             )
                         }
                     }
                     else {
                         return (
-                            <label><input type='checkbox' value={e} />{e}</label>
+                            <div className='notificatinCheckbox' key={i}>
+                                <div className='checkbox' style={true ? { background: '#7791f7' } : {}}>
+                                    <Checkbox />
+                                </div>
+                                <label>{e}</label>
+                            </div>
                         )
                     }
                 })}
@@ -76,7 +86,7 @@ export const CatalogFilter = () => {
                         onColor='#7791F7'
                         uncheckedIcon={false}
                         checkedIcon={false}
-                        width={40}
+                        width={35}
                         height={20}
                         borderRadius={10}
                     />
@@ -91,7 +101,7 @@ export const CatalogFilter = () => {
                         onColor='#7791F7'
                         uncheckedIcon={false}
                         checkedIcon={false}
-                        width={40}
+                        width={35}
                         height={20}
                         borderRadius={10}
                     />
@@ -106,7 +116,7 @@ export const CatalogFilter = () => {
                         onColor='#7791F7'
                         uncheckedIcon={false}
                         checkedIcon={false}
-                        width={40}
+                        width={35}
                         height={20}
                         borderRadius={10}
                     />

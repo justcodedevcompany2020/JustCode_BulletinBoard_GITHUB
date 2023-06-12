@@ -1,5 +1,5 @@
 import './style.css'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { MobileRightPart } from './mobileRightPart'
 import { Camera, MobileHeart, NextArrow, PreviousArrow } from '../svg'
 import Flickity from 'flickity'
@@ -30,6 +30,7 @@ export const SingleAnnouncementLeftPart = () => {
     const [imageCount, setImageCount] = useState(0)
     const context = useContext(Context)
 
+
     useEffect(() => {
         const current = document.querySelectorAll('.opacity')
         current.forEach((e, i) => {
@@ -41,20 +42,28 @@ export const SingleAnnouncementLeftPart = () => {
         })
     }, [imageCount])
 
+    const slidingBox = document.querySelector('.slidingBox')
+    
     function handleImageChange(change) {
-        if (change === 'next') {
-            if (imageCount === images.length - 1) {
+        slidingBox.style.transition = '400ms'
+
+        if (change == 'next') {
+            if (imageCount == images.length - 1) {
+                slidingBox.style.transition = '0ms'
                 setImageCount(0)
             } else {
                 setImageCount(imageCount + 1)
             }
-        } else if (change === 'prev') {
-            if (imageCount === 0) {
+        } else if (change == 'prev') {
+
+            if (imageCount == 0) {
+                slidingBox.style.transition = '0ms'
                 setImageCount(images.length - 1)
             } else {
                 setImageCount(imageCount - 1)
             }
         }
+        // slidingBox.style.transition = '400ms'
     }
 
     // const data = [
@@ -111,7 +120,11 @@ export const SingleAnnouncementLeftPart = () => {
 
             <div className='imageSlider'>
                 <div className='mainImage'>
-                    <img alt='' src={require(`../../public/${images[imageCount].image}`)} />
+                    <div className='slidingBox' style={{ left: `${-imageCount}00%` }}>
+                        {images.length > 0 && images.map((e, i) => (
+                            <img alt='' src={require(`../../public/${e.image}`)} />
+                        ))}
+                    </div>
                     <div className='imageCount'>
                         <Camera />
                         <span>10</span>
@@ -125,8 +138,8 @@ export const SingleAnnouncementLeftPart = () => {
                 </div>
                 <div className='allSliderImages'>
                     {images.length > 0 && images.map((e, i) => (
-                        <div className='opacity' onClick={() => setImageCount(i)} key={i}>
-                            <img alt='' src={require(`../../public/${e.image}`)} />
+                        <div className='opacity' onClick={() => { setImageCount(i) }} key={i}>
+                            <img alt='' src={require(`../../public/${e.image}`)} style={{ transitionDuration: '1s' }} />
                         </div>
                     ))}
                 </div>

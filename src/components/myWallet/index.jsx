@@ -1,9 +1,7 @@
 import './style.css'
 import Tabs from '../tabs'
-import { PayViaVisa } from '../payViaVisa'
-import { PayViaIdram } from '../payViaIdram'
+import { PayViaIdram } from '../payFromWallet'
 import { Idram, Telcell, Visa } from '../svg'
-import { PayViaTelcell } from '../payViaTelcell'
 
 export const MyWallet = () => {
     return (
@@ -24,7 +22,7 @@ export const MyWallet = () => {
                 <h1>Пополнить кошелёк</h1>
                 <Tabs
                     tabList={[<Idram />, <Visa />, <Telcell />]}
-                    tabPanel={[<PayViaIdram />, <PayViaVisa />, <PayViaTelcell />]}
+                    tabPanel={[<PayViaIdram via={'Idram'} />, <PayViaIdram via={'Visa'} />, <PayViaIdram via={'Telcell'} />]}
                 />
             </div>
         </div>

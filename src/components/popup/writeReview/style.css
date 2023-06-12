@@ -1,9 +1,17 @@
 .yourRating {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .yourRating > h2 {
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
+}
+
+.yourRating > div > svg {
+  width: 25px;
+  height: 25px;
 }

@@ -4,35 +4,35 @@ export const MessageLeft = ({ currentMemberId, setCurrentMemberId }) => {
     const chatMembers = [
         {
             image: 'man.png',
-            title: 'Алексей Т.',
+            name: 'Алексей Т.',
             date: 'Сегодня, 17:40',
             lastMessage: 'Здравствуйте Да! Здравствуйте',
             id: 1,
         },
         {
             image: 'man.png',
-            title: 'Алексей Т.',
+            name: 'Алексей Т.',
             date: 'Сегодня, 17:40',
             lastMessage: 'Здравствуйте! Да',
             id: 2,
         },
         {
             image: 'man.png',
-            title: 'Алексей Т.',
+            name: 'Алексей Т.',
             date: 'Сегодня, 17:40',
             lastMessage: 'Здравствуйте! Да',
             id: 3,
         },
         {
             image: 'man.png',
-            title: 'Алексей Т.',
+            name: 'Алексей Т.',
             date: 'Сегодня, 17:40',
             lastMessage: 'Здравствуйте! Да',
             id: 4,
         },
         {
             image: 'man.png',
-            title: 'Алексей Т.',
+            name: 'Алексей Т.',
             date: 'Сегодня, 17:40',
             lastMessage: 'Здравствуйте! Да',
             id: 5,
@@ -51,7 +51,7 @@ export const MessageLeft = ({ currentMemberId, setCurrentMemberId }) => {
                         <img alt='' src={require(`../../public/${e?.image}`)} />
                         <div className='memberRight'>
                             <div className='memberName'>
-                                <h2>{e?.title}</h2>
+                                <h2>{e?.name}</h2>
                                 <span>{e?.date}</span>
                             </div>
                             {e?.lastMessage.length > 23

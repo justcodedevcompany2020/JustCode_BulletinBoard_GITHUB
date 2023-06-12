@@ -1,8 +1,8 @@
 import './style.css'
 import { useState } from 'react'
+import { ClosedEye, JustCode, OpenEye } from '../../components/svg'
 
 export const ForgotPassword = () => {
-
     const [email, setEmail] = useState('')
     const [code, setCode] = useState('')
     const [password, setPassword] = useState('')
@@ -10,7 +10,8 @@ export const ForgotPassword = () => {
     const [emailPage, setEmailPage] = useState(true)
     const [codePage, setCodePage] = useState(false)
     const [passwordPage, setPasswordPage] = useState(false)
-
+    const [showPassword, setShowPassword] = useState(false)
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false)
     function handleEmailPage() {
         setEmailPage(false)
         setCodePage(true)
@@ -28,8 +29,8 @@ export const ForgotPassword = () => {
 
     return (
         <div className='loginPage'>
-            <div className='loginTitle'>
-                <h1>JustCode</h1>
+            <div className='cursor' onClick={() => window.location = '/'}>
+                <JustCode />
             </div>
             <div className='mainLogin'>
                 <div className='loginTop'>
@@ -46,10 +47,20 @@ export const ForgotPassword = () => {
                 </div>
                 <div className='loginInputs'>
                     {emailPage && <input type='email' placeholder='Ваша эл. почта' value={email} onChange={(e) => setEmail(e.target.value)} />}
-                    {codePage && <input type='number' placeholder='Код подтверждения' value={code} onChange={(e) => setCode(e.target.value)} />}
+                    {codePage && <input type='number' placeholder='Код подтверждения' value={code} onChange={(e) => e.target.value <= 999999 && setCode(e.target.value)} />}
                     {passwordPage && <>
-                        <input type='password' placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} />
-                        <input type='password' placeholder='Повторите пароль' value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
+                        <div className='inputEye'>
+                            <input type={showPassword ? 'text' : 'password'} placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <div className='cursor' onClick={() => setShowPassword(!showPassword)}>
+                                {showPassword ? <OpenEye /> : <ClosedEye />}
+                            </div>
+                        </div>
+                        <div className='inputEye'>
+                            <input type={showConfirmPassword ? 'text' : 'password'} placeholder='Повторите пароль' value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
+                            <div className='cursor' onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+                                {showConfirmPassword ? <OpenEye /> : <ClosedEye />}
+                            </div>
+                        </div>
                     </>}
                 </div>
                 <div className='loginButton'>

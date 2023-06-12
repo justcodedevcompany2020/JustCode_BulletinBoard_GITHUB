@@ -41,7 +41,7 @@ export const BlacklistSettings = () => {
         <div className='allMyContacts'>
             {blacklist.length > 0
                 ? blacklist.map((e, i) =>
-                    <div className='eachContact' id='eachBlack'>
+                    <div className='eachContact' id='eachBlack' key={i}>
                         <div className='eachBlacklist'>
                             <img alt='' src={require(`../../public/${e?.image}`)} />
                             <div className='blackName'>

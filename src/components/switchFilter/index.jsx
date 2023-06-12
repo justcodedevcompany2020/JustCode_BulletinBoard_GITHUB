@@ -16,7 +16,7 @@ export const SwitchFilter = ({ open, title }) => {
                         onColor='#7791F7'
                         uncheckedIcon={false}
                         checkedIcon={false}
-                        width={40}
+                        width={35}
                         height={20}
                         borderRadius={10}
                     />

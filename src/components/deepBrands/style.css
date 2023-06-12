@@ -7,7 +7,7 @@
   z-index: 2;
 }
 
-.top60 > label {
+.brandCheckbox {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -16,4 +16,8 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
+}
+
+.brandCheckbox > div {
+  width: 20px;
 }

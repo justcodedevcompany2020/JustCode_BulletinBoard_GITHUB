@@ -8,10 +8,10 @@ export const LeavedReviews = () => {
         <div className='receivedReviews'>
             {reviews.length > 0
                 ? reviews.map((e, i) => (
-                    <div className='eachReceivedReview'>
+                    <div className='eachReceivedReview' key={i}>
                         <div className='eachReviewLeft'>
                             <img alt='' src={require(`../../public/${e?.image}`)} />
-                            <div className='reviewDetails' key={i}>
+                            <div className='reviewDetails' >
                                 <h1>{e?.name}</h1>
                                 <h2>{e?.date}</h2>
                                 <h3>{e?.review}</h3>

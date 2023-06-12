@@ -48,6 +48,14 @@
   gap: 5px;
 }
 
+.subCategory > label > input {
+  width: 19px;
+  height: 19px;
+  background: #7791f7;
+  border-radius: 10px;
+  appearance: none;
+}
+
 .searchBrand {
   border: 1px solid #ebebeb;
   border-radius: 5px;
