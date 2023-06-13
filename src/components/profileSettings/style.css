@@ -62,6 +62,36 @@
   background: none;
 }
 
+.changeType {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 430px;
+  width: 100%;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  padding-right: 10px;
+}
+
+.changeType > input {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  background: none;
+}
+
+.editName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
 .changeAvatar > select {
   border: 1px solid #ebebeb;
   border-radius: 8px;
@@ -88,6 +118,18 @@
   min-width: 120px;
   width: 15%;
   color: #969696;
+}
+
+@media screen and (min-width: 1650px) {
+  #profSetting > div {
+    gap: 20%;
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  #profSetting > div {
+    gap: 10%;
+  }
 }
 
 @media screen and (max-width: 768px) {

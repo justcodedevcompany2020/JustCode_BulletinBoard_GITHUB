@@ -4,12 +4,11 @@
 
 .slider {
   display: flex;
-  /* padding: 0 10px; */
   margin: 40px 0;
 }
 
 .eachSlide {
-  min-width: 370px;
+  min-width: 270px;
   height: 150px;
   border-radius: 20px;
   position: relative;
@@ -39,19 +38,23 @@
 }
 
 .mainSliderPrev {
-  left: 30px;
+  left: 220px;
   top: 32%;
   z-index: 1;
 }
 
 .mainSliderNext {
-  right: 30px;
+  right: 220px;
   top: 32%;
   z-index: 1;
 }
 
 .styles-module_item-tracker__3bypy {
   gap: 20px;
+}
+
+.styles-module_item-container__a8zaY {
+  width: 380px !important;
 }
 
 /* .styles-module_item-tracker__3bypy{

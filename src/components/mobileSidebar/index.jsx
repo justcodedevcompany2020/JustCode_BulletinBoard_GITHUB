@@ -5,7 +5,7 @@ import { BlueGreaterThan, BlueLessThan } from '../svg'
 export const MobileSidebar = ({ sidebar }) => {
     const [open, setOpen] = useState(false)
     const [selected, setSelected] = useState(sidebar.find((e) => e.path = window.location.pathname))
-
+    console.log(selected);
     return (
         <div className='MobileSidebar'>
             <div className='mobileSidebar' onClick={() => setOpen(!open)}>

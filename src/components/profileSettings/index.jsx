@@ -1,9 +1,34 @@
 import './style.css'
+import { Edit } from '../svg'
 import { useState } from 'react'
 import { AccountType } from '../popup/accountType'
 
 export const ProfilSettings = () => {
     const [openType, setOpenType] = useState(false)
+    const [name, setName] = useState('Алексей Т.')
+    const [editName, setEditName] = useState(false)
+    const [nameError, setNameError] = useState(false)
+    const [photoURL, setPhotoURL] = useState('http://localhost:3000/static/media/man.2461d0edf7774ef37c62.png')
+    const [file, setFile] = useState('') // es uxarkvelu a backend
+
+    function save() {
+        if (name.length > 0) {
+            setEditName(false)
+            setNameError(false)
+        } else {
+            setNameError(true)
+        }
+    }
+
+    const handleAvatarChange = async (e) => {
+        let url = URL.createObjectURL(e.target.files[0]);
+        let img = new Image();
+        img.onload = function () {
+            setPhotoURL(URL.createObjectURL(e?.target?.files[0]))
+            setFile(e?.target?.files[0])
+        };
+        img.src = url;
+    }
 
     return (
         <div>
@@ -15,15 +40,26 @@ export const ProfilSettings = () => {
                 <div className='eachProfileSetting'>
                     <span>Ваш аватар</span>
                     <div className='changeAvatar'>
-                        <img alt='' src={require('../../public/man.png')} />
-                        <span>Изменить</span>
+                        <img alt='' src={photoURL} />
+                        <label className='cursor'>
+                            <input type="file"
+                                style={{ display: 'none' }}
+                                onChange={handleAvatarChange}
+                                // accept="image/jpg, image/JPG, image/jpeg, image/JPEG, image/tiff, image/TIFF, image/png, image/PNG"
+                                accept="image/*"
+                            />
+                            Изменить
+                        </label>
                     </div>
                 </div>
                 <div className='loginSeparator' />
                 <div className='eachProfileSetting'>
                     <span>Ваше имя</span>
-                    <div className='changeAvatar'>
-                        <input value={'Алексей Т.'} disabled />
+                    <div className='changeType' id='changeName' style={nameError ? { border: '1px solid red' } : {}}>
+                        <input value={name} onChange={(e) => setName(e.target.value)} disabled={editName ? false : true} />
+                        <div className='editName' onClick={() => setEditName(true)}>
+                            <Edit />
+                        </div>
                     </div>
                 </div>
                 <div className='loginSeparator' />
@@ -52,7 +88,7 @@ export const ProfilSettings = () => {
                 </div>
             </div>
             <div className='notificationButton'>
-                <button className='blueButton'>Сохранить</button>
+                <button className='blueButton' onClick={save}>Сохранить</button>
             </div>
         </div>
     )

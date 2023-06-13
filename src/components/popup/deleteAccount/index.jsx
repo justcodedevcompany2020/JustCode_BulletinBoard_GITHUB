@@ -1,10 +1,18 @@
-import { CloseIcon } from '../../svg'
+import { useState } from 'react'
+import { ClosedEye, CloseIcon, OpenEye } from '../../svg'
 
 export const DeleteAccount = ({ open, setOpen }) => {
+    const [password, setPassword] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
+    
     return (
         <div className={open ? 'active' : 'inactive'}>
             <div className='pop' style={{ width: '570px' }}>
-                <div className='close' onClick={() => setOpen(false)}>
+                <div className='close' onClick={() => {
+                    setOpen(false)
+                    setShowPassword(false)
+                    setPassword('')
+                }}>
                     <CloseIcon />
                 </div>
                 <h1>Удалить учетную запись</h1>
@@ -18,7 +26,12 @@ export const DeleteAccount = ({ open, setOpen }) => {
                     </p>
                 </div>
                 <div className='passInputs'>
-                    <input placeholder='Ваш пароль' />
+                    <div className='inputEye'>
+                        <input type={showPassword ? 'text' : 'password'} placeholder='Ваш пароль' value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <div className='cursor' onClick={() => setShowPassword(!showPassword)}>
+                            {showPassword ? <OpenEye /> : <ClosedEye />}
+                        </div>
+                    </div>
                 </div>
                 <div className='labelButton'>
                     <button className='redButton'>Удалить</button>

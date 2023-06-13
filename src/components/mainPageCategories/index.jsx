@@ -67,8 +67,8 @@ export const MainCategories = () => {
                         <PreviousArrow />
                     </div>
                     {categories.length > 0 && categories.map((e, i) => (
-                        <div className='cursor hoverBg' onMouseOver={() => changeBg('in', e?.id)} onMouseLeave={() => changeBg('out', e?.id)}>
-                            <div className='eachMenuCategory' id={`id${e?.id}`} key={i}>
+                        <div className='cursor hoverBg' key={i} onMouseOver={() => changeBg('in', e?.id)} onMouseLeave={() => changeBg('out', e?.id)}>
+                            <div className='eachMenuCategory' id={`id${e?.id}`} >
                                 <img alt='' src={require(`../../public/${e.image}`)} />
                             </div>
                             <div className='hoverDiv' />

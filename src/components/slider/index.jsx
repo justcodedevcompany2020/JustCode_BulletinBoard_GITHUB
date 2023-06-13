@@ -72,6 +72,7 @@ export const Slider = () => {
                     </div>
                 }
                 transition={2}
+                pageCount={5}
             >
                 {slides.length > 0 && slides.map((e, i) => (
                     <div className='eachSlide' key={i} style={{ background: `${e.background}` }}>

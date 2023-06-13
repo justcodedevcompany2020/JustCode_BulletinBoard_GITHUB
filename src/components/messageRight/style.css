@@ -26,7 +26,7 @@
 
 .rightTopLeft > h2 {
   font-weight: 400;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 18px;
   color: #7791f7;
 }
@@ -96,14 +96,14 @@
 
 .messageText > h2 {
   font-weight: 600;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 14px;
   color: #7791f7;
 }
 
 .messageText > p {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 14px;
   color: #969696;
   word-break: break-word;
@@ -114,4 +114,26 @@
   font-size: 8px;
   line-height: 11px;
   color: #969696;
+}
+
+.rightBottom > div {
+  position: relative;
+  cursor: pointer;
+}
+
+.rightBottom > div > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  width: 20px;
+}
+
+.rightBottom > div > label > input {
+  visibility: hidden;
+}
+
+.messageText > img {
+  width: 200px;
+  height: 200px;
 }

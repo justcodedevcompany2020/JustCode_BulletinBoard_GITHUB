@@ -376,6 +376,28 @@
   flex-shrink: 0;
 }
 
+.box {
+  max-width: 100% !important;
+  margin: 30px auto !important;
+}
+
+.box > div {
+  max-width: 100% !important;
+}
+
+.carousel-container {
+  max-width: 100% !important;
+}
+
+.carousel-item,
+.fade {
+  max-width: 100% !important;
+}
+
+.thumbnails > img {
+  height: 90px !important;
+}
+
 @media screen and (max-width: 768px) {
   .nameBlock > h1 {
     font-size: 18px;

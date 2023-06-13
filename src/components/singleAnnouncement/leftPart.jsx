@@ -1,97 +1,69 @@
 import './style.css'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { MobileRightPart } from './mobileRightPart'
 import { Camera, MobileHeart, NextArrow, PreviousArrow } from '../svg'
-import Flickity from 'flickity'
 import { Carousel } from 'react-carousel-minimal';
 import Context from '../context'
 
 export const SingleAnnouncementLeftPart = () => {
-    const images = [
-        {
-            image: 'shkaf.png'
-        },
-        {
-            image: 'shkaf2.png'
-        },
-        {
-            image: 'ad.png'
-        },
-        {
-            image: 'apartment.png'
-        },
-        {
-            image: 'auto.png'
-        },
-        {
-            image: 'madeInArmenia.png'
-        },
-    ]
-    const [imageCount, setImageCount] = useState(0)
+    // const images = [
+    //     {
+    //         image: 'shkaf.png'
+    //     },
+    //     {
+    //         image: 'shkaf2.png'
+    //     },
+    //     {
+    //         image: 'ad.png'
+    //     },
+    //     {
+    //         image: 'apartment.png'
+    //     },
+    //     {
+    //         image: 'auto.png'
+    //     },
+    //     {
+    //         image: 'madeInArmenia.png'
+    //     },
+    // ]
+    // const [imageCount, setImageCount] = useState(0)
+
+    // useEffect(() => {
+    //     const current = document.querySelectorAll('.opacity')
+    //     current.forEach((e, i) => {
+    //         if (i === imageCount) {
+    //             e.style.opacity = '0.5'
+    //         } else {
+    //             e.style.opacity = '1'
+    //         }
+    //     })
+    // }, [imageCount])
+
+
+    // function handleImageChange(change) {
+    //     const slidingBox = document.querySelector('.slidingBox')
+    //     slidingBox.style.transition = '400ms'
+
+    //     if (change == 'next') {
+    //         if (imageCount == images.length - 1) {
+    //             slidingBox.style.transition = '0ms'
+    //             setImageCount(0)
+    //         } else {
+    //             setImageCount(imageCount + 1)
+    //         }
+    //     } else if (change == 'prev') {
+
+    //         if (imageCount == 0) {
+    //             slidingBox.style.transition = '0ms'
+    //             setImageCount(images.length - 1)
+    //         } else {
+    //             setImageCount(imageCount - 1)
+    //         }
+    //     }
+    //     // slidingBox.style.transition = '400ms'
+    // }
+
     const context = useContext(Context)
-
-
-    useEffect(() => {
-        const current = document.querySelectorAll('.opacity')
-        current.forEach((e, i) => {
-            if (i === imageCount) {
-                e.style.opacity = '0.5'
-            } else {
-                e.style.opacity = '1'
-            }
-        })
-    }, [imageCount])
-
-    const slidingBox = document.querySelector('.slidingBox')
-    
-    function handleImageChange(change) {
-        slidingBox.style.transition = '400ms'
-
-        if (change == 'next') {
-            if (imageCount == images.length - 1) {
-                slidingBox.style.transition = '0ms'
-                setImageCount(0)
-            } else {
-                setImageCount(imageCount + 1)
-            }
-        } else if (change == 'prev') {
-
-            if (imageCount == 0) {
-                slidingBox.style.transition = '0ms'
-                setImageCount(images.length - 1)
-            } else {
-                setImageCount(imageCount - 1)
-            }
-        }
-        // slidingBox.style.transition = '400ms'
-    }
-
-    // const data = [
-    //     {
-    //         image: "http://localhost:3000/static/media/shkaf.eea5ab90e54bd712cb11.png",
-    //         // caption: "San Francisco"
-    //     },
-    //     {
-    //         image: "http://localhost:3000/static/media/shkaf2.e3719d5608738c2dee39.png",
-    //         // caption: "Scotland"
-    //     },
-    //     {
-    //         image: "http://localhost:3000/static/media/ad.76307c7d50d0b32657cc.png",
-    //         // caption: "Darjeeling"
-    //     },
-    //     {
-    //         image: "http://localhost:3000/static/media/apartment.cc96864086f9f81c1736.png",
-    //         // caption: "San Francisco"
-    //     },
-    //     {
-    //         image: "http://localhost:3000/static/media/auto.941461f2dcd3115e23c7.png",
-    //         // caption: "Scotland"
-    //     },
-    //     {
-    //         image: "http://localhost:3000/static/media/madeInArmenia.a08d2f8f73591d0abd82.png",
-    //         // caption: "Darjeeling"
-    //     },
-    // ];
 
     useEffect(() => {
         window.addEventListener('scroll', (event) => {
@@ -108,6 +80,45 @@ export const SingleAnnouncementLeftPart = () => {
         })
     }, [window.scrollY])
 
+    const data = [
+        {
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
+        },
+        {
+            image: "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
+        },
+        {
+            image: "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
+        },
+        {
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
+        },
+        {
+            image: "https://i.natgeofe.com/n/f7732389-a045-402c-bf39-cb4eda39e786/scotland_travel_4x3.jpg",
+        },
+        {
+            image: "https://www.tusktravel.com/blog/wp-content/uploads/2020/07/Best-Time-to-Visit-Darjeeling-for-Honeymoon.jpg",
+        },
+        {
+            image: "https://www.omm.com/~/media/images/site/locations/san_francisco_780x520px.ashx",
+        },
+        {
+            image: "https://images.ctfassets.net/bth3mlrehms2/6Ypj2Qd3m3jQk6ygmpsNAM/61d2f8cb9f939beed918971b9bc59bcd/Scotland.jpg?w=750&h=422&fl=progressive&q=50&fm=jpg",
+        },
+        {
+            image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
+        }
+    ];
+
+    // const captionStyle = {
+    //     fontSize: '2em',
+    //     fontWeight: 'bold',
+    // }
+    const slideNumberStyle = {
+        fontSize: '20px',
+        fontWeight: 'bold',
+    }
+
     return (
         <div className='singleMainLeft'>
             <div className='nameBlock'>
@@ -118,7 +129,7 @@ export const SingleAnnouncementLeftPart = () => {
                 </div>
             </div>
 
-            <div className='imageSlider'>
+            {/* <div className='imageSlider'>
                 <div className='mainImage'>
                     <div className='slidingBox' style={{ left: `${-imageCount}00%` }}>
                         {images.length > 0 && images.map((e, i) => (
@@ -143,25 +154,27 @@ export const SingleAnnouncementLeftPart = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
-            {/* <Carousel
+            <Carousel
                 data={data}
                 time={2000}
                 width="850px"
                 height="500px"
+                // captionStyle={captionStyle}
                 radius="10px"
-                slideBackgroundColor="darkgrey"
+                slideNumber={true}
+                slideNumberStyle={slideNumberStyle}
+                captionPosition="bottom"
+                // automatic={true}
+                dots={true}
+                // pauseIconColor="white"
+                // pauseIconSize="40px"
+                slideBackgroundColor="transparent"
                 slideImageFit="cover"
                 thumbnails={true}
-                thumbnailWidth="100px"
-                style={{
-                    textAlign: "center",
-                    maxWidth: "850px",
-                    maxHeight: "500px",
-                    margin: "40px auto",
-                }}
-            /> */}
+                thumbnailWidth="90px"
+            />
 
             <div className='urgent'>
                 <span>Срочно!</span>
@@ -233,6 +246,6 @@ export const SingleAnnouncementLeftPart = () => {
                     <span>Обновлено 23.03.2023 09:31</span>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
