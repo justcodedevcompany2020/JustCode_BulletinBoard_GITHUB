@@ -2,9 +2,10 @@ import './mainNavs.css'
 import { MainNavs } from './mainNavs'
 import { LittleNavs } from './littleNavs'
 import { MobileNavs } from './mobileNavs'
-import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
+import { MobileMenu } from '../popup/mobileMenu'
 import { SelectCategory } from '../selectCategory'
+import { useDispatch, useSelector } from 'react-redux'
 import { GetUser } from '../../Redux/action/auth_action'
 import { MobileCategoriesPopup } from '../popup/mobileCategories'
 import { MobileSubcategoriesPopup } from '../popup/mobileSubcategories'
@@ -7796,13 +7797,19 @@ export const Navigation = () => {
 
     const [openSubcategories, setOpenSubcategories] = useState(false)
     const [openSubsubcategories, setOpenSubsubcategories] = useState(false)
+    const [openMobileMenu, setOpenMobileMenu] = useState(false)
 
     // const [openMobileSubcategories, setOpenMobileSubcategories] = useState(false)
     // const [openMobileSubSubcategories, setOpenMobileSubSubcategories] = useState(false)
+    const open = useSelector((st) => st.Auth_reducer.openCategories)
 
     useEffect(() => {
         dispatch(GetUser())
     }, [dispatch])
+
+    useEffect(() => {
+        setOpenCategories(open)
+    }, [open])
 
     return (
         <>
@@ -7839,15 +7846,19 @@ export const Navigation = () => {
                 selectedSubcategoryTitle={selectedSubcategoryTitle}
                 categories={categories[0].subCategories[0].subSubcategories}
             />
+            <MobileMenu
+                open={openMobileMenu}
+                setOpen={setOpenMobileMenu}
+            />
             <div className='navigationShadow'>
                 <div className='navigation'>
                     <LittleNavs />
-                    <MainNavs openCategories={openCategories} setOpenCategories={setOpenCategories} />
-                    <MobileNavs setOpenMobileCategories={setOpenMobileCategories} />
+                    <MainNavs />
+                    <MobileNavs setOpenMobileCategories={setOpenMobileCategories} setOpenMobileMenu={setOpenMobileMenu} />
                 </div>
             </div>
             <div className={openCategories ? 'openCategories' : 'closedCategories'}>
-                <SelectCategory categories={categories} openCategories={openCategories} />
+                <SelectCategory categories={categories} openCategories={openCategories} setOpenCategories={setOpenCategories} />
             </div>
         </>
     )

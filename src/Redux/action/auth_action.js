@@ -8,3 +8,16 @@ export const GetUser = () => {
         })
     }
 }
+
+export const CloseMenu = () => {
+    return {
+        type: 'closeMenu'
+    }
+}
+
+export const OpenMenu = () => {
+
+    return {
+        type: 'openMenu'
+    }
+}

@@ -2,46 +2,49 @@ import './style.css'
 import { useState } from 'react'
 import { Checkbox } from '../../components/svg'
 
-
 export const Notifications = () => {
     const [notifications, setNotifications] = useState([
         {
             title: 'Уведомления о новых сообщениях и ответах',
             email: true,
             phone: false,
+            id: 1
         },
         {
             title: 'Изменения в избранных объявлениях',
-            email: true,
-            phone: false,
+            email: false,
+            phone: true,
+            id: 2
         },
         {
             title: 'Новые отзывы и оценки',
             email: true,
-            phone: false,
+            phone: true,
+            id: 3
         },
         {
             title: 'Напоминания и другая информация',
-            email: true,
+            email: false,
             phone: false,
+            id: 4
         },
         {
             title: 'Новости сайта и периодическая рассылка',
             email: true,
             phone: false,
+            id: 5
         },
     ])
-    const [checked, setChecked] = useState(false)
 
-    // function handleChange(event, target) {
-    //     if (target === 'email') {
-    //         notifications.find(e => e === event).email = !notifications.find(e => e === event).email
-    //     } else {
-    //         notifications.find(e => e === event).phone = !notifications.find(e => e === event).phone
-    //     }
-    //     setNotifications(notifications)
-    //     console.log('notifications', notifications)
-    // }
+    function handleCheck(event, target) {
+        let item = [...notifications]
+        if (target === 'email') {
+            item.find(e => e === event).email = !item.find(e => e === event).email
+        } else {
+            item.find(e => e === event).phone = !item.find(e => e === event).phone
+        }
+        setNotifications(item)
+    }
 
     return (
         <div className='notifications'>
@@ -52,13 +55,13 @@ export const Notifications = () => {
                         <h1>{e.title}</h1>
                         <div className='eachNotificationCheckbox'>
                             <div className='notificatinCheckbox'>
-                                <div className='checkbox' onClick={() => setChecked(!checked)} style={e?.email ? { background: '#7791f7' } : {}}>
+                                <div className='checkbox' onClick={() => handleCheck(e, 'email')} style={e?.email ? { background: '#7791f7' } : {}}>
                                     <Checkbox />
                                 </div>
                                 <label>Эл. почта</label>
                             </div>
                             <div className='notificatinCheckbox'>
-                                <div className='checkbox' onClick={() => setChecked(!checked)} style={e?.phone ? { background: '#7791f7' } : {}}>
+                                <div className='checkbox' onClick={() => handleCheck(e, 'phone')} style={e?.phone ? { background: '#7791f7' } : {}}>
                                     <Checkbox />
                                 </div>
                                 <label>Телефон</label>

@@ -13,7 +13,7 @@ const steps = [
 
 export const Stepp = ({ currentStep }) => {
     return (
-        <Box sx={{ width: '250px' }}>
+        <Box sx={{ width: '70%' }}>
             <Stepper activeStep={currentStep} alternativeLabel>
                 {steps.map((label) => (
                     <Step key={label}>

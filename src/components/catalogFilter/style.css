@@ -46,14 +46,15 @@
   line-height: 19px;
   display: flex;
   gap: 5px;
+  cursor: pointer;
 }
 
 .subCategory > label > input {
+  color: #6585ff;
   width: 19px;
   height: 19px;
-  background: #7791f7;
   border-radius: 10px;
-  appearance: none;
+  accent-color: currentColor;
 }
 
 .searchBrand {

@@ -1,5 +1,5 @@
 import './style.css'
-import { Edit } from '../svg'
+import { ArrowDown, Edit, GreaterThan, LessThan } from '../svg'
 import { useState } from 'react'
 import { AccountType } from '../popup/accountType'
 
@@ -10,6 +10,30 @@ export const ProfilSettings = () => {
     const [nameError, setNameError] = useState(false)
     const [photoURL, setPhotoURL] = useState('http://localhost:3000/static/media/man.2461d0edf7774ef37c62.png')
     const [file, setFile] = useState('') // es uxarkvelu a backend
+    const regions = [
+        {
+            id: 1,
+            region: 'Ереван 1',
+        },
+        {
+            id: 2,
+            region: 'Ереван 2',
+        },
+        {
+            id: 3,
+            region: 'Ереван 3',
+        },
+        {
+            id: 4,
+            region: 'Ереван 4',
+        },
+        {
+            id: 5,
+            region: 'Ереван 5',
+        },
+    ]
+    const [openRegions, setOpenRegions] = useState(false)
+    const [selectedRegion, setSelectedRegion] = useState('Ереван 1')
 
     function save() {
         if (name.length > 0) {
@@ -21,13 +45,13 @@ export const ProfilSettings = () => {
     }
 
     const handleAvatarChange = async (e) => {
-        let url = URL.createObjectURL(e.target.files[0]);
-        let img = new Image();
+        let url = URL.createObjectURL(e.target.files[0])
+        let img = new Image()
         img.onload = function () {
             setPhotoURL(URL.createObjectURL(e?.target?.files[0]))
             setFile(e?.target?.files[0])
-        };
-        img.src = url;
+        }
+        img.src = url
     }
 
     return (
@@ -65,17 +89,23 @@ export const ProfilSettings = () => {
                 <div className='loginSeparator' />
                 <div className='eachProfileSetting'>
                     <span>Регион</span>
-                    <div className='changeAvatar'>
-                        <select>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                            <option>Ереван</option>
-                        </select>
+                    <div className='changeRegion'>
+                        <div className='selectRegion' onClick={() => setOpenRegions(!openRegions)}>
+                            <div className='currentRegion'>
+                                <span>{selectedRegion}</span>
+                                <LessThan />
+                            </div>
+                            <div className={openRegions ? 'regionDropdown' : 'inactive'}>
+                                {openRegions && regions.map((e, i) => (
+                                    <div className='eachRegion' key={i} onClick={() => {
+                                        setSelectedRegion(e?.region)
+                                        setOpenRegions(false)
+                                    }}>
+                                        <span>{e?.region}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className='loginSeparator' />

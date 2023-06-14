@@ -1,5 +1,6 @@
 .mainSlider {
   position: relative;
+  overflow: hidden;
 }
 
 .slider {
@@ -75,5 +76,11 @@
   .eachSlide > span {
     font-size: 18px;
     line-height: 25px;
+  }
+  .mainSliderNext {
+    right: 40px;
+  }
+  .mainSliderPrev {
+    left: 40px;
   }
 }

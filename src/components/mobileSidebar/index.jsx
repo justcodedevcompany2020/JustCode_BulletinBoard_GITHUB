@@ -1,28 +1,29 @@
 import './style.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { BlueGreaterThan, BlueLessThan } from '../svg'
 
-export const MobileSidebar = ({ sidebar }) => {
+export const MobileSidebar = ({ sidebar, active, setActive }) => {
     const [open, setOpen] = useState(false)
-    const [selected, setSelected] = useState(sidebar.find((e) => e.path = window.location.pathname))
-    console.log(selected);
+    const navigate = useNavigate()
     return (
         <div className='MobileSidebar'>
             <div className='mobileSidebar' onClick={() => setOpen(!open)}>
                 <div className='selectedMenu'>
-                    <img alt='' src={require(`../../public/${selected.active_image}`)} />
-                    <span>{selected.title}</span>
+                    <img alt='' src={require(`../../public/${active?.active_image}`)} />
+                    <span>{active?.title}</span>
                 </div>
                 {open ? <BlueGreaterThan /> : <BlueLessThan />}
             </div>
             <div className={open ? 'sidebarOtherOptions' : 'inactive'}>
                 {sidebar.map((e, i) => (
                     <div className='eachSidebarOption' key={i} onClick={() => {
-                        setSelected(e)
+                        setActive(e)
+                        navigate(e.path)
                         setOpen(false)
                     }}>
-                        {selected.title === e.title ? <img alt='' src={require(`../../public/${e.active_image}`)} /> : <img alt='' src={require(`../../public/${e.image}`)} />}
-                        <span style={{ color: selected.title === e.title && '#7791f7' }}>{e.title}</span>
+                        {active?.title === e.title ? <img alt='' src={require(`../../public/${e.active_image}`)} /> : <img alt='' src={require(`../../public/${e.image}`)} />}
+                        <span style={{ color: active?.title === e.title && '#7791f7' }}>{e.title}</span>
                     </div>
                 ))}
             </div>

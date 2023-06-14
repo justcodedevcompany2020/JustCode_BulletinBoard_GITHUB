@@ -3,7 +3,7 @@ import { Searchbar } from '../searchbar'
 import { useSelector } from 'react-redux'
 import { Categories } from '../menuCategories'
 
-export const MainNavs = ({ openCategories, setOpenCategories }) => {
+export const MainNavs = () => {
     const user = useSelector(st => st.Auth_reducer.user)
 
     return (
@@ -12,7 +12,7 @@ export const MainNavs = ({ openCategories, setOpenCategories }) => {
                 <h1>JustCode</h1>
             </div>
             <div className='eachMainNav'>
-                <Categories openCategories={openCategories} setOpenCategories={setOpenCategories} />
+                <Categories/>
             </div>
             <div className='eachMainNav' style={{ width: '65%' }}>
                 <Searchbar />
@@ -28,7 +28,6 @@ export const MainNavs = ({ openCategories, setOpenCategories }) => {
                     <button className='navGreyButton' onClick={() => window.location = '/login'}>Войти</button>
                 </div>
             }
-
         </div>
     )
 }

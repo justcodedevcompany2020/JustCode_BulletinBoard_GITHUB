@@ -11,7 +11,7 @@ export const WatchBeforeSubmit = ({ setCurrentStep }) => {
             </div>
             <div className='watchButtons'>
                 <div className='watchLeftBtn'>
-                    <button className='blueButton' onClick={() => setCurrentStep(3)}>Разместить</button>
+                    <button className='blueButton' onClick={() => setCurrentStep(4)}>Разместить</button>
                     <button className='blueButton' onClick={() => setCurrentStep(1)}>Изменить</button>
                 </div>
                 <button onClick={() => setCurrentStep(0)}>Отменить</button>

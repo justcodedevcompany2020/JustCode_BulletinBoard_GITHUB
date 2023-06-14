@@ -6,6 +6,12 @@ export const Auth_reducer = (state = store, action) => {
         case 'user':
             temp.user = action.payload
             break;
+        case 'openMenu':
+            temp.openCategories = true
+            break
+        case 'closeMenu':
+            temp.openCategories = false
+            break
         default:
             return temp;
     }

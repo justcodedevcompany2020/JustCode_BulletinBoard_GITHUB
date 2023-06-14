@@ -1,17 +1,10 @@
 import './style.css'
 import { useState } from 'react'
-import { NavLink } from "react-router-dom"
+import { NavLink } from 'react-router-dom'
 import { ProfileUser } from '../profileUser'
 
-export const Sidebar = ({ sidebar }) => {
-    const [active, setActive] = useState(null)
-    const setIcon = (e) => {
-        sidebar.filter(event => {
-            if (e === event) {
-                setActive(e?.id)
-            }
-        })
-    }
+export const Sidebar = ({ sidebar, active, setActive }) => {
+    const [activeHover, setActiveHover] = useState(null)
 
     return (
         <div className='sidebar'>
@@ -22,12 +15,23 @@ export const Sidebar = ({ sidebar }) => {
                     <NavLink
                         key={i}
                         to={e?.path}
-                        style={{ color: active === e?.id ? '#7791f7' : '' }}
-                        className={({ isActive }) => isActive ? "activey" : "pending"}
+                        style={{ color: active.id === e?.id ? '#7791f7' : '' }}
+                        className={({ isActive }) => isActive ? 'activey' : 'pending'}
                     >
-                        <div className='eachSidebarItem' onMouseOver={() => setIcon(e)} onMouseLeave={() => setActive(null)} >
-                            <img alt='' src={require(`../../public/${active === e?.id ? e.active_image : e.image}`)} />
-                            {e.title}
+                        <div className='eachSidebarItem'
+                            onMouseOver={() => {
+                                setActiveHover(e?.id)
+                            }}
+                            onMouseLeave={() => {
+                                setActive(sidebar.find(e => e.path === window.location.pathname))
+                                setActiveHover(null)
+                            }}
+                            onClick={() => {
+                                setActive(e)
+                            }}
+                        >
+                            <img alt='' src={require(`../../public/${active.id === e?.id || activeHover === e?.id ? e.active_image : e.image}`)} />
+                            <span style={active.id === e?.id || activeHover === e?.id ? { color: '#7791f7', fontWeight: 600 } : {}}>{e?.title}</span>
                         </div>
                     </NavLink>
                 ))}

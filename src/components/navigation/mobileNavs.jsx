@@ -1,19 +1,17 @@
 import './mainNavs.css'
 import { Searchbar } from '../searchbar'
-import { MobileCategories, NavigationCamera } from '../svg'
+import { MobileCategories } from '../svg'
 
-export const MobileNavs = ({ setOpenMobileCategories }) => {
+export const MobileNavs = ({ setOpenMobileCategories, setOpenMobileMenu }) => {
     return (
         <div className='mobileNavigation'>
             <div className='mobileNavs'>
-                <div onClick={() => {
-                    setOpenMobileCategories(true)
-                }}>
+                <div onClick={() => setOpenMobileCategories(true)}>
                     <MobileCategories />
                 </div>
                 <h1 onClick={() => window.location = '/'}>JustCode</h1>
-                <div className='mobileCamera'>
-                    <NavigationCamera />
+                <div onClick={() => setOpenMobileMenu(true)}>
+                    <MobileCategories />
                 </div>
             </div>
             <div className='eachMainNav'>

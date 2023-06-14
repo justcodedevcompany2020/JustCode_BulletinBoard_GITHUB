@@ -1,4 +1,5 @@
 import './style.css'
+import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Sidebar } from '../../components/sidebar'
 import { NavPath } from '../../components/navPath'
@@ -64,17 +65,18 @@ export const ProfileLayout = () => {
             id: 8
         },
     ]
+    const [active, setActive] = useState(sidebar.find(e => e.path === window.location.pathname))
 
     return (
         <div className='pageBg'>
-            <NavPath width={'80%'}/>
+            <NavPath width={'80%'} />
             <div className='mobileSidebarDisplay'>
-                <MobileSidebar sidebar={sidebar} />
+                <MobileSidebar sidebar={sidebar} active={active} setActive={setActive} />
                 <ProfileUser />
             </div>
             <div className='profileLayout'>
                 <div className='sidebarDisplay'>
-                    <Sidebar sidebar={sidebar} />
+                    <Sidebar sidebar={sidebar} active={active} setActive={setActive} />
                 </div>
                 <div className='profileLayoutOutline'>
                     <Outlet />

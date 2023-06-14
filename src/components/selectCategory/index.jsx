@@ -1,8 +1,8 @@
 import './style.css'
 import Context from '../context'
-import { useContext, useState, useEffect } from 'react'
+import { useContext, useState, useEffect, useRef } from 'react'
 
-export const SelectCategory = ({ categories, openCategories }) => {
+export const SelectCategory = ({ categories, openCategories, setOpenCategories }) => {
     const context = useContext(Context)
     const [subcategories, setSubcategories] = useState([])
     const [subSubCategories, setSubSubcategories] = useState(null)
@@ -12,6 +12,7 @@ export const SelectCategory = ({ categories, openCategories }) => {
     const [activeSubcategoryTitle, setActiveSubcategoryTitle] = useState('')
     const [activeSubSubcategory, setActiveSubSubcategory] = useState(null)
     const [currentImage, setCurrentImage] = useState(null)
+    const wrapperRef = useRef(null);
 
     useEffect(() => {
         if (!openCategories) {
@@ -28,7 +29,10 @@ export const SelectCategory = ({ categories, openCategories }) => {
     return (
         <>
             {context.windowSize.innerWidth > 768 &&
-                <div className='selectCategory'>
+                <div onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                }} className='selectCategory' ref={wrapperRef}>
                     <div className='mainCats'>
                         {categories.length > 0 && categories.map((e, i) => (
                             <div key={i} className='eachCreateCat' onMouseOver={() => {
@@ -87,7 +91,7 @@ export const SelectCategory = ({ categories, openCategories }) => {
                         }
                     </div>
                     <div className='catImages'>
-                        {currentImage && <img alt='' src={require(`../../public/${currentImage}`)} /> }
+                        {currentImage && <img alt='' src={require(`../../public/${currentImage}`)} />}
                     </div>
                 </div>
             }
