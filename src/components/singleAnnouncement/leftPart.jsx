@@ -39,7 +39,6 @@ export const SingleAnnouncementLeftPart = () => {
     //     })
     // }, [imageCount])
 
-
     // function handleImageChange(change) {
     //     const slidingBox = document.querySelector('.slidingBox')
     //     slidingBox.style.transition = '400ms'
@@ -65,20 +64,7 @@ export const SingleAnnouncementLeftPart = () => {
 
     const context = useContext(Context)
 
-    useEffect(() => {
-        window.addEventListener('scroll', (event) => {
-            if (window.scrollY >= 20 && context.windowSize.innerWidth > 425) {
-                document.querySelector('.littleNavs').style.display = 'none';
-                document.querySelector('.navigationShadow').style.position = 'sticky';
-                document.querySelector('.navigationShadow').style.top = '0';
-                document.querySelector('.navigationShadow').style.zIndex = '1';
-            } else if (window.scrollY < 20 && context.windowSize.innerWidth > 425) {
-                document.querySelector('.littleNavs').style.display = 'flex';
-                document.querySelector('.navigationShadow').style.position = 'relative';
-                document.querySelector('.navigationShadow').style.zIndex = '1';
-            }
-        })
-    }, [window.scrollY])
+
 
     const data = [
         {
@@ -108,12 +94,8 @@ export const SingleAnnouncementLeftPart = () => {
         {
             image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
         }
-    ];
+    ]
 
-    // const captionStyle = {
-    //     fontSize: '2em',
-    //     fontWeight: 'bold',
-    // }
     const slideNumberStyle = {
         fontSize: '20px',
         fontWeight: 'bold',

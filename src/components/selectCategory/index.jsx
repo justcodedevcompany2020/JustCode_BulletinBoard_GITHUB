@@ -1,6 +1,6 @@
 import './style.css'
 import Context from '../context'
-import { useContext, useState, useEffect, useRef } from 'react'
+import { useContext, useState, useEffect } from 'react'
 
 export const SelectCategory = ({ categories, openCategories, setOpenCategories }) => {
     const context = useContext(Context)
@@ -12,7 +12,6 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
     const [activeSubcategoryTitle, setActiveSubcategoryTitle] = useState('')
     const [activeSubSubcategory, setActiveSubSubcategory] = useState(null)
     const [currentImage, setCurrentImage] = useState(null)
-    const wrapperRef = useRef(null);
 
     useEffect(() => {
         if (!openCategories) {
@@ -29,10 +28,7 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
     return (
         <>
             {context.windowSize.innerWidth > 768 &&
-                <div onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                }} className='selectCategory' ref={wrapperRef}>
+                <div onClick={(e) => e.stopPropagation()} className='selectCategory'>
                     <div className='mainCats'>
                         {categories.length > 0 && categories.map((e, i) => (
                             <div key={i} className='eachCreateCat' onMouseOver={() => {

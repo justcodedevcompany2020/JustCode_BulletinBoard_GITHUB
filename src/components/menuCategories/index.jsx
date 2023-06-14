@@ -7,14 +7,10 @@ export const Categories = () => {
     const open = useSelector((st) => st.Auth_reducer.openCategories)
     const dispatch = useDispatch()
     const handleClick = (e) => {
-        e.preventDefault()
         e.stopPropagation()
-        if (open) {
-            dispatch(CloseMenu())
-        } else {
-            dispatch(OpenMenu())
-        }
+        open ? dispatch(CloseMenu()) : dispatch(OpenMenu())
     }
+
     return (
         <div className='navCategories' onClick={(e) => handleClick(e)}>
             <CategoryHamburger />
