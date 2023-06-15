@@ -73,7 +73,8 @@
   animation: openModal 0.4s ease-out forwards;
   z-index: 2;
   box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.15);
-  padding-bottom: 25px;
+  padding: 25px 0;
+  top: 125px;
 }
 
 .closedCategories {
@@ -100,6 +101,12 @@
   line-height: 19px;
   color: #333333;
   text-decoration: none;
+}
+
+.mainNavLeft {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 @keyframes openModal {

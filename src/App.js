@@ -21,6 +21,8 @@ function App() {
     }
   }, [])
 
+  // window.scrollY ete es pahi ira arjeqic poqranuma - verevi navbary cuyc tal, ete mecanuma - cuyc chtal
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= 50 && windowSize.innerWidth > 425) {

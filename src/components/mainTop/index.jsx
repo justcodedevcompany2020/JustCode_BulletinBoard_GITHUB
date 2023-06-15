@@ -1,6 +1,7 @@
 import './style.css'
-import { BiggerSign, Heart, HeartFilled, NextArrow, PreviousArrow } from '../svg'
 import { Tooltip } from '@mui/material'
+import { BiggerSign, Heart, HeartFilled, NextArrow, PreviousArrow } from '../svg'
+import { useRef } from 'react'
 
 export const MainTop = () => {
     const advertisement = [
@@ -59,6 +60,23 @@ export const MainTop = () => {
             description: 'Квартира 56 кв. м.'
         },
     ]
+    const carouselRef = useRef(null)
+
+    const scrollRight = () => {
+        carouselRef.current.scrollBy({
+            top: 0,
+            left: carouselRef.current.offsetWidth / advertisement.length * 5,
+            behavior: 'smooth'
+        })
+    }
+
+    const scrollLeft = () => {
+        carouselRef.current.scrollBy({
+            top: 0,
+            left: - carouselRef.current.offsetWidth / advertisement.length * 5,
+            behavior: 'smooth'
+        })
+    }
 
     return (
         <div className='topMain'>
@@ -68,8 +86,8 @@ export const MainTop = () => {
                     <BiggerSign />
                 </div>
                 <div className='topArrows'>
-                    <div className='menuCategorySlider'>
-                        <div className='previousArrow prevArrTop'>
+                    <div className='menuCategorySlider' ref={carouselRef}>
+                        <div className='previousArrow prevArrTop' onClick={scrollLeft}>
                             <PreviousArrow />
                         </div>
                         {advertisement.length > 0 && advertisement.map((e, i) => (
@@ -96,11 +114,10 @@ export const MainTop = () => {
                                 }
                             </div>
                         ))}
-                        <div className='nextArrow nextArrTop'>
+                        <div className='nextArrow nextArrTop' onClick={scrollRight}>
                             <NextArrow />
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import './style.css'
+import { useRef } from 'react' 
 import { NextArrow, PreviousArrow } from '../svg'
 
 export const MainCategories = () => {
@@ -49,6 +50,7 @@ export const MainCategories = () => {
             id: 9
         },
     ]
+    const carouselRef = useRef(null)
 
     function changeBg(inOrOut, id) {
         if (inOrOut === 'in') {
@@ -58,12 +60,28 @@ export const MainCategories = () => {
         }
     }
 
+    const scrollRight = () => {
+        carouselRef.current.scrollBy({
+            top: 0,
+            left: carouselRef.current.offsetWidth / categories.length,
+            behavior: 'smooth'
+        })
+    }
+
+    const scrollLeft = () => {
+        carouselRef.current.scrollBy({
+            top: 0,
+            left: - carouselRef.current.offsetWidth / categories.length,
+            behavior: 'smooth'
+        })
+    }
+
     return (
         <div className='menuCategories'>
             <h2>Выберите категорию</h2>
             <div className='categoriesArrows'>
-                <div className='menuCategorySlider'>
-                    <div className='previousArrow prevArrBusiness'>
+                <div className='menuCategorySlider' ref={carouselRef}>
+                    <div className='previousArrow prevArrBusiness' onClick={scrollLeft}>
                         <PreviousArrow />
                     </div>
                     {categories.length > 0 && categories.map((e, i) => (
@@ -75,7 +93,7 @@ export const MainCategories = () => {
                             <span>{e.title}</span>
                         </div>
                     ))}
-                    <div className='nextArrow nextArrBusiness'>
+                    <div className='nextArrow nextArrBusiness' onClick={scrollRight}>
                         <NextArrow />
                     </div>
                 </div>

@@ -13,6 +13,7 @@
   background: #ffffff;
   width: 20%;
   max-width: 220px;
+  /* margin-bottom: 20px; */
 }
 
 .eachMenuTop > img {
@@ -45,6 +46,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  /* padding-bottom: 20px; */
 }
 
 .topLocation {
@@ -89,6 +91,9 @@
 
 .prevArrTop {
   z-index: 1;
+  /* top: 0;
+  bottom: 0;
+  margin: auto; */
   left: -20px;
   top: 35%;
 }
@@ -97,6 +102,9 @@
   z-index: 1;
   right: -20px;
   top: 35%;
+  /* top: 0;
+  bottom: 0;
+  margin: auto; */
 }
 
 @media screen and (max-width: 1024px) {

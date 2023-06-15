@@ -21,7 +21,7 @@ export const CreateAnnouncement = () => {
                         </div>
                         : currentStep === 1
                             ? <div className='topStepperName'>
-                                <div className='cursor'>
+                                <div className='cursor' onClick={() => setCurrentStep(0)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                     <Back />
                                 </div>
                                 <h1>{selectedCategory}</h1>

@@ -10,7 +10,7 @@
   top: 0;
   display: grid;
   place-items: center;
-  z-index: 2;
+  z-index: 4;
 }
 
 .inactive {

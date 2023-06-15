@@ -72,7 +72,7 @@ body::-webkit-scrollbar {
 }
 
 @font-face {
-  font-family: 'OpenSans';
+  font-family: "OpenSans";
   src: url("../src//fonts/OpenSans-VariableFont_wdth\,wght.ttf");
   font-weight: 500;
 }
