@@ -1,5 +1,6 @@
 import './style.css'
 import { BiggerSign, NextArrow, PreviousArrow, RatingFilled, RatingUnfilled } from '../svg'
+import { useRef } from 'react'
 
 export const MainBusinessAccounts = () => {
     const advertisement = [
@@ -41,6 +42,24 @@ export const MainBusinessAccounts = () => {
         },
     ]
 
+    const carouselRef = useRef(null)
+
+    const scrollRight = () => {
+        carouselRef.current.scrollBy({
+            top: 0,
+            left: carouselRef.current.offsetWidth / advertisement.length * 5,
+            behavior: 'smooth'
+        })
+    }
+
+    const scrollLeft = () => {
+        carouselRef.current.scrollBy({
+            top: 0,
+            left: - carouselRef.current.offsetWidth / advertisement.length * 5,
+            behavior: 'smooth'
+        })
+    }
+
     return (
         <div className='businessCategories'>
             <div className='pageTitle'>
@@ -48,8 +67,8 @@ export const MainBusinessAccounts = () => {
                 <BiggerSign />
             </div>
             <div className='businessArrows'>
-                <div className='menuCategorySlider'>
-                    <div className='previousArrow prevArrBusiness'>
+                <div className='menuCategorySlider' ref={carouselRef}>
+                    <div className='previousArrow prevArrBusiness' onClick={scrollLeft}>
                         <PreviousArrow />
                     </div>
                     {advertisement.length > 0 && advertisement.map((e, i) => (
@@ -65,7 +84,7 @@ export const MainBusinessAccounts = () => {
                             </div>
                         </div>
                     ))}
-                    <div className='nextArrow nextArrBusiness'>
+                    <div className='nextArrow nextArrBusiness' onClick={scrollRight}>
                         <NextArrow />
                     </div>
                 </div>

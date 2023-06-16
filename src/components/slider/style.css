@@ -1,15 +1,23 @@
 .mainSlider {
   position: relative;
   overflow: hidden;
+  max-width: 1440px;
+  margin: 30px auto;
 }
 
 .slider {
   display: flex;
   margin: 40px 0;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  max-width: 2750px;
+  width: 100%;
+  margin: auto;
 }
 
 .eachSlide {
-  min-width: 270px;
+  min-width: 360px;
   height: 150px;
   border-radius: 20px;
   position: relative;
@@ -39,13 +47,13 @@
 }
 
 .mainSliderPrev {
-  left: 220px;
+  left: 20px;
   top: 32%;
   z-index: 1;
 }
 
 .mainSliderNext {
-  right: 220px;
+  right: 22px;
   top: 32%;
   z-index: 1;
 }
@@ -67,7 +75,7 @@
     margin: 40px 20px;
   }
   .eachSlide {
-    min-width: 330px;
+    min-width: 290px;
   }
   .eachSlide > img {
     width: 80px;
@@ -82,5 +90,8 @@
   }
   .mainSliderPrev {
     left: 40px;
+  }
+  .mainSlider {
+    margin: auto;
   }
 }

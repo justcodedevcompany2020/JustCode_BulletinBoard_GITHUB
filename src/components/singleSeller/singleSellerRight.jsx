@@ -1,8 +1,9 @@
 import './style.css'
+import { useState } from 'react'
 import { Heart, HeartFilled } from '../svg'
 
 export const SingleSellerRight = () => {
-    const advertisement = [
+    const [advertisement, setAdvertisement] = useState([
         {
             price: '950.000 $',
             image: 'apartment.png',
@@ -129,7 +130,13 @@ export const SingleSellerRight = () => {
             urgent: false,
             location: 'Ереван'
         },
-    ]
+    ])
+
+    function handleFavorite(event) {
+        let item = [...advertisement]
+        item.find(e => e === event).liked = !item.find(e => e === event).liked
+        setAdvertisement(item)
+    }
 
     return (
         <div className='sellerProducts'>
@@ -153,7 +160,7 @@ export const SingleSellerRight = () => {
                             <span>Купи меня</span>
                         </div>
                     }
-                    <div className='topFavorite'>
+                    <div className='topFavorite' onClick={() => handleFavorite(e)}>
                         {e.liked ?
                             <HeartFilled />
                             : <Heart />

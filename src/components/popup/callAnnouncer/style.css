@@ -21,7 +21,7 @@
 
 .callTop > h5 {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 16px;
   color: #7791f7;
   cursor: pointer;  
@@ -29,14 +29,14 @@
 
 .callTop > h6 {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 14px;
   color: #969696;
 }
 
 .callTop > span {
   font-weight: 400;
-  font-size: 8px;
+  font-size: 12px;
   line-height: 11px;
   color: #969696;
 }
@@ -70,6 +70,6 @@
 
 .CallOther > span {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 14px;
 }

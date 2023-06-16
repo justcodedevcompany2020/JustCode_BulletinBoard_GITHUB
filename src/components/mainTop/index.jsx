@@ -1,10 +1,10 @@
 import './style.css'
 import { Tooltip } from '@mui/material'
+import { useRef, useState } from 'react'
 import { BiggerSign, Heart, HeartFilled, NextArrow, PreviousArrow } from '../svg'
-import { useRef } from 'react'
 
 export const MainTop = () => {
-    const advertisement = [
+    const [advertisement, setAdvertisement] = useState([
         {
             price: '300.000 Драм',
             image: 'top.png',
@@ -59,7 +59,7 @@ export const MainTop = () => {
             liked: true,
             description: 'Квартира 56 кв. м.'
         },
-    ]
+    ])
     const carouselRef = useRef(null)
 
     const scrollRight = () => {
@@ -78,48 +78,54 @@ export const MainTop = () => {
         })
     }
 
+    function handleFavorite(event) {
+        let item = [...advertisement]
+        item.find(e => e === event).liked = !item.find(e => e === event).liked
+        setAdvertisement(item)
+    }
+
     return (
-        <div className='topMain'>
-            <div className='mainTop'>
-                <div className='pageTitle'>
-                    <h2>Топ Обявления</h2>
-                    <BiggerSign />
-                </div>
-                <div className='topArrows'>
-                    <div className='menuCategorySlider' ref={carouselRef}>
-                        <div className='previousArrow prevArrTop' onClick={scrollLeft}>
-                            <PreviousArrow />
-                        </div>
-                        {advertisement.length > 0 && advertisement.map((e, i) => (
-                            <div className='eachMenuTop' key={i}>
-                                <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
-                                <div className='topPadding'>
-                                    <p>{e.price}</p>
-                                    <span>{e.description}</span>
-                                </div>
-                                <div className='topLocation'>
-                                    <span>Ереван</span>
-                                </div>
-                                {e.liked ?
-                                    <Tooltip title="Удалить из избранного" placement="top-end" arrow>
-                                        <div className='topFavorite'>
-                                            <HeartFilled />
-                                        </div>
-                                    </Tooltip>
-                                    : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
-                                        <div className='topFavorite'>
-                                            <Heart />
-                                        </div>
-                                    </Tooltip>
-                                }
+        // <div className='topMain'>
+        <div className='mainTop'>
+            <div className='pageTitle'>
+                <h2>Топ Обявления</h2>
+                <BiggerSign />
+            </div>
+            <div className='topArrows'>
+                <div className='menuCategorySlider' ref={carouselRef}>
+                    <div className='previousArrow prevArrTop' onClick={scrollLeft}>
+                        <PreviousArrow />
+                    </div>
+                    {advertisement.length > 0 && advertisement.map((e, i) => (
+                        <div className='eachMenuTop' key={i}>
+                            <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
+                            <div className='topPadding'>
+                                <p>{e.price}</p>
+                                <span>{e.description}</span>
                             </div>
-                        ))}
-                        <div className='nextArrow nextArrTop' onClick={scrollRight}>
-                            <NextArrow />
+                            <div className='topLocation'>
+                                <span>Ереван</span>
+                            </div>
+                            {e.liked ?
+                                <Tooltip title="Удалить из избранного" placement="top-end" arrow>
+                                    <div className='topFavorite' onClick={() => handleFavorite(e)}>
+                                        <HeartFilled />
+                                    </div>
+                                </Tooltip>
+                                : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
+                                    <div className='topFavorite' onClick={() => handleFavorite(e)}>
+                                        <Heart />
+                                    </div>
+                                </Tooltip>
+                            }
                         </div>
+                    ))}
+                    <div className='nextArrow nextArrTop' onClick={scrollRight}>
+                        <NextArrow />
                     </div>
                 </div>
             </div>
         </div>
+        // </div>
     )
 }

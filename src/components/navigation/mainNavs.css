@@ -14,11 +14,7 @@
   gap: 10px;
 }
 
-.eachMainNav > h1 {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 29px;
+.eachMainNav > svg {
   cursor: pointer;
 }
 
@@ -48,7 +44,7 @@
 
 .navigationShadow {
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
-  padding: 10px 0 20px 0;
+  padding: 20px 0;
   background: #fff;
   z-index: 1;
   position: relative;
@@ -105,7 +101,7 @@
 
 .mainNavLeft {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -126,6 +122,15 @@
     transform: translateY(-100%);
   }
 } */
+
+@media screen and (max-width: 830px) {
+  .navGreyButton {
+    padding: 10px;
+  }
+  .navGreenButton {
+    padding: 10px;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .mainNavs {
@@ -148,10 +153,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .navigationShadow {
-    padding: 10px 0;
   }
 
   .navigation {

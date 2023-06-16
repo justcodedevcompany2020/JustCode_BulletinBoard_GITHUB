@@ -104,3 +104,21 @@ textarea::placeholder {
 .css-1hskriy {
   width: inherit !important;
 }
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  color: #7791f7 !important;
+}
+
+.css-n7tliy-MuiStep-root {
+  padding: 0 !important;
+}
+
+.stepper {
+  width: 70%;
+}
+
+@media screen and (max-width: 425px) {
+  .stepper {
+    width: 100%;
+  }
+}

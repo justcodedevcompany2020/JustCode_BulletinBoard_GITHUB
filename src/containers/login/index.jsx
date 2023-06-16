@@ -1,18 +1,35 @@
 import './style.css'
+import ReactFlagsSelect from 'react-flags-select'
 import { useState } from 'react'
-import { ClosedEye, FacebookIcon, GoogleIcon, JustCode, MailIcon, OpenEye, VkIcon } from '../../components/svg'
+import { Link } from 'react-router-dom'
+import { ClosedEye, FacebookIcon, GoogleIcon, JustCode, MailIcon, NavbarLogo, OpenEye, VkIcon } from '../../components/svg'
 
 export const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
+    const [selected, setSelected] = useState("RU")
 
     return (
         <div className='logPage'>
-            <div className='loginPage'>
-                <div className='cursor' onClick={() => window.location = '/'}>
-                    <JustCode />
+            <div className='navigationShadow'>
+                <div className='logNav'>
+                    <div className='centerDiv cursor' onClick={() => window.location = '/'}>
+                        <NavbarLogo />
+                    </div>
+                    <ReactFlagsSelect
+                        countries={["RU", "AM", "US"]}
+                        selected={selected}
+                        onSelect={(code) => setSelected(code)}
+                        optionsSize={14}
+                        className='countries'
+                        showOptionLabel={true}
+                        showSelectedLabel={true}
+                    />
                 </div>
+            </div>
+            <div className='loginPage'>
+                <JustCode />
                 <div className='mainLogin'>
                     <div className='loginTop'>
                         <div className='loginTopLeft'>
@@ -59,6 +76,15 @@ export const Login = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className='logFooter'>
+                <div className='logNavLeft'>
+                    <Link>Лицензионное соглашение</Link>
+                    <Link>Помощь</Link>
+                    <Link>Реклама на Юле</Link>
+                </div>
+                <span>© 2023 JustCode</span>
             </div>
         </div>
     )

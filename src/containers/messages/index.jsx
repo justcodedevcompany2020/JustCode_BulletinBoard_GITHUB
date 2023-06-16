@@ -22,9 +22,9 @@ export const Messages = () => {
         } else if (context.windowSize.innerWidth > 768 && currentMemberId) {
             document.querySelector('.mobileTop').style.display = 'none'
             document.querySelector('.messageRightSide').style.display = 'flex'
-            document.querySelector('.messageRightSide').style.width = '80%'
+            document.querySelector('.messageRightSide').style.width = '75%'
             document.querySelector('.messageLeftSide').style.display = 'flex'
-            document.querySelector('.messageLeftSide').style.width = '20%'
+            document.querySelector('.messageLeftSide').style.width = '25%'
         } else if (context.windowSize.innerWidth <= 768 && !currentMemberId) {
             document.querySelector('.mobileTop').style.display = 'none'
             document.querySelector('.messageRightSide').style.display = 'none'
@@ -32,8 +32,8 @@ export const Messages = () => {
         } else if (context.windowSize.innerWidth > 768 && !currentMemberId) {
             document.querySelector('.mobileTop').style.display = 'none'
             document.querySelector('.messageRightSide').style.display = 'flex'
-            document.querySelector('.messageRightSide').style.width = '80%'
-            document.querySelector('.messageLeftSide').style.width = '20%'
+            document.querySelector('.messageRightSide').style.width = '75%'
+            document.querySelector('.messageLeftSide').style.width = '25%'
         }
     }, [context.windowSize.innerWidth, currentMemberId])
 

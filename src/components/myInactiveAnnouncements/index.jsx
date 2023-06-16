@@ -1,8 +1,9 @@
 import './style.css'
+import { useState } from 'react'
 import { AddToTop, Heart, HeartFilled } from '../svg'
 
 export const MyInactiveAnnouncements = () => {
-    // const advertisement = [
+    // const [advertisement, setAdvertisement] = useState([
     //     {
     //         price: '950.000 $',
     //         image: 'apartment.png',
@@ -111,8 +112,14 @@ export const MyInactiveAnnouncements = () => {
     //         urgent: false,
     //         location: 'Ереван'
     //     },
-    // ]
-    const advertisement = []
+    // ])
+    const [advertisement, setAdvertisement] = useState([])
+
+    function handleFavorite(event) {
+        let item = [...advertisement]
+        item.find(e => e === event).liked = !item.find(e => e === event).liked
+        setAdvertisement(item)
+    }
 
     return (
         <div className='catalogItems'>
@@ -139,7 +146,7 @@ export const MyInactiveAnnouncements = () => {
                             <span>Купи меня</span>
                         </div>
                     }
-                    <div className='topFavorite'>
+                    <div className='topFavorite' onClick={() => handleFavorite(e)}>
                         {e.liked ?
                             <HeartFilled />
                             : <Heart />

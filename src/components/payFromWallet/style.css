@@ -28,7 +28,8 @@
 }
 
 .idramPayment > button {
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -39,7 +40,7 @@
     flex-direction: column;
   }
   .idramPayment > button {
-    width: 230px;
+    max-width: 230px;
     padding: 6px;
   }
   .idramPayment > input {

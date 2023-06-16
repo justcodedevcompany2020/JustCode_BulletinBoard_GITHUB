@@ -1,8 +1,9 @@
 import './style.css'
+import { useState } from 'react'
 import { BiggerSign, Heart, HeartFilled } from '../svg'
 
 export const AutoService = () => {
-    const advertisement = [
+    const [advertisement, setAdvertisement] = useState([
         {
             price: '300.000 Драм',
             image: 'auto.png',
@@ -51,7 +52,13 @@ export const AutoService = () => {
             liked: false,
             description: 'Прокат машин'
         },
-    ]
+    ])
+
+    function handleFavorite(event) {
+        let item = [...advertisement]
+        item.find(e => e === event).liked = !item.find(e => e === event).liked
+        setAdvertisement(item)
+    }
 
     return (
         <div>
@@ -70,7 +77,7 @@ export const AutoService = () => {
                         <div className='autoUrgent'>
                             <span>Срочно !</span>
                         </div>
-                        <div className='topFavorite'>
+                        <div className='topFavorite' onClick={() => handleFavorite(e)}>
                             {e.liked ?
                                 <HeartFilled />
                                 : <Heart />

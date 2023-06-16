@@ -164,6 +164,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nameBlock > h1 {
@@ -399,6 +400,7 @@
 
 .thumbnails > img {
   height: 90px !important;
+  cursor: pointer !important;
 }
 
 @media screen and (max-width: 768px) {

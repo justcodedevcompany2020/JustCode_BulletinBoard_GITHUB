@@ -2,6 +2,7 @@ import './mainNavs.css'
 import { Searchbar } from '../searchbar'
 import { useSelector } from 'react-redux'
 import { Categories } from '../menuCategories'
+import { NavbarLogo } from '../svg'
 
 export const MainNavs = () => {
     const user = useSelector(st => st.Auth_reducer.user)
@@ -10,7 +11,7 @@ export const MainNavs = () => {
         <div className='mainNavs'>
             <div className='mainNavLeft' style={{ width: '70%' }}>
                 <div className='eachMainNav' onClick={() => window.location = '/'}>
-                    <h1>JustCode</h1>
+                    <NavbarLogo />
                 </div>
                 <div className='eachMainNav'>
                     <Categories />

@@ -5,7 +5,7 @@ import { AddToTop, Heart, HeartFilled } from '../svg'
 import { SellGoodsFaster } from '../popup/sellGoodsFaster'
 
 export const MyActiveAnnouncements = () => {
-    const advertisement = [
+    const [advertisement, setAdvertisement] = useState([
         {
             price: '950.000 $',
             image: 'apartment.png',
@@ -126,10 +126,16 @@ export const MyActiveAnnouncements = () => {
             location: 'Ереван',
             id: 12
         },
-    ]
+    ])
     const [selectedLabel, setSelectedLabel] = useState(null)
     const [openPopup, setOpenPopup] = useState(null)
     const [openSelect, setOpenSelect] = useState(false)
+
+    function handleFavorite(event) {
+        let item = [...advertisement]
+        item.find(e => e === event).liked = !item.find(e => e === event).liked
+        setAdvertisement(item)
+    }
 
     return (
         <div className='catalogItems'>
@@ -180,7 +186,7 @@ export const MyActiveAnnouncements = () => {
                             <span>Купи меня</span>
                         </div>
                     }
-                    <div className='topFavorite'>
+                    <div className='topFavorite' onClick={() => handleFavorite(e)}>
                         {e.liked ?
                             <HeartFilled />
                             : <Heart />

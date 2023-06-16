@@ -8,15 +8,49 @@ export const CatalogFilter = () => {
     const [subCategory, setSubCategory] = useState(true)
     const [showMoreSubCategory, setShowMoreSubCategory] = useState(false)
     const subCategories = ['Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары', 'Аксессуары']
-
     const [brand, setBrand] = useState(true)
     const [showMoreBrands, setShowMoreBrands] = useState(false)
-    const brands = ['Dolce & Gabbana', 'Nike', 'Adidas', 'Reebok', 'Versace', 'Emporio Armani']
-
+    const [brands, setBrands] = useState([
+        {
+            title: 'Dolce & Gabbana',
+            id: 1,
+            checked: false,
+        },
+        {
+            title: 'Nike',
+            id: 2,
+            checked: true,
+        },
+        {
+            title: 'Adidas',
+            id: 3,
+            checked: false,
+        },
+        {
+            title: 'Reebok',
+            id: 4,
+            checked: false,
+        },
+        {
+            title: 'Versace',
+            id: 5,
+            checked: true,
+        },
+        {
+            title: 'Emporio Armani',
+            id: 6,
+            checked: false,
+        }])
     const [safeDeal, setSafeDeal] = useState(false)
     const [sale, setSale] = useState(true)
     const [shop, setShop] = useState(false)
     const [placement, setPlacement] = useState(true)
+
+    function handleCheck(event) {
+        let item = [...brands]
+        item.find(e => e === event).checked = !item.find(e => e === event).checked
+        setBrands(item)
+    }
 
     return (
         <div className='catalogFilter'>
@@ -55,10 +89,10 @@ export const CatalogFilter = () => {
                         if (i < 4) {
                             return (
                                 <div className='notificatinCheckbox' key={i}>
-                                    <div className='checkbox' style={true ? { background: '#7791f7' } : {}}>
+                                    <div className='checkbox' style={e.checked ? { background: '#7791f7' } : {}} onClick={() => handleCheck(e)}>
                                         <Checkbox />
                                     </div>
-                                    <label>{e}</label>
+                                    <label>{e.title}</label>
                                 </div>
                             )
                         }
@@ -66,10 +100,10 @@ export const CatalogFilter = () => {
                     else {
                         return (
                             <div className='notificatinCheckbox' key={i}>
-                                <div className='checkbox' style={true ? { background: '#7791f7' } : {}}>
+                                <div className='checkbox' style={e.checked ? { background: '#7791f7' } : {}} onClick={() => handleCheck(e)}>
                                     <Checkbox />
                                 </div>
-                                <label>{e}</label>
+                                <label>{e.title}</label>
                             </div>
                         )
                     }

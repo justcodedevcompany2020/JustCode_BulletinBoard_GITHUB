@@ -13,6 +13,7 @@
   background: #ffffff;
   width: 20%;
   max-width: 220px;
+  min-width: 174px;
   /* margin-bottom: 20px; */
 }
 
@@ -34,9 +35,9 @@
   line-height: 19px;
 }
 
-.topMain {
+/* .topMain {
   background: #fffbe7;
-}
+} */
 
 .mainTop {
   width: 80%;
@@ -47,6 +48,7 @@
   flex-direction: column;
   gap: 20px;
   /* padding-bottom: 20px; */
+  background: #fffbe7;
 }
 
 .topLocation {
@@ -110,6 +112,7 @@
 @media screen and (max-width: 1024px) {
   .eachMenuTop {
     width: 30%;
+    min-width: 170px;
   }
 }
 

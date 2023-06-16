@@ -14,7 +14,7 @@ export const ToAdmin = () => {
                         <Info />
                     </div>
                 </div>
-                <p>После успешной проверки оно будет размещено на List.am и мы вышлем подтверждающее письмо на адрес <span>user@gmail.com</span></p>
+                <p>После успешной проверки оно будет размещено на JustCode и мы вышлем подтверждающее письмо на адрес <span>user@gmail.com</span></p>
             </div>
             {openInfo && <div className='toAdminPage'>
                 <h1>Модерация объявлений</h1>
