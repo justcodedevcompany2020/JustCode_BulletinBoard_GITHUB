@@ -29,6 +29,10 @@
   overflow: auto !important;
 }
 
+.tabMrg {
+  margin: 20px 0;
+}
+
 @media screen and (max-width: 425px) {
   .webTabs {
     display: none;

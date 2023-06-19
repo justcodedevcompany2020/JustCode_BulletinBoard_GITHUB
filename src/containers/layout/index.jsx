@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Footer } from '../../components/footer'
 import { Navigation } from '../../components/navigation'
-import { CloseMenu } from '../../Redux/action/auth_action'
+import { CloseMenu } from '../../Redux/action/sidebar_action'
 
 export const Layout = () => {
     const dispatch = useDispatch()

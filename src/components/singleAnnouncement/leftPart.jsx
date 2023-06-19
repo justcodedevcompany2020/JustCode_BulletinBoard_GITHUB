@@ -1,9 +1,9 @@
 import './style.css'
-import { useContext, useEffect, useState } from 'react'
-import { MobileRightPart } from './mobileRightPart'
-import { Camera, MobileHeart, NextArrow, PreviousArrow } from '../svg'
-import { Carousel } from 'react-carousel-minimal';
 import Context from '../context'
+import { Carousel } from 'react-carousel-minimal'
+import { MobileRightPart } from './mobileRightPart'
+import { useContext, useEffect, useState } from 'react'
+import { Camera, MobileHeart, NextArrow, PreviousArrow } from '../svg'
 
 export const SingleAnnouncementLeftPart = () => {
     // const images = [
@@ -63,8 +63,6 @@ export const SingleAnnouncementLeftPart = () => {
     // }
 
     const context = useContext(Context)
-
-
 
     const data = [
         {
@@ -149,7 +147,7 @@ export const SingleAnnouncementLeftPart = () => {
                 slideNumberStyle={slideNumberStyle}
                 captionPosition="bottom"
                 // automatic={true}
-                dots={true}
+                // dots={true}
                 // pauseIconColor="white"
                 // pauseIconSize="40px"
                 slideBackgroundColor="transparent"

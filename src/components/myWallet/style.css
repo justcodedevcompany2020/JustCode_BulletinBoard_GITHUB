@@ -72,6 +72,23 @@
   line-height: 22px;
 }
 
+.mobileWalletTabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.changeWalletTabs {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.eachWalletTab {
+  width: 33%;
+  height: 40px;
+}
+
+
 @media screen and (max-width: 768px) {
   .eachWallet {
     flex-direction: column;

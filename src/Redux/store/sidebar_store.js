@@ -1,4 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-    user: {},
+    openCategories: false,
+    changeMenu: '',
+    changeWalletMenu: null
 }

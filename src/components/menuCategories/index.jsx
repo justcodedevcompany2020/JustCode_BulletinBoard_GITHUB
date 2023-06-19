@@ -1,7 +1,7 @@
 import './style.css'
 import { CategoryHamburger } from '../svg'
 import { useSelector, useDispatch } from 'react-redux'
-import { CloseMenu, OpenMenu } from '../../Redux/action/auth_action'
+import { CloseMenu, OpenMenu } from '../../Redux/action/sidebar_action'
 
 export const Categories = () => {
     const open = useSelector((st) => st.Auth_reducer.openCategories)

@@ -6,7 +6,7 @@ import { BlueGreaterThan, BlueLessThan } from '../svg'
 export const MobileSidebar = ({ sidebar, active, setActive }) => {
     const [open, setOpen] = useState(false)
     const navigate = useNavigate()
-    console.log('active', active);
+
     return (
         <div className='MobileSidebar'>
             <div className='mobileSidebar' onClick={() => setOpen(!open)}>

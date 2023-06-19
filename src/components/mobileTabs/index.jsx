@@ -1,8 +1,11 @@
 import './style.css'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { BlueGreaterThan, BlueLessThan } from '../svg'
+import { ChangeMenu } from '../../Redux/action/sidebar_action'
 
 export const MobileTabs = ({ tabList }) => {
+    const dispatch = useDispatch()
     const [open, setOpen] = useState(false)
     const [selected, setSelected] = useState(tabList[0])
 
@@ -19,6 +22,7 @@ export const MobileTabs = ({ tabList }) => {
                     <div className='eachSidebarOption eachTabOption' key={i} onClick={() => {
                         setSelected(e)
                         setOpen(false)
+                        dispatch(ChangeMenu(e))
                     }}>
                         <span style={{ color: selected === e && '#7791f7' }}>{e}</span>
                     </div>
