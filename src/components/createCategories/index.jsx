@@ -1,7 +1,6 @@
 import './style.css'
-import Context from '../context'
+import { useState } from 'react'
 import { BlueArrowRight } from '../svg'
-import { useContext, useState } from 'react'
 
 export const CreateCategories = ({ setSelectedCategory, setCurrentStep }) => {
     const categories = [
@@ -5964,7 +5963,6 @@ export const CreateCategories = ({ setSelectedCategory, setCurrentStep }) => {
             ]
         },
     ]
-    const context = useContext(Context)
     const [subcategories, setSubcategories] = useState([])
     const [subSubCategories, setSubSubcategories] = useState([])
     const [activeCategory, setActiveCategory] = useState(null)
@@ -5973,10 +5971,11 @@ export const CreateCategories = ({ setSelectedCategory, setCurrentStep }) => {
     const [openMobileCategories, setOpenMobileCategories] = useState(true)
     const [openMobileSubcategories, setOpenMobileSubcategories] = useState(false)
     const [openMobileSubSubcategories, setOpenMobileSubSubcategories] = useState(false)
+    const bigScreen = window.matchMedia("(min-width: 768px)").matches
 
     return (
         <>
-            {context.windowSize.innerWidth > 768
+            {bigScreen
                 ? <div className='createCategoryPage'>
                     <div className='createCategories'>
                         {categories?.length > 0 && categories.map((e, i) => (
@@ -6009,7 +6008,7 @@ export const CreateCategories = ({ setSelectedCategory, setCurrentStep }) => {
                     }}>
                         {subSubCategories.map((e, i) => (
                             <div className='eachCreateCat'
-                            key={i}
+                                key={i}
                                 style={{ background: activeSubSubcategory === i && '#f5f5f5' }}
                                 onMouseOver={() => {
                                     setActiveSubSubcategory(i)

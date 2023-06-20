@@ -1,41 +1,40 @@
 import './style.css'
-import Context from '../../components/context'
+import { useState, useEffect } from 'react'
 import { BlueArrowLeft } from '../../components/svg'
-import { useContext, useState, useEffect } from 'react'
 import { MessageLeft } from '../../components/messageLeft'
 import { MessageRight } from '../../components/messageRight'
 
 export const Messages = () => {
+    const smallScreen = window.matchMedia("(max-width: 768px)").matches
+    const bigScreen = window.matchMedia("(min-width: 768px)").matches
     const [currentMemberId, setCurrentMemberId] = useState(null)
-    const context = useContext(Context)
     const currentMember = {
         image: 'man.png',
         name: 'Алексей Т.',
     }
 
     useEffect(() => {
-        if (context.windowSize.innerWidth <= 768 && currentMemberId) {
+        if (smallScreen && currentMemberId) {
             document.querySelector('.mobileTop').style.display = 'flex'
             document.querySelector('.messageLeftSide').style.display = 'none'
-            document.querySelector('.messageRightSide').style.display = 'flex'
+            document.querySelector('.memberRight').style.display = 'flex'
+            document.querySelector('.memberRight').style.width = '100%'
             document.querySelector('.messageRightSide').style.width = '100%'
-        } else if (context.windowSize.innerWidth > 768 && currentMemberId) {
+        } else if (smallScreen && !currentMemberId) {
             document.querySelector('.mobileTop').style.display = 'none'
-            document.querySelector('.messageRightSide').style.display = 'flex'
-            document.querySelector('.messageRightSide').style.width = '75%'
+            document.querySelector('.messageLeftSide').style.width = '100%'
+            document.querySelector('.messageRightSide').style.width = '0'
+        } else if (bigScreen && currentMemberId) {
+            document.querySelector('.mobileTop').style.display = 'none'
+            document.querySelector('.memberRight').style.display = 'flex'
+            document.querySelector('.memberRight').style.width = '75%'
             document.querySelector('.messageLeftSide').style.display = 'flex'
             document.querySelector('.messageLeftSide').style.width = '25%'
-        } else if (context.windowSize.innerWidth <= 768 && !currentMemberId) {
+        } else if (bigScreen && !currentMemberId) {
             document.querySelector('.mobileTop').style.display = 'none'
-            document.querySelector('.messageRightSide').style.display = 'none'
-            document.querySelector('.messageLeftSide').style.width = '100%'
-        } else if (context.windowSize.innerWidth > 768 && !currentMemberId) {
-            document.querySelector('.mobileTop').style.display = 'none'
-            document.querySelector('.messageRightSide').style.display = 'flex'
-            document.querySelector('.messageRightSide').style.width = '75%'
             document.querySelector('.messageLeftSide').style.width = '25%'
         }
-    }, [context.windowSize.innerWidth, currentMemberId])
+    }, [smallScreen, bigScreen, currentMemberId])
 
     function backToMessages() {
         document.querySelector('.mobileTop').style.display = 'none'

@@ -1,8 +1,7 @@
 import './style.css'
-import Context from '../context'
 import { Carousel } from 'react-carousel-minimal'
 import { MobileRightPart } from './mobileRightPart'
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Camera, MobileHeart, NextArrow, PreviousArrow } from '../svg'
 
 export const SingleAnnouncementLeftPart = () => {
@@ -61,8 +60,6 @@ export const SingleAnnouncementLeftPart = () => {
     //     }
     //     // slidingBox.style.transition = '400ms'
     // }
-
-    const context = useContext(Context)
 
     const data = [
         {

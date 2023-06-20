@@ -1,8 +1,7 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Camera, MobileHeart, NextArrow, PreviousArrow } from '../svg'
 import Flickity from 'flickity'
 import { Carousel } from 'react-carousel-minimal';
-import Context from '../context'
 import { MobileRightPart } from '../singleAnnouncement/mobileRightPart';
 
 export const WatchLeft = () => {
@@ -27,7 +26,6 @@ export const WatchLeft = () => {
         }, 
     ]
     const [imageCount, setImageCount] = useState(0)
-    const context = useContext(Context)
 
     useEffect(() => {
         const current = document.querySelectorAll('.opacity')

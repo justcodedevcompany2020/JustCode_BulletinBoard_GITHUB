@@ -1,13 +1,13 @@
 import './style.css'
 import Tabs from '../tabs'
-import Context from '../context'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { Idram, Telcell, Visa } from '../svg'
 import { PayViaIdram } from '../payFromWallet'
 
 export const MyWallet = () => {
-    const context = useContext(Context)
     const [active, setActive] = useState(1)
+    const smallScreen = window.matchMedia("(max-width: 425px)").matches
+    const bigScreen = window.matchMedia("(min-width: 425px)").matches
 
     return (
         <div className='myWallet'>
@@ -25,13 +25,13 @@ export const MyWallet = () => {
             </div>
             <div className='topUpMyWallet'>
                 <h1>Пополнить кошелёк</h1>
-                {context.windowSize.innerWidth > 425 &&
+                {bigScreen &&
                     <Tabs
                         tabList={[<Idram />, <Visa />, <Telcell />]}
                         tabPanel={[<PayViaIdram via={'Idram'} />, <PayViaIdram via={'Visa'} />, <PayViaIdram via={'Telcell'} />]}
                     />
                 }
-                {context.windowSize.innerWidth <= 425 &&
+                {smallScreen &&
                     <>
                         <div className='mobileWalletTabs'>
                             <div className='changeWalletTabs'>

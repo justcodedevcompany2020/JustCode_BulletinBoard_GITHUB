@@ -1,14 +1,13 @@
 import './style.css'
-import Context from '../context'
 import { Star, VerifiedAccount } from '../svg'
 import { CallAnnouncer } from '../popup/callAnnouncer'
 import { TextAnnouncer } from '../popup/textAnnouncer'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useEffect } from 'react'
 
 export const SingleAnnouncementRightPart = () => {
-    const context = useContext(Context)
     const [call, setCall] = useState(false)
     const [text, setText] = useState(false)
+    const bigScreen = window.matchMedia("(min-width: 425px)").matches
 
     useEffect(() => {
         if (document.querySelector('.layout')) {
@@ -22,10 +21,10 @@ export const SingleAnnouncementRightPart = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (window.scrollY >= 370 && context.windowSize.innerWidth > 425) {
+            if (window.scrollY >= 370 && bigScreen) {
                 document.querySelector('.singleAds').style.position = 'sticky';
                 document.querySelector('.singleAds').style.top = '83px';
-            } else if (window.scrollY < 370 && context.windowSize.innerWidth > 425) {
+            } else if (window.scrollY < 370 && bigScreen) {
                 document.querySelector('.singleAds').style.position = 'relative';
                 document.querySelector('.singleAds').style.top = '0';
             }

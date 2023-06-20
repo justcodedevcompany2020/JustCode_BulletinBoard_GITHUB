@@ -17,7 +17,7 @@ export const SellGoodsFaster = ({ open, setOpen, onClickHomeBtn, onClickTopBtn, 
                 <h1>Продайте свой товар быстрее</h1>
                 <span id='sellSpan'>Вы можете продвегать свое объявление данными способами</span>
                 <div className='loginSeparator' />
-                <div className='popupScroller'>
+                <div className='popupScroller' style={{ maxHeight: '430px' }}>
                     <div className='toopLabels'>
                         <div className='eachLabel' onClick={() => setSelectedLabel(1)} style={{ border: selectedLabel === 1 && '2px solid #7791F7' }}>
                             <img alt='' src={require('../../../public/blueHomeIcon.png')} />

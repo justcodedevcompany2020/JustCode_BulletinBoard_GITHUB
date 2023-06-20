@@ -1,9 +1,7 @@
 import './style.css'
-import Context from '../context'
-import { useContext, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export const SelectCategory = ({ categories, openCategories, setOpenCategories }) => {
-    const context = useContext(Context)
     const [subcategories, setSubcategories] = useState([])
     const [subSubCategories, setSubSubcategories] = useState(null)
     const [activeCategory, setActiveCategory] = useState(categories[0])
@@ -12,6 +10,7 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
     const [activeSubcategoryTitle, setActiveSubcategoryTitle] = useState('')
     const [activeSubSubcategory, setActiveSubSubcategory] = useState(null)
     const [currentImage, setCurrentImage] = useState(null)
+    const bigScreen = window.matchMedia("(min-width: 768px)").matches
 
     useEffect(() => {
         if (!openCategories) {
@@ -27,7 +26,7 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
 
     return (
         <>
-            {context.windowSize.innerWidth > 768 &&
+            {bigScreen &&
                 <div onClick={(e) => e.stopPropagation()} className='selectCategory'>
                     <div className='mainCats'>
                         {categories.length > 0 && categories.map((e, i) => (

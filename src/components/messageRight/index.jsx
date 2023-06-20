@@ -1,7 +1,7 @@
 import './style.css'
+import { MuiFbPhotoGrid } from 'mui-fb-photo-grid'
 import { useEffect, useRef, useState } from 'react'
 import { MoreIcons, Attachment, SendMessage, BlueSendMessage, BlueAttachment } from '../svg'
-import { IMuiFbPhotoGridImage, MuiFbPhotoGrid } from 'mui-fb-photo-grid';
 
 export const MessageRight = ({ currentMemberId, setCurrentMemberId, currentMember }) => {
     const me = {
@@ -29,24 +29,32 @@ export const MessageRight = ({ currentMemberId, setCurrentMemberId, currentMembe
         },
         {
             user: currentMember,
-            message: 'Здравствуйте! Да',
+            message: 'Здравствуйте! Да. Здравствуйте, товар был в использовании? Здравствуйте, товар был в использовании? Здравствуйте, товар был в использовании? Здравствуйте, товар был в использовании? Здравствуйте, товар был в использовании? Здравствуйте, товар был в использовании?',
             time: '12:41',
-            image: null
+            image: [
+                { img: 'http://localhost:3000/static/media/business.5f5e9c03c5e00cf9fc12.png' },
+                { img: 'http://localhost:3000/static/media/top.7f9ff658897fb1917ffb.png' },
+                { img: 'http://localhost:3000/static/media/auto.941461f2dcd3115e23c7.png' },
+                { img: 'http://localhost:3000/static/media/apartment.cc96864086f9f81c1736.png' },
+                { img: 'http://localhost:3000/static/media/business.5f5e9c03c5e00cf9fc12.png' },
+            ]
         },
     ])
     const conversationRef = useRef(null);
     const [scrollToBottom] = useState(new Date())
     const [message, setMessage] = useState('')
     const [activeAttachment, setActiveAttachment] = useState(false)
-    let selectedFiles = []
     const [selected, setSelected] = useState([])
+    let selectedFiles = []
     let newImages = []
 
     useEffect(() => {
         if (conversationRef.current) conversationRef.current.scrollTop = conversationRef.current.scrollHeight
-    }, [scrollToBottom, allMessages, currentMemberId])
+    }, [scrollToBottom, allMessages, currentMemberId, conversationRef])
+
 
     function handleImageChange(event) {
+        document.querySelector('.rightCenter').style.height = '325px'
         let targetFiles = event.target.files
         let targetFilesObject = [...targetFiles] // file for backend
 
@@ -67,8 +75,8 @@ export const MessageRight = ({ currentMemberId, setCurrentMemberId, currentMembe
         })
     }
 
-
     function sendMessage() {
+        document.querySelector('.rightCenter').style.height = '405px'
         let item = [...allMessages]
         let img = []
         selected.forEach((e, i) => {
@@ -84,8 +92,8 @@ export const MessageRight = ({ currentMemberId, setCurrentMemberId, currentMembe
         })
         setAllMessages(item)
         setSelected([])
-        selectedFiles = []
         setMessage('')
+        selectedFiles = []
         document.querySelector('.photoListDiv').innerHTML = ''
     }
 
@@ -126,7 +134,7 @@ export const MessageRight = ({ currentMemberId, setCurrentMemberId, currentMembe
                     </div>
                 }
             </div>
-            {<div style={selected.length === 0 ? { display: 'none' } : { display: 'flex' }} className='photoListDiv' />}
+            <div style={selected.length > 0 ? { display: 'flex' } : { display: 'none' }} className='photoListDiv' />
             <div className='rightBottom'>
                 <div className='cursor' onMouseOver={() => setActiveAttachment(true)} onMouseLeave={() => setActiveAttachment(false)}>
                     <label>

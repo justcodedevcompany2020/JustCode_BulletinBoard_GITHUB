@@ -1,6 +1,5 @@
 import './style.css'
 import * as React from 'react'
-import Context from '../context'
 import Tab from '@mui/material/Tab'
 import Box from '@mui/material/Box'
 import TabList from '@mui/lab/TabList'
@@ -23,9 +22,10 @@ import { MyInactiveAnnouncements } from '../myInactiveAnnouncements'
 
 export default function Tabs({ tabList, tabPanel }) {
     const dispatch = useDispatch()
-    const context = React.useContext(Context)
     const title = useSelector(st => st.Sidebar_reducer.changeMenu)
     const [value, setValue] = React.useState('1')
+    const smallScreen = window.matchMedia("(max-width: 425px)").matches
+    const bigScreen = window.matchMedia("(min-width: 425px)").matches
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -58,11 +58,12 @@ export default function Tabs({ tabList, tabPanel }) {
                         <MobileTabs tabList={tabList} />
                     </div>
                 </Box>
-                {context.windowSize.innerWidth > 425
-                    && tabPanel.map((e, i) => (
+                {bigScreen > 425 &&
+                    tabPanel.map((e, i) => (
                         <TabPanel key={i} value={i + 1 + ''}>{e}</TabPanel>
-                    ))}
-                {context.windowSize.innerWidth <= 425 &&
+                    ))
+                }
+                {smallScreen &&
                     <div className='tabMrg'>
                         {title === 'Профиль' && <ProfilSettings />}
                         {title === 'Контактная информация' && <ContactSettings />}

@@ -31,6 +31,10 @@ function App() {
           document.querySelector('.navigationShadow').style.position = 'sticky';
           document.querySelector('.navigationShadow').style.top = '-40px';
           document.querySelector('.navigationShadow').style.zIndex = '3';
+        } else if (windowSize.innerWidth <= 425) {
+          document.querySelector('.navigationShadow').style.position = 'sticky';
+          document.querySelector('.navigationShadow').style.top = '0px';
+          document.querySelector('.navigationShadow').style.zIndex = '3';
         } else {
           document.querySelector('.littleNavs').style.visibility = 'visible';
           document.querySelector('.navigationShadow').style.top = '0px';
@@ -39,7 +43,7 @@ function App() {
         }
       }
     })
-  }, [window.scrollY])
+  }, [window.scrollY, windowSize])
 
   const value = {
     windowSize, setWindowSize

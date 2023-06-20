@@ -53,9 +53,11 @@ export const Slider = () => {
     ]
     const context = useContext(Context)
     const carouselRef = useRef(null)
+    const smallScreen = window.matchMedia('(max-width: 425px)').matches
+    const bigScreen = window.matchMedia('(min-width: 425px)').matches
 
     useEffect(() => {
-        if (context.windowSize.innerWidth > 425) {
+        if (bigScreen) {
             carouselRef.current.scrollBy({
                 top: 0,
                 left: 100,
@@ -66,12 +68,12 @@ export const Slider = () => {
                 left: 0,
             })
         }
-    }, [context.windowSize.innerWidth])
+    }, [context.windowSize.innerWidth, bigScreen])
 
     const scrollRight = () => {
         carouselRef.current.scrollBy({
             top: 0,
-            left: context.windowSize.innerWidth > 425 ? 345 : context.windowSize.innerWidth - 20,
+            left: bigScreen ? 345 : context.windowSize.innerWidth - 20,
             behavior: 'smooth'
         })
     }
@@ -94,7 +96,7 @@ export const Slider = () => {
             </div>
             <div className='slider' ref={carouselRef}>
                 {slides.length > 0 && slides.map((e, i) => (
-                    <div className='eachSlide' key={i} style={{ background: `${e.background}`, minWidth: context.windowSize.innerWidth < 425 && context.windowSize.innerWidth - 40 }}>
+                    <div className='eachSlide' key={i} style={{ background: `${e.background}`, minWidth: smallScreen && context.windowSize.innerWidth - 40 }}>
                         <span>{e.title}</span>
                         <img alt='' src={require(`../../public/${e.image}`)} />
                     </div>
