@@ -43,7 +43,7 @@ function App() {
         }
       }
     })
-  }, [window.scrollY, windowSize])
+  }, [windowSize])
 
   const value = {
     windowSize, setWindowSize
