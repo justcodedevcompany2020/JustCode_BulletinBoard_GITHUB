@@ -27,19 +27,19 @@ function App() {
     window.addEventListener('scroll', () => {
       if (document.querySelector('.littleNavs') && document.querySelector('.navigationShadow')) {
         if (window.scrollY >= 50 && windowSize.innerWidth > 425) {
-          document.querySelector('.littleNavs').style.visibility = 'hidden';
-          document.querySelector('.navigationShadow').style.position = 'sticky';
-          document.querySelector('.navigationShadow').style.top = '-40px';
-          document.querySelector('.navigationShadow').style.zIndex = '3';
+          document.querySelector('.littleNavs').style.visibility = 'hidden'
+          document.querySelector('.navigationShadow').style.position = 'sticky'
+          document.querySelector('.navigationShadow').style.top = '-40px'
+          document.querySelector('.navigationShadow').style.zIndex = '3'
         } else if (windowSize.innerWidth <= 425) {
-          document.querySelector('.navigationShadow').style.position = 'sticky';
-          document.querySelector('.navigationShadow').style.top = '0px';
-          document.querySelector('.navigationShadow').style.zIndex = '3';
+          document.querySelector('.navigationShadow').style.position = 'sticky'
+          document.querySelector('.navigationShadow').style.top = '0px'
+          document.querySelector('.navigationShadow').style.zIndex = '3'
         } else {
-          document.querySelector('.littleNavs').style.visibility = 'visible';
-          document.querySelector('.navigationShadow').style.top = '0px';
-          document.querySelector('.navigationShadow').style.position = 'relative';
-          document.querySelector('.navigationShadow').style.zIndex = '3';
+          document.querySelector('.littleNavs').style.visibility = 'visible'
+          document.querySelector('.navigationShadow').style.top = '0px'
+          document.querySelector('.navigationShadow').style.position = 'relative'
+          document.querySelector('.navigationShadow').style.zIndex = '3'
         }
       }
     })
