@@ -9,3 +9,14 @@ export const GetUser = () => {
     }
 }
 
+export const OpenMask = () => {
+    return {
+        type: 'openMask'
+    }
+}
+
+export const CloseMask = () => {
+    return {
+        type: 'closeMask'
+    }
+}

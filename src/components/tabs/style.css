@@ -1,5 +1,5 @@
 .css-13xfq8m-MuiTabPanel-root {
-  padding: 15px 0 !important;
+  padding: 10px 0 15px 0 !important;
 }
 
 .webTabs {
@@ -14,10 +14,10 @@
   font-weight: 600 !important;
   font-size: 12px !important;
   line-height: 16px !important;
-  /* font-family: "Open Sans" !important; */
 }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  padding-left: 0 !important;
   color: #333333 !important;
 }
 

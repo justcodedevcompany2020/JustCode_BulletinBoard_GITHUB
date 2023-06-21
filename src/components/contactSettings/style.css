@@ -20,7 +20,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 40px;
-  padding: 15px;
+  padding: 10px;
 }
 
 .eachContactConfirmation {
@@ -75,7 +75,6 @@
     gap: 10px;
   }
   .eachContact {
-    padding: 15px;
     gap: 20px;
   }
 }

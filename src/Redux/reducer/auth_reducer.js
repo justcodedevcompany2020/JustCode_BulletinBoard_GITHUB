@@ -12,6 +12,12 @@ export const Auth_reducer = (state = store, action) => {
         case 'closeMenu':
             temp.openCategories = false
             break
+        case 'openMask':
+            temp.openMask = true
+            break;
+        case 'closeMask':
+            temp.openMask = false
+            break;
         default:
             return temp;
     }

@@ -195,7 +195,7 @@ export const MyActiveAnnouncements = () => {
                 </div>
             ))
                 : <div className='noActiveAnnouncements'>
-                    <p>У вас нет активных объявлений в данный момент.</p>
+                    <p>Здесь вы найдете все активные объявления. В данный момент у вас нет активных объявлений.</p>
                     <button onClick={() => window.location = '/create'}>Разместить обьявление</button>
                 </div>
             }

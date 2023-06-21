@@ -47,13 +47,13 @@
 }
 
 .mainSliderPrev {
-  left: 20px;
+  left: 110px;
   top: 32%;
   z-index: 1;
 }
 
 .mainSliderNext {
-  right: 22px;
+  right: 110px;
   top: 32%;
   z-index: 1;
 }
@@ -86,10 +86,10 @@
     line-height: 25px;
   }
   .mainSliderNext {
-    right: 40px;
+    right: 70px;
   }
   .mainSliderPrev {
-    left: 40px;
+    left: 70px;
   }
   .mainSlider {
     margin: auto;

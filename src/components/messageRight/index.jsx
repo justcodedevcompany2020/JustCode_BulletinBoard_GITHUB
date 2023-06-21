@@ -40,7 +40,8 @@ export const MessageRight = ({ currentMemberId, setCurrentMemberId, currentMembe
             ]
         },
     ])
-    const conversationRef = useRef(null);
+    const [seeMore, setSeeMore] = useState(false)
+    const conversationRef = useRef(null)
     const [scrollToBottom] = useState(new Date())
     const [message, setMessage] = useState('')
     const [activeAttachment, setActiveAttachment] = useState(false)
@@ -105,7 +106,12 @@ export const MessageRight = ({ currentMemberId, setCurrentMemberId, currentMembe
                         <img alt='' src={require(`../../public/${currentMember?.image}`)} />
                         <h2>{currentMember?.name}</h2>
                     </div>
-                    <MoreIcons />
+                    <div className='moreIcons' onClick={() => seeMore ? setSeeMore(false) : setSeeMore(true)}>
+                        <MoreIcons />
+                        <div className='seeMore' style={seeMore ? { display: 'flex', top: '25px' } : { display: 'none' }}>
+                            <span>Разблокировать</span>
+                        </div>
+                    </div>
                 </div>
                 <div className='loginSeparator' />
             </div>

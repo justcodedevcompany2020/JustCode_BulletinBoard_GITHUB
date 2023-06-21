@@ -33,12 +33,12 @@ export const MyPayments = () => {
                         </div>
                         <div className='eachMyPayment' id='eachPayRight'>
                             <p onClick={() => console.log('id --->>>', e?.id)} style={{ cursor: 'pointer' }}>Пополнить кошелёк</p>
-                            <span>{e?.price}</span>
+                            <span style={{color: '#333333'}}>{e?.price}</span>
                         </div>
                     </div>
                 ))
                 : <div className='noActiveAnnouncements'>
-                    <p>No Payments</p>
+                    <p>Вы не совершили ни одного платежа.</p>
                 </div>
             }
         </div>

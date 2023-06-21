@@ -34,7 +34,7 @@ export const MyOperations = () => {
                     </div>
                 ))
                 : <div className='noActiveAnnouncements'>
-                    <p>No operations</p>
+                    <p>Вы не совершили ни одну операцию.</p>
                 </div>
             }
         </div>

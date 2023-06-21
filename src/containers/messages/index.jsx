@@ -55,7 +55,13 @@ export const Messages = () => {
                     <MessageLeft currentMemberId={currentMemberId} setCurrentMemberId={setCurrentMemberId} />
                 </div>
                 <div className='messageRightSide'>
-                    <MessageRight currentMemberId={currentMemberId} setCurrentMemberId={setCurrentMemberId} currentMember={currentMember} />
+                    {currentMemberId
+                        ? <MessageRight currentMemberId={currentMemberId} setCurrentMemberId={setCurrentMemberId} currentMember={currentMember} />
+                        : <div className='centerDiv' style={{ height: '90%' }}>
+                            <p id='whoToMessage'>Выберите кому бы вы хотели написать</p>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>

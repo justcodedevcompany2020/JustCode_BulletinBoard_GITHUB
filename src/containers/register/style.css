@@ -43,6 +43,68 @@
   text-align: center;
 }
 
+.phoneMask {
+  display: flex;
+  width: 100%;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  position: relative;
+}
+
+.chooseMask {
+  padding: 10px;
+  border-right: 1px solid #ebebeb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.phoneMask > input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.chooseMask > img {
+  width: 25px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.allPhoneMasks {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 200px;
+  overflow-y: auto;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.eachPhoneMask {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.eachPhoneMask:hover {
+  background: #ebebeb;
+}
+
+.eachPhoneMask > img {
+  width: 25px;
+  height: 20px;
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 768px) {
   .registerCheckbox > label {
     width: 80%;

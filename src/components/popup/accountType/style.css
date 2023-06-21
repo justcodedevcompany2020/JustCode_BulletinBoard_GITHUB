@@ -1,9 +1,3 @@
-.accTypeRadio {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .individualType {
   display: flex;
   flex-direction: column;
@@ -30,7 +24,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 10px;
+  gap: 15px;
 }
 
 #accTypeMrg {
@@ -58,4 +52,23 @@
 .accountTypeButton > button {
   width: 244px;
   height: 41px;
+}
+
+.accTypeRadio {
+  cursor: pointer;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  gap: 5px;
+}
+
+.accTypeRadio > input {
+  cursor: pointer;
+  color: #6585ff;
+  width: 19px;
+  height: 19px;
+  border-radius: 10px;
+  accent-color: currentColor;
 }

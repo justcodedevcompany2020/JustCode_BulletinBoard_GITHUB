@@ -14,7 +14,6 @@
   width: 20%;
   max-width: 220px;
   min-width: 174px;
-  /* margin-bottom: 20px; */
 }
 
 .eachMenuTop > img {
@@ -35,10 +34,6 @@
   line-height: 19px;
 }
 
-/* .topMain {
-  background: #fffbe7;
-} */
-
 .mainTop {
   width: 80%;
   max-width: 1440px;
@@ -47,7 +42,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* padding-bottom: 20px; */
   background: #fffbe7;
 }
 
@@ -79,7 +73,7 @@
   justify-content: center;
   align-items: center;
   right: 10px;
-  bottom: 55px;
+  top: 155px;
   cursor: pointer;
 }
 
@@ -93,9 +87,6 @@
 
 .prevArrTop {
   z-index: 1;
-  /* top: 0;
-  bottom: 0;
-  margin: auto; */
   left: -20px;
   top: 35%;
 }
@@ -104,9 +95,6 @@
   z-index: 1;
   right: -20px;
   top: 35%;
-  /* top: 0;
-  bottom: 0;
-  margin: auto; */
 }
 
 @media screen and (max-width: 1024px) {

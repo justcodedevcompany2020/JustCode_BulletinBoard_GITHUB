@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
 import myReducer from './Redux/reducer/myReducer'
 import { applyMiddleware, legacy_createStore as createStore } from 'redux'
+import './fonts/OpenSans.ttf'
 
 const store = createStore(
   myReducer,

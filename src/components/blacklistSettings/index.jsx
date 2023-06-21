@@ -66,7 +66,7 @@ export const BlacklistSettings = () => {
                     </div>
                 )
                 : <div className='noActiveAnnouncements'>
-                    <p>No blacklist</p>
+                    <p>Здесь вы увидите список заблокированных вами пользователей. <br/> В настоящее время у вас нет заблокированных пользователей.</p>
                 </div>
             }
         </div>

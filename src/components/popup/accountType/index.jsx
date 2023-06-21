@@ -19,17 +19,15 @@ export const AccountType = ({ open, setOpen }) => {
                     </div>
                     <div className='passInputs' id='accTypeMrg'>
                         <label htmlFor='accountType' className='individualType'>
-                            <div className='accTypeRadio'>
-                                <input type='radio' name='type' checked={accountType === 0 ? true : false} onChange={(e) => e.target.checked === true ? setAccountType(0) : setAccountType(1)} />
-                                <span>Индивидуальный</span>
-                            </div>
+                            <label className='accTypeRadio'>
+                                <input type='radio' name='type' checked={accountType === 0 ? true : false} onChange={(e) => e.target.checked === true ? setAccountType(0) : setAccountType(1)} /> Индивидуальный
+                            </label>
                             <p>Все необходимые функции для работы с объявлениями.</p>
                         </label>
                         <label htmlFor='accountType' className='individualType'>
-                            <div className='accTypeRadio'>
-                                <input type='radio' name='type' checked={accountType === 1 ? true : false} onChange={(e) => e.target.checked === true ? setAccountType(1) : setAccountType(0)} />
-                                <span>Индивидуальный</span>
-                            </div>
+                            <label className='accTypeRadio'>
+                                <input type='radio' name='type' checked={accountType === 1 ? true : false} onChange={(e) => e.target.checked === true ? setAccountType(1) : setAccountType(0)} /> Бизнес
+                            </label>
                             <span>12,000 Р в год</span>
                             <p>Бизнес страница в своем стиле и информация о бизнесе на страницах ваших объявлений. Пакеты со скидками на размещение и обновление объявлений сверх лимита.</p>
                         </label>

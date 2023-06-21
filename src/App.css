@@ -36,7 +36,6 @@ input::placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  /* color: #969696; */
   color: #a7a7a7;
 }
 
@@ -71,17 +70,10 @@ body::-webkit-scrollbar {
   background: #b1b1b1;
 }
 
-@font-face {
-  font-family: "OpenSans";
-  src: url("../src//fonts/OpenSans-VariableFont_wdth\,wght.ttf");
-  font-weight: 500;
-}
-
 textarea::placeholder {
   font-weight: 400;
   font-size: 14px;
   line-height: 19px;
-  /* color: #969696; */
   color: red;
 }
 

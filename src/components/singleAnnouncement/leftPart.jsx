@@ -1,67 +1,10 @@
 import './style.css'
+import { MobileHeart } from '../svg'
 import { Carousel } from 'react-carousel-minimal'
 import { MobileRightPart } from './mobileRightPart'
-import { useEffect, useState } from 'react'
-import { Camera, MobileHeart, NextArrow, PreviousArrow } from '../svg'
 
 export const SingleAnnouncementLeftPart = () => {
-    // const images = [
-    //     {
-    //         image: 'shkaf.png'
-    //     },
-    //     {
-    //         image: 'shkaf2.png'
-    //     },
-    //     {
-    //         image: 'ad.png'
-    //     },
-    //     {
-    //         image: 'apartment.png'
-    //     },
-    //     {
-    //         image: 'auto.png'
-    //     },
-    //     {
-    //         image: 'madeInArmenia.png'
-    //     },
-    // ]
-    // const [imageCount, setImageCount] = useState(0)
-
-    // useEffect(() => {
-    //     const current = document.querySelectorAll('.opacity')
-    //     current.forEach((e, i) => {
-    //         if (i === imageCount) {
-    //             e.style.opacity = '0.5'
-    //         } else {
-    //             e.style.opacity = '1'
-    //         }
-    //     })
-    // }, [imageCount])
-
-    // function handleImageChange(change) {
-    //     const slidingBox = document.querySelector('.slidingBox')
-    //     slidingBox.style.transition = '400ms'
-
-    //     if (change == 'next') {
-    //         if (imageCount == images.length - 1) {
-    //             slidingBox.style.transition = '0ms'
-    //             setImageCount(0)
-    //         } else {
-    //             setImageCount(imageCount + 1)
-    //         }
-    //     } else if (change == 'prev') {
-
-    //         if (imageCount == 0) {
-    //             slidingBox.style.transition = '0ms'
-    //             setImageCount(images.length - 1)
-    //         } else {
-    //             setImageCount(imageCount - 1)
-    //         }
-    //     }
-    //     // slidingBox.style.transition = '400ms'
-    // }
-
-    const data = [
+    const images = [
         {
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
         },
@@ -105,60 +48,24 @@ export const SingleAnnouncementLeftPart = () => {
                     <MobileHeart />
                 </div>
             </div>
-
-            {/* <div className='imageSlider'>
-                <div className='mainImage'>
-                    <div className='slidingBox' style={{ left: `${-imageCount}00%` }}>
-                        {images.length > 0 && images.map((e, i) => (
-                            <img alt='' src={require(`../../public/${e.image}`)} />
-                        ))}
-                    </div>
-                    <div className='imageCount'>
-                        <Camera />
-                        <span>10</span>
-                    </div>
-                    <div className='previousArrow prevArrSingle' onClick={() => handleImageChange('prev')}>
-                        <PreviousArrow />
-                    </div>
-                    <div className='nextArrow nextArrSingle' onClick={() => handleImageChange('next')}>
-                        <NextArrow />
-                    </div>
-                </div>
-                <div className='allSliderImages'>
-                    {images.length > 0 && images.map((e, i) => (
-                        <div className='opacity' onClick={() => { setImageCount(i) }} key={i}>
-                            <img alt='' src={require(`../../public/${e.image}`)} style={{ transitionDuration: '1s' }} />
-                        </div>
-                    ))}
-                </div>
-            </div> */}
-
             <Carousel
-                data={data}
+                data={images}
                 time={2000}
                 width="850px"
                 height="500px"
-                // captionStyle={captionStyle}
                 radius="10px"
                 slideNumber={true}
                 slideNumberStyle={slideNumberStyle}
                 captionPosition="bottom"
-                // automatic={true}
-                // dots={true}
-                // pauseIconColor="white"
-                // pauseIconSize="40px"
                 slideBackgroundColor="transparent"
                 slideImageFit="cover"
                 thumbnails={true}
                 thumbnailWidth="90px"
             />
-
             <div className='urgent'>
                 <span>Срочно!</span>
             </div>
-
             <MobileRightPart />
-
             <div className='mainInfo'>
                 <div className='eachInfo'>
                     <span>Местоположение</span>

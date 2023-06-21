@@ -37,3 +37,10 @@
   top: 0;
   left: 0;
 }
+
+#whoToMessage {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #969696;
+}

@@ -25,7 +25,7 @@ export const MobileMenu = ({ open, setOpen }) => {
         {
             title: 'Войти',
             icon: <Login />,
-            path: '/login'
+            path: '/auth/login'
         },
     ]
     return (

@@ -63,7 +63,7 @@ export const ProfilSettings = () => {
             <div className='profileInfo'>
                 <div className='eachProfileSetting'>
                     <span>Ваш аватар</span>
-                    <div className='changeAvatar'>
+                    <div className='changeAvatar' style={{ alignItems: 'center' }}>
                         <img alt='' src={photoURL} />
                         <label className='cursor'>
                             <input type="file"

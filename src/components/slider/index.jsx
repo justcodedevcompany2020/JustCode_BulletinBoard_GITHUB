@@ -70,6 +70,40 @@ export const Slider = () => {
         }
     }, [context.windowSize.innerWidth, bigScreen])
 
+    // const element = document.querySelector('.slider')
+    // let lastScrollTop = 0
+
+    // if (element) {
+    //     element.onscroll = (e) => {
+    //         if (element.scrollTop < lastScrollTop) {
+    //             // upscroll 
+    //             return;
+    //         }
+    //         lastScrollTop = element.scrollTop <= 0 ? 0 : element.scrollTop;
+    //         if (element.scrollTop + element.offsetHeight >= element.scrollHeight) {
+    //             console.log("End");
+    //         }
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     if (carouselRef.current.offsetWidth === carouselRef?.current?.scrollLeft) {
+    //         alert()
+    //     }
+    //     console.log(carouselRef?.current?.offsetWidth)
+    //     console.log(carouselRef?.current?.scrollLeft)
+    // }, [])
+
+    // // console.log(carouselRef?.current?.offsetWidth)
+
+    // setInterval(() => {
+    //     carouselRef.current.scrollBy({
+    //         top: 0,
+    //         left: bigScreen ? 345 : context.windowSize.innerWidth - 20,
+    //         behavior: 'smooth'
+    //     })
+    // }, 3000)
+
     const scrollRight = () => {
         carouselRef.current.scrollBy({
             top: 0,

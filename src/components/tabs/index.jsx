@@ -58,7 +58,7 @@ export default function Tabs({ tabList, tabPanel }) {
                         <MobileTabs tabList={tabList} />
                     </div>
                 </Box>
-                {bigScreen > 425 &&
+                {bigScreen &&
                     tabPanel.map((e, i) => (
                         <TabPanel key={i} value={i + 1 + ''}>{e}</TabPanel>
                     ))

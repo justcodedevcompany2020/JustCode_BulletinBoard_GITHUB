@@ -29,7 +29,7 @@ export const MainNavs = () => {
                         <button className='navGreyButton' onClick={() => window.location = '/profile'}>Мой профиль</button>
                     </div>
                     : <div className='eachMainNav'>
-                        <button className='navGreyButton' onClick={() => window.location = '/login'}>Войти</button>
+                        <button className='navGreyButton' onClick={() => window.location = '/auth/login'}>Войти</button>
                     </div>
                 }
             </div>

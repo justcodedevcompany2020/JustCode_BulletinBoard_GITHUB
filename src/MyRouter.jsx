@@ -16,15 +16,18 @@ import { MyAnnouncements } from './containers/myAnnouncements'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SingleAnnouncement } from './components/singleAnnouncement'
 import { CreateAnnouncement } from './containers/createAnnouncement'
+import { AuthLayout } from './containers/authLayout'
 
 export const MyRouter = () => {
-    if (window.location.pathname === '/login' || window.location.pathname === '/register' || window.location.pathname === '/forgotPassword') {
+    if (window.location.pathname === '/auth/login' || window.location.pathname === '/auth/register' || window.location.pathname === '/auth/forgotPassword') {
         return (
             <BrowserRouter>
                 <Routes>
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/forgotPassword' element={<ForgotPassword />} />
-                    <Route path='/register' element={<Register />} />
+                    <Route path='/auth' element={<AuthLayout />}>
+                        <Route path='/auth/login' element={<Login />} />
+                        <Route path='/auth/forgotPassword' element={<ForgotPassword />} />
+                        <Route path='/auth/register' element={<Register />} />
+                    </Route>
                 </Routes>
             </BrowserRouter>
         )
