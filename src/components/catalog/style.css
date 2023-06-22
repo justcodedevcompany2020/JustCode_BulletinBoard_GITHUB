@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 }
 
 .catalogItems > img {
@@ -23,10 +23,67 @@
   color: #969696;
 }
 
+.catalogImages {
+  /* min-width: 220px; */
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  background: #ffffff;
+  flex: 1;
+}
+
+.catalogImages > img {
+  height: 180px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
+.profileUrgent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 155px;
+  left: 10px;
+  background: rgba(255, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.profileUrgent > span {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.profileBuyMe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 155px;
+  left: 10px;
+  background: rgba(36, 111, 255, 0.4);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.profileBuyMe > span {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #ffffff;
+}
+
+
 @media screen and (max-width: 768px) {
-  .catalogImages {
-    width: 31%;
-  }
+  /* .catalogImages {
+    max-width: 165px;
+  } */
   .changeCat {
     margin-top: 20px;
   }
@@ -39,7 +96,7 @@
   .catalogItems {
     justify-content: space-between;
   }
-  .catalogImages {
+  /* .catalogImages {
     width: 45%;
-  }
+  } */
 }

@@ -27,3 +27,12 @@
   padding: 20px 0;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 768px) {
+  .autoUrgent {
+    top: 100px;
+  }
+  .buyMe {
+    top: 100px;
+  }
+}

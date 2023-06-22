@@ -11,7 +11,7 @@
   gap: 10px;
   position: relative;
   background: #ffffff;
-  width: 20%;
+  flex: 1;
   max-width: 220px;
   min-width: 174px;
 }
@@ -35,13 +35,9 @@
 }
 
 .mainTop {
-  width: 80%;
+  width: 100%;
   max-width: 1440px;
   margin: auto;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   background: #fffbe7;
 }
 
@@ -81,10 +77,6 @@
   padding: 0 10px 20px;
 }
 
-.topArrows {
-  position: relative;
-}
-
 .prevArrTop {
   z-index: 1;
   left: -20px;
@@ -97,9 +89,29 @@
   top: 35%;
 }
 
+.topArrowsSlider {
+  position: absolute;
+  width: 100%;
+  top: 150px;
+}
+
+.topMain {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+@media screen and (min-width: 1790px) {
+  .topMain {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .eachMenuTop {
-    width: 30%;
     min-width: 170px;
   }
 }
@@ -120,8 +132,16 @@
     align-items: flex-start;
   }
   .eachMenuTop {
-    width: 20%;
     min-width: 147px;
+  }
+  .topFavorite {
+    top: 120px;
+    width: 25px;
+    height: 25px;
+  }
+  .topFavorite > svg {
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -134,8 +154,5 @@
   }
   .autoAndApartmentRightPart {
     width: 100%;
-  }
-  .eachMenuTop {
-    width: 30%;
   }
 }

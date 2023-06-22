@@ -115,7 +115,7 @@ export const Favorites = () => {
         <div className='catalogItems mrgBtm'>
             {advertisement.length > 0
                 ? advertisement.map((e, i) => (
-                    <div className='eachMenuTop catalogImages' key={i}>
+                    <div className='eachMenuTop catalogImages' key={i} style={{ minWidth: '220px' }}>
                         <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
                             <p>{e.price}</p>
@@ -133,7 +133,7 @@ export const Favorites = () => {
                     </div>
                 ))
                 : <div className='noActiveAnnouncements'>
-                    <p>Нет избранных объявлений. <br/>Если вас заинтересовало объявление, добавьте его в избранное. <br/> Добавить объявление в избранное можно на странице объявления.</p>
+                    <p>Нет избранных объявлений. <br />Если вас заинтересовало объявление, добавьте его в избранное. <br /> Добавить объявление в избранное можно на странице объявления.</p>
                 </div>
             }
         </div>

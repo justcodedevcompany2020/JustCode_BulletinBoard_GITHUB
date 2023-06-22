@@ -85,47 +85,50 @@ export const MainTop = () => {
     }
 
     return (
-        // <div className='topMain'>
         <div className='mainTop'>
-            <div className='pageTitle'>
-                <h2>Топ Обявления</h2>
-                <BiggerSign />
-            </div>
-            <div className='topArrows'>
-                <div className='menuCategorySlider' ref={carouselRef}>
+            <div className='topMain'>
+                <div className='pageTitle' style={{ marginTop: '20px' }}>
+                    <h2>Топ Обявления</h2>
+                    <BiggerSign />
+                </div>
+                <div className='topArrowsSlider'>
                     <div className='previousArrow prevArrTop' onClick={scrollLeft}>
                         <PreviousArrow />
                     </div>
-                    {advertisement.length > 0 && advertisement.map((e, i) => (
-                        <div className='eachMenuTop' key={i}>
-                            <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
-                            <div className='topPadding'>
-                                <p>{e.price}</p>
-                                <span>{e.description}</span>
-                            </div>
-                            <div className='topLocation'>
-                                <span>Ереван</span>
-                            </div>
-                            {e.liked ?
-                                <Tooltip title="Удалить из избранного" placement="top-end" arrow>
-                                    <div className='topFavorite' onClick={() => handleFavorite(e)}>
-                                        <HeartFilled />
-                                    </div>
-                                </Tooltip>
-                                : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
-                                    <div className='topFavorite' onClick={() => handleFavorite(e)}>
-                                        <Heart />
-                                    </div>
-                                </Tooltip>
-                            }
-                        </div>
-                    ))}
                     <div className='nextArrow nextArrTop' onClick={scrollRight}>
                         <NextArrow />
                     </div>
                 </div>
+                <div className='topArrows'>
+                    <div className='menuCategorySlider topMenuSlider' ref={carouselRef}>
+                        {advertisement.length > 0 && advertisement.map((e, i) => (
+                            <div className='eachMenuTop' key={i}>
+                                <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
+                                <div className='topPadding'>
+                                    <p>{e.price}</p>
+                                    <span>{e.description}</span>
+                                </div>
+                                <div className='topLocation'>
+                                    <span>Ереван</span>
+                                </div>
+                                {e.liked ?
+                                    <Tooltip title="Удалить из избранного" placement="top-end" arrow>
+                                        <div className='topFavorite' onClick={() => handleFavorite(e)}>
+                                            <HeartFilled />
+                                        </div>
+                                    </Tooltip>
+                                    : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
+                                        <div className='topFavorite' onClick={() => handleFavorite(e)}>
+                                            <Heart />
+                                        </div>
+                                    </Tooltip>
+                                }
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </div>
-        // </div>
     )
 }

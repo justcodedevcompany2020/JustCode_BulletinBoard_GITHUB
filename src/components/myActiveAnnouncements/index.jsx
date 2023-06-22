@@ -164,7 +164,7 @@ export const MyActiveAnnouncements = () => {
                 onClick={() => console.log('buy selected label')}
             />
             {advertisement.length > 0 ? advertisement.map((e, i) => (
-                <div className='eachMenuTop catalogImages' key={i}>
+                <div className='catalogImages' key={i}>
                     <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                     <div className='topPadding'>
                         <p>{e.price}</p>
@@ -177,12 +177,12 @@ export const MyActiveAnnouncements = () => {
                         <AddToTop />
                     </div>
                     {e.urgent &&
-                        <div className='autoUrgent'>
+                        <div className='profileUrgent'>
                             <span>Срочно !</span>
                         </div>
                     }
                     {e.buyMe &&
-                        <div className='buyMe'>
+                        <div className='profileBuyMe'>
                             <span>Купи меня</span>
                         </div>
                     }
