@@ -40,6 +40,33 @@ export const Appartments = () => {
             urgent: false,
             location: 'Ереван'
         },
+        {
+            price: '950.000 $',
+            image: 'apartment.png',
+            liked: false,
+            description: 'Прокат машин',
+            buyMe: false,
+            urgent: false,
+            location: 'Ереван'
+        },
+        {
+            price: '950.000 $',
+            image: 'apartment.png',
+            liked: false,
+            description: 'Прокат машин',
+            buyMe: false,
+            urgent: false,
+            location: 'Ереван'
+        },
+        {
+            price: '950.000 $',
+            image: 'apartment.png',
+            liked: false,
+            description: 'Прокат машин',
+            buyMe: false,
+            urgent: false,
+            location: 'Ереван'
+        },
     ])
 
     function handleFavorite(event) {
@@ -52,11 +79,13 @@ export const Appartments = () => {
         <div className='autoService'>
             <div className='pageTitle'>
                 <h2>Продажа квартир</h2>
-                <BiggerSign />
+                <div className='centerDiv' style={{ marginTop: '5px' }}>
+                    <BiggerSign />
+                </div>
             </div>
             <div className='autoServiceSlider'>
                 {advertisement.length > 0 && advertisement.map((e, i) => (
-                    <div className='eachMenuTop' key={i}>
+                    <div className='eachMenuAuto' key={i}>
                         <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
                             <p>{e.price}</p>

@@ -7,12 +7,6 @@ export const AutoService = () => {
         {
             price: '300.000 Драм',
             image: 'auto.png',
-            liked: true,
-            description: 'Прокат машин'
-        },
-        {
-            price: '300.000 Драм',
-            image: 'auto.png',
             liked: false,
             description: 'Прокат машин'
         },
@@ -64,11 +58,13 @@ export const AutoService = () => {
         <div>
             <div className='pageTitle'>
                 <h2>Автосервис</h2>
-                <BiggerSign />
+                <div className='centerDiv' style={{ marginTop: '5px' }}>
+                    <BiggerSign />
+                </div>
             </div>
             <div className='autoServiceSlider'>
                 {advertisement.length > 0 && advertisement.map((e, i) => (
-                    <div className='eachMenuTop' key={i} style={{minWidth: 'inherit'}}>
+                    <div className='eachMenuAuto' key={i}>
                         <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
                             <p>{e.price}</p>

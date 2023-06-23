@@ -64,7 +64,9 @@ export const MainBusinessAccounts = () => {
         <div className='businessCategories'>
             <div className='pageTitle'>
                 <h2>Бизнес страницы</h2>
-                <BiggerSign />
+                <div className='centerDiv' style={{marginTop: '5px'}}>
+                    <BiggerSign />
+                </div>
             </div>
             <div className='businessArrows'>
                 <div className='menuCategorySlider' ref={carouselRef}>

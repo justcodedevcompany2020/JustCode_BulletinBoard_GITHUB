@@ -89,7 +89,9 @@ export const MainTop = () => {
             <div className='topMain'>
                 <div className='pageTitle' style={{ marginTop: '20px' }}>
                     <h2>Топ Обявления</h2>
-                    <BiggerSign />
+                    <div className='centerDiv' style={{marginTop: '5px'}}>
+                        <BiggerSign />
+                    </div>
                 </div>
                 <div className='topArrowsSlider'>
                     <div className='previousArrow prevArrTop' onClick={scrollLeft}>
@@ -102,7 +104,7 @@ export const MainTop = () => {
                 <div className='topArrows'>
                     <div className='menuCategorySlider topMenuSlider' ref={carouselRef}>
                         {advertisement.length > 0 && advertisement.map((e, i) => (
-                            <div className='eachMenuTop' key={i}>
+                            <div className='eachMenuAuto' key={i}>
                                 <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                                 <div className='topPadding'>
                                     <p>{e.price}</p>
