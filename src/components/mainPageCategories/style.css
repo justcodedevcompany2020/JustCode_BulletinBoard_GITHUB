@@ -60,6 +60,12 @@
   position: relative;
 }
 
+.infiniteBusinessSlider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 @media screen and (max-width: 768px) {
   .menuCategories > h2 {
     font-size: 20px;

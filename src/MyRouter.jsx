@@ -41,6 +41,7 @@ export const MyRouter = () => {
                         <Route path='/item/:id' element={<SingleAnnouncement />} />
                         <Route path='/seller/:id' element={<Seller />} />
                         <Route path='/catalog/:id' element={<Catalog />} />
+                        <Route path='/create' element={<CreateAnnouncement />} />
                         <Route path='/profile' element={<ProfileLayout />} >
                             <Route path='/profile/profile' element={<MyAnnouncements />} />
                             <Route path='/profile/reviews' element={<Reviews />} />
@@ -50,7 +51,6 @@ export const MyRouter = () => {
                             <Route path='/profile/settings' element={<Settings />} />
                             <Route path='/profile/messages' element={<Messages />} />
                         </Route>
-                        <Route path='/create' element={<CreateAnnouncement />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

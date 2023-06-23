@@ -1,6 +1,6 @@
 import './style.css'
 
-export const NavPath = ({ width }) => {
+export const NavPath = ({ width, padding }) => {
     const navPath = [
         {
             path: 'Главная',
@@ -21,7 +21,7 @@ export const NavPath = ({ width }) => {
     ]
 
     return (
-        <div className='navPath' style={{ width }}>
+        <div className='navPath' style={{ width, padding }}>
             <ul>
                 {navPath.length > 0 && navPath.map((e, i) => {
                     if (i === navPath.length - 1) {

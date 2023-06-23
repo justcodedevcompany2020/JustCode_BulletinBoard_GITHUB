@@ -13,6 +13,7 @@
     "@trendyol-js/react-carousel": "^3.0.2",
     "axios": "^1.4.0",
     "flickity": "^3.0.0",
+    "infinite-react-carousel": "^1.2.11",
     "mui-fb-photo-grid": "^1.2.3",
     "react": "^18.2.0",
     "react-alice-carousel": "^2.7.1",
