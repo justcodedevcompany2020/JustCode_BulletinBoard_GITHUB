@@ -24,7 +24,6 @@
 }
 
 .catalogImages {
-  /* min-width: 220px; */
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   display: flex;
@@ -81,14 +80,14 @@
 
 
 @media screen and (max-width: 768px) {
-  /* .catalogImages {
-    max-width: 165px;
-  } */
   .changeCat {
     margin-top: 20px;
   }
   .catalogItems {
     gap: 10px;
+  }
+  .profileTopFavorite {
+    top: 170px;
   }
 }
 
@@ -96,7 +95,4 @@
   .catalogItems {
     justify-content: space-between;
   }
-  /* .catalogImages {
-    width: 45%;
-  } */
 }

@@ -49,7 +49,7 @@ export const MobileMenu = ({ open, setOpen }) => {
     return (
         <div className={open ? 'mobileCategoriesPopup' : 'inactive'}>
             <div className='mobileCategoriesPopupTop'>
-                <h1>Меню </h1>
+                <h1>Меню</h1>
                 <div className='mobileCategoriesPopupClose' onClick={() => setOpen(false)}>
                     <BlueCloseIcon />
                 </div>

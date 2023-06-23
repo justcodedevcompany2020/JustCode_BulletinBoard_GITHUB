@@ -1,7 +1,11 @@
 import './style.css'
 import { FooterFacebook, FooterInstagram, FooterLinkedIn } from '../svg'
+import ReactFlagsSelect from 'react-flags-select'
+import { useState } from 'react'
+
 
 export const Footer = () => {
+    const [selected, setSelected] = useState("RU")
     return (
         <div className='footerShadow'>
             <div className='footer'>
@@ -9,6 +13,17 @@ export const Footer = () => {
                     <p>Лицензионное соглашение</p>
                     <p>Помощь</p>
                     <p>Реклама на Юле</p>
+                </div>
+                <div className='mobileFooterLang'>
+                    <ReactFlagsSelect
+                        countries={["RU", "AM", "US"]}
+                        selected={selected}
+                        onSelect={(code) => setSelected(code)}
+                        optionsSize={14}
+                        className='countries'
+                        showOptionLabel={true}
+                        showSelectedLabel={true}
+                    />
                 </div>
                 <div className='eachFooterColumn'>
                     <span>JustCode в соцсетях</span>

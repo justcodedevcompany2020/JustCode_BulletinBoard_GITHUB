@@ -133,16 +133,16 @@ export const CatalogItems = () => {
                         <span>{e.location}</span>
                     </div>
                     {e.urgent &&
-                        <div className='autoUrgent'>
+                        <div className='profileUrgent'>
                             <span>Срочно !</span>
                         </div>
                     }
                     {e.buyMe &&
-                        <div className='buyMe'>
+                        <div className='profileBuyMe'>
                             <span>Купи меня</span>
                         </div>
                     }
-                    <div className='topFavorite' onClick={() => handleFavorite(e)}>
+                    <div className='topFavorite profileTopFavorite' onClick={() => handleFavorite(e)}>
                         {e.liked ?
                             <HeartFilled />
                             : <Heart />
