@@ -40,7 +40,7 @@
 .changeAvatar > img {
   width: 35px;
   height: 35px;
-  border-radius: 8px;
+  border-radius: 50%;
 }
 
 .changeAvatar > label {

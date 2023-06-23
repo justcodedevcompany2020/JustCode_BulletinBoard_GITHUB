@@ -68,7 +68,7 @@ export const AutoService = () => {
             </div>
             <div className='autoServiceSlider'>
                 {advertisement.length > 0 && advertisement.map((e, i) => (
-                    <div className='eachMenuTop' key={i}>
+                    <div className='eachMenuTop' key={i} style={{minWidth: 'inherit'}}>
                         <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
                             <p>{e.price}</p>

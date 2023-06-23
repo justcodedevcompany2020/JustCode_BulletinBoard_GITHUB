@@ -24,6 +24,7 @@ export const Messages = () => {
             document.querySelector('.mobileTop').style.display = 'none'
             document.querySelector('.messageLeftSide').style.width = '100%'
             document.querySelector('.messageRightSide').style.width = '0'
+            document.querySelector('#whoToMessage').style.display = 'none'
         } else if (bigScreen && currentMemberId) {
             document.querySelector('.mobileTop').style.display = 'none'
             document.querySelector('.memberRight').style.display = 'flex'
@@ -31,8 +32,10 @@ export const Messages = () => {
             document.querySelector('.messageLeftSide').style.display = 'flex'
             document.querySelector('.messageLeftSide').style.width = '25%'
         } else if (bigScreen && !currentMemberId) {
+            document.querySelector('#whoToMessage').style.display = 'flex'
             document.querySelector('.mobileTop').style.display = 'none'
             document.querySelector('.messageLeftSide').style.width = '25%'
+            document.querySelector('.messageRightSide').style.width = '75%'
         }
     }, [smallScreen, bigScreen, currentMemberId])
 

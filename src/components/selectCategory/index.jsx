@@ -21,6 +21,7 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
             setActiveSubcategory(null)
             setActiveSubcategoryTitle('')
             setActiveSubSubcategory(null)
+            setCurrentImage(null)
         }
     }, [openCategories])
 
@@ -85,9 +86,11 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
                             </div>
                         }
                     </div>
-                    <div className='catImages'>
-                        {currentImage && <img alt='' src={require(`../../public/${currentImage}`)} />}
-                    </div>
+                    {currentImage &&
+                        <div className='catImages'>
+                            <img alt='' src={require(`../../public/${currentImage}`)} />
+                        </div>
+                    }
                 </div>
             }
         </>

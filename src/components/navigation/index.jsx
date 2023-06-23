@@ -7856,9 +7856,9 @@ export const Navigation = () => {
                     <MainNavs />
                     <MobileNavs setOpenMobileCategories={setOpenMobileCategories} setOpenMobileMenu={setOpenMobileMenu} />
                 </div>
-            </div>
-            <div className={openCategories ? 'openCategories' : 'closedCategories'}>
-                <SelectCategory categories={categories} openCategories={openCategories} setOpenCategories={setOpenCategories} />
+                <div className={openCategories ? 'openCategories' : 'closedCategories'}>
+                    <SelectCategory categories={categories} openCategories={openCategories} setOpenCategories={setOpenCategories} />
+                </div>
             </div>
         </>
     )

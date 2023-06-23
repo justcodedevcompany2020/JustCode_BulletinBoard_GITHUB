@@ -39,6 +39,10 @@ input::placeholder {
   color: #a7a7a7;
 }
 
+* {
+  scrollbar-width: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -107,6 +111,12 @@ textarea::placeholder {
 
 .stepper {
   width: 70%;
+}
+
+@media screen and (max-width: 768px) {
+  .css-1hv8oq8-MuiStepLabel-label {
+    font-size: 12px !important;
+  }
 }
 
 @media screen and (max-width: 425px) {

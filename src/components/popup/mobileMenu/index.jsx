@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { BlueArrowRight, BlueCloseIcon, CreateAnnouncement, Favorites, Login, Message, Wallet } from '../../svg'
 
 export const MobileMenu = ({ open, setOpen }) => {
@@ -28,6 +29,23 @@ export const MobileMenu = ({ open, setOpen }) => {
             path: '/auth/login'
         },
     ]
+
+    useEffect(() => {
+        if (open) {
+            if (document.querySelector('.pageBg') && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
+                document.querySelector('.pageBg').style.display = 'none'
+                document.querySelector('.navigationShadow').style.display = 'none'
+                document.querySelector('.footerShadow').style.display = 'none'
+            }
+        } else {
+            if (document.querySelector('.pageBg') && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
+                document.querySelector('.pageBg').style.display = 'block'
+                document.querySelector('.navigationShadow').style.display = 'block'
+                document.querySelector('.footerShadow').style.display = 'block'
+            }
+        }
+    }, [open])
+
     return (
         <div className={open ? 'mobileCategoriesPopup' : 'inactive'}>
             <div className='mobileCategoriesPopupTop'>
