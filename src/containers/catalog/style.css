@@ -31,3 +31,9 @@
   color: #333333;
   cursor: pointer;
 }
+
+.changeCatTop {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}

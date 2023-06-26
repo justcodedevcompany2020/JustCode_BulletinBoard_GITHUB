@@ -93,7 +93,7 @@ export const ProfilSettings = () => {
                         <div className='selectRegion' onClick={() => setOpenRegions(!openRegions)}>
                             <div className='currentRegion'>
                                 <span>{selectedRegion}</span>
-                                <LessThan />
+                                {openRegions ? <GreaterThan /> : <LessThan />}
                             </div>
                             <div className={openRegions ? 'regionDropdown' : 'inactive'}>
                                 {openRegions && regions.map((e, i) => (

@@ -1,12 +1,12 @@
 import './style.css'
+import "swiper/css"
+import 'swiper/css/navigation'
 import Context from '../context'
 import { NextArrow, PreviousArrow } from '../svg'
-import { useContext, useEffect, useRef } from 'react'
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Pagination, Navigation } from "swiper"
+import { useContext, useRef, useState } from 'react'
 
 export const Slider = () => {
-    const slides = [
+    const [slides, setSlides] = useState([
         {
             title: 'Сделано в Армении',
             image: 'madeInArmenia.png',
@@ -52,59 +52,12 @@ export const Slider = () => {
             image: 'automobiles.png',
             background: 'linear-gradient(90deg, #DAF5FD 0%, #B4D1FB 100%)'
         },
-    ]
+    ])
     const context = useContext(Context)
     const carouselRef = useRef(null)
     const smallScreen = window.matchMedia('(max-width: 425px)').matches
     const bigScreen = window.matchMedia('(min-width: 425px)').matches
-
-    useEffect(() => {
-        if (bigScreen) {
-            carouselRef.current.scrollBy({
-                top: 0,
-                left: 100,
-            })
-        } else {
-            carouselRef.current.scrollBy({
-                top: 0,
-                left: 0,
-            })
-        }
-    }, [context.windowSize.innerWidth, bigScreen])
-
-    // const element = document.querySelector('.slider')
-    // let lastScrollTop = 0
-
-    // if (element) {
-    //     element.onscroll = (e) => {
-    //         if (element.scrollTop < lastScrollTop) {
-    //             // upscroll 
-    //             return;
-    //         }
-    //         lastScrollTop = element.scrollTop <= 0 ? 0 : element.scrollTop;
-    //         if (element.scrollTop + element.offsetHeight >= element.scrollHeight) {
-    //             console.log("End");
-    //         }
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     if (carouselRef.current.offsetWidth === carouselRef?.current?.scrollLeft) {
-    //         alert()
-    //     }
-    //     console.log(carouselRef?.current?.offsetWidth)
-    //     console.log(carouselRef?.current?.scrollLeft)
-    // }, [])
-
-    // // console.log(carouselRef?.current?.offsetWidth)
-
-    // setInterval(() => {
-    //     carouselRef.current.scrollBy({
-    //         top: 0,
-    //         left: bigScreen ? 345 : context.windowSize.innerWidth - 20,
-    //         behavior: 'smooth'
-    //     })
-    // }, 3000)
+    const [swiperRef, setSwiperRef] = useState(null);
 
     const scrollRight = () => {
         carouselRef.current.scrollBy({
@@ -112,6 +65,10 @@ export const Slider = () => {
             left: bigScreen ? 345 : context.windowSize.innerWidth - 20,
             behavior: 'smooth'
         })
+        // const newSlides = [...slides]
+        // const eachSlide = newSlides.shift()
+        // newSlides.push(eachSlide)
+        // setSlides(newSlides)
     }
 
     const scrollLeft = () => {
@@ -120,6 +77,10 @@ export const Slider = () => {
             left: - 345,
             behavior: 'smooth'
         })
+        // const newSlides = [...slides]
+        // const eachSlide = newSlides.pop()
+        // newSlides.unshift(eachSlide)
+        // setSlides(newSlides)
     }
 
     return (
@@ -139,33 +100,53 @@ export const Slider = () => {
                         <img alt='' src={require(`../../public/${e.image}`)} />
                     </div>
                 ))}
-
-                {/* <Swiper
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>Slide 1</SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                    <SwiperSlide>Slide 5</SwiperSlide>
-                    <SwiperSlide>Slide 6</SwiperSlide>
-                    <SwiperSlide>Slide 7</SwiperSlide>
-                    <SwiperSlide>Slide 8</SwiperSlide>
-                    <SwiperSlide>Slide 9</SwiperSlide>
-                </Swiper> */}
-
             </div>
+
+            {/* <div className='slider' >
+                <Swiper
+                    onSwiper={setSwiperRef}
+                    allowTouchMove={smallScreen ? true : false}
+                    loop={true}
+                    navigation={true}
+                    modules={[Pagination, Navigation]}
+                    className="mySwiper"
+                    // breakpoints={{
+                    //     320: {
+                    //         slidesPerView: 3,
+                    //         spaceBetween: 100
+                    //     },
+                    //     375: {
+                    //         slidesPerView: 6,
+                    //         spaceBetween: 100,
+                    //     },
+                    //     425: {
+                    //         slidesPerView: 6,
+                    //         spaceBetween: 150,
+                    //     },
+                    //     768: {
+                    //         spaceBetween: 180,
+                    //     },
+                    //     1024: {
+                    //         slidesPerView: 6,
+                    //         spaceBetween: 180
+                    //     },
+                    //     1440: {
+                    //         slidesPerView: 7,
+                    //         spaceBetween: 150
+                    //     }
+
+                    // }}
+                >
+                    {slides.length > 0 && slides.map((e, i) => (
+                        <SwiperSlide  key={i}>
+                            <div className='eachSlide' style={{ background: `${e.background}`, minWidth: smallScreen && context.windowSize.innerWidth - 40 }}>
+                                <span>{e.title}</span>
+                                <img alt='' src={require(`../../public/${e.image}`)} />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div> */}
         </div>
     )
 }

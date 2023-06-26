@@ -1,7 +1,5 @@
 .footerShadow {
-  border: 1px solid #ebebeb;
-  max-width: 1440px;
-  margin: 0 auto;
+  border-top: 1px solid #ebebeb;
 }
 
 .footer {
@@ -61,6 +59,9 @@
 @media screen and (max-width: 768px) {
   .footer {
     width: 90%;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
   }
   .mobileC {
     display: none;
@@ -82,11 +83,6 @@
 }
 
 @media screen and (max-width: 425px) {
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
   .mobileCC {
     justify-content: center;
   }

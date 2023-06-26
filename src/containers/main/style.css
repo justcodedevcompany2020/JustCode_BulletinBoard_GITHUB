@@ -70,4 +70,7 @@
   .webAd > img {
     display: none;
   }
+  .mainAndBusiness {
+    width: 90%;
+  }
 }

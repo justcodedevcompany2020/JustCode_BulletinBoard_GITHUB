@@ -123,7 +123,7 @@ export const CatalogItems = () => {
     return (
         <div className='catalogItems'>
             {advertisement.length > 0 && advertisement.map((e, i) => (
-                <div className='eachMenuTop catalogImages' key={i}>
+                <div className='eachMenuCatalog' key={i}>
                     <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                     <div className='topPadding'>
                         <p>{e.price}</p>

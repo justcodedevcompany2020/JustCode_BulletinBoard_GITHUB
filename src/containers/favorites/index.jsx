@@ -124,7 +124,7 @@ export const Favorites = () => {
                         <div className='topLocation'>
                             <span>{e.location}</span>
                         </div>
-                        <div className='topFavorite' onClick={() => handleFavorite(e)}>
+                        <div className='topFavorite' onClick={() => handleFavorite(e)} style={{top: '170px'}}>
                             {e.liked ?
                                 <HeartFilled />
                                 : <Heart />

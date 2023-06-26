@@ -89,7 +89,7 @@ export const MainTop = () => {
             <div className='topMain'>
                 <div className='pageTitle' style={{ marginTop: '20px' }}>
                     <h2>Топ Обявления</h2>
-                    <div className='centerDiv' style={{marginTop: '5px'}}>
+                    <div className='centerDiv' style={{ marginTop: '5px' }}>
                         <BiggerSign />
                     </div>
                 </div>
@@ -103,6 +103,67 @@ export const MainTop = () => {
                 </div>
                 <div className='topArrows'>
                     <div className='menuCategorySlider topMenuSlider' ref={carouselRef}>
+                        {/* <Swiper
+                            onSwiper={setSwiperRef}
+                            all owTouchMove={smallScreen ? true : false}
+                            loop={true}
+                            navigation={smallScreen ? false : true}
+                            modules={[Pagination, Navigation]}
+                            className="mySwiper"
+                            breakpoints={{
+                                320: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 100
+                                },
+                                375: {
+                                    slidesPerView: 6,
+                                    spaceBetween: 100,
+                                },
+                                425: {
+                                    slidesPerView: 6,
+                                    spaceBetween: 150,
+                                },
+                                768: {
+                                    spaceBetween: 180,
+                                },
+                                1024: {
+                                    slidesPerView: 6,
+                                    spaceBetween: 180
+                                },
+                                1440: {
+                                    slidesPerView: 7,
+                                    spaceBetween: 150
+                                }
+        
+                            }}
+                        >
+                            {advertisement.length > 0 && advertisement.map((e, i) => (
+                                <SwiperSlide key={i}>
+                                    <div className='eachMenuAuto' key={i}>
+                                        <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
+                                        <div className='topPadding'>
+                                            <p>{e.price}</p>
+                                            <span>{e.description}</span>
+                                        </div>
+                                        <div className='topLocation'>
+                                            <span>Ереван</span>
+                                        </div>
+                                        {e.liked
+                                            ? <Tooltip title="Удалить из избранного" placement="top-end" arrow>
+                                                <div className='topFavorite' onClick={() => handleFavorite(e)}>
+                                                    <HeartFilled />
+                                                </div>
+                                            </Tooltip>
+                                            : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
+                                                <div className='topFavorite' onClick={() => handleFavorite(e)}>
+                                                    <Heart />
+                                                </div>
+                                            </Tooltip>
+                                        }
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper> */}
                         {advertisement.length > 0 && advertisement.map((e, i) => (
                             <div className='eachMenuAuto' key={i}>
                                 <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />

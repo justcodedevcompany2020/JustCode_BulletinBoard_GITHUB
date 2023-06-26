@@ -149,6 +149,7 @@
   top: 40px;
   border: 1px solid #ebebeb;
   border-radius: 8px;
+  z-index: 1;
 }
 
 .eachRegion {

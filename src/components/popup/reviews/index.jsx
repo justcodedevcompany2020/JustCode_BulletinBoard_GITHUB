@@ -77,7 +77,7 @@ export const Reviews = ({ open, setOpen }) => {
 
     return (
         <div className={open ? 'active' : 'inactive'}>
-            <div className='pop' style={{ width: '570px', maxHeight: '570px' }}>
+            <div className='pop' style={{ width: '570px' }}>
                 <div className='close' onClick={() => setOpen(false)}>
                     <CloseIcon />
                 </div>

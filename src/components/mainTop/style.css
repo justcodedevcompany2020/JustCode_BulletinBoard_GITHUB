@@ -50,7 +50,7 @@
   left: 10px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 4px 20px;
 }
 
 .topLocation > span {
@@ -148,11 +148,21 @@
 @media screen and (max-width: 425px) {
   .autoAndApartment {
     flex-direction: column;
+    width: 90%;
   }
   .autoAndApartmentLeftPart {
     width: 100%;
   }
   .autoAndApartmentRightPart {
     width: 100%;
+  }
+  .topMain {
+    width: 90%;
+  }
+  .swiper-button-next:after {
+    display: none;
+  }
+  .swiper-button-prev:after {
+    display: none;
   }
 }

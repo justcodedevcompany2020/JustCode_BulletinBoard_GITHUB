@@ -1,6 +1,6 @@
 import './style.css'
-import { useCallback, useRef, useState } from 'react'
-import { BiggerSign, NextArrow, PreviousArrow, RatingFilled, RatingUnfilled } from '../svg'
+import { useRef, useState } from 'react'
+import { BiggerSign, NextArrow, PreviousArrow } from '../svg'
 
 export const MainBusinessAccounts = () => {
     const [advertisement, setAdvertisement] = useState([
@@ -66,8 +66,6 @@ export const MainBusinessAccounts = () => {
         },
     ])
     const carouselRef = useRef(null)
-    // const [scrollLeft, setScrollLeft] = useState(0)
-    // const carouselElementRef = useRef(null)
 
     const scrollRight = () => {
         carouselRef.current.scrollBy({
@@ -85,22 +83,6 @@ export const MainBusinessAccounts = () => {
         })
     }
 
-    // let infiniteBusinessSlider = document.querySelector('.infiniteBusinessSlider')
-    // const actionHandler = useCallback((move) => {
-
-    //     infiniteBusinessSlider.style.transition = '400ms'
-
-    //     if (move === 'next') {
-    //         carouselRef.current += carouselElementRef.current.offsetWidth
-    //         console.log(carouselRef.current);
-    //         setScrollLeft(-carouselRef.current)
-    //     } else if (move === 'prev') {
-    //         carouselRef.current -= carouselElementRef.current.offsetWidth
-    //         console.log(carouselRef.current);
-    //         setScrollLeft(carouselRef.current)
-    //     }
-    // }, [])
-
     return (
         <div className='businessCategories'>
             <div className='pageTitle'>
@@ -110,26 +92,16 @@ export const MainBusinessAccounts = () => {
                 </div>
             </div>
             <div className='businessArrows'>
-                <div className='menuCategorySlider' ref={carouselRef}> {/* style={{ height: carouselRef?.current?.offsetHeight }} */}
-                    <div className='previousArrow prevArrBusiness' onClick={scrollLeft}> {/* onClick={() => actionHandler('prev')} */}
+                <div className='menuCategorySlider' ref={carouselRef}>
+                    <div className='previousArrow prevArrBusiness' onClick={scrollLeft}>
                         <PreviousArrow />
                     </div>
-                    <div className='infiniteBusinessSlider'> {/* style={{ left: scrollLeft }} */}
+                    <div className='infiniteBusinessSlider'>
                         {advertisement.length > 0 && advertisement.map((e, i) => (
-                            <div className='eachMenuBusiness' key={i}> {/* ref={carouselElementRef} */}
-                                <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
-                                <span>{e.title}</span>
-                                <div className='businessRating'>
-                                    <RatingFilled />
-                                    <RatingFilled />
-                                    <RatingFilled />
-                                    <RatingUnfilled />
-                                    <RatingUnfilled />
-                                </div>
-                            </div>
+                            <img alt='' className='eachMenuBusiness' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         ))}
                     </div>
-                    <div className='nextArrow nextArrBusiness' onClick={scrollRight}> {/* onClick={() => actionHandler('next')} */}
+                    <div className='nextArrow nextArrBusiness' onClick={scrollRight}>
                         <NextArrow />
                     </div>
                 </div>

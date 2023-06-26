@@ -23,6 +23,24 @@
   color: #969696;
 }
 
+.eachMenuCatalog {
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  background: #ffffff;
+  flex: 1;
+  max-width: 230px;
+}
+
+.eachMenuCatalog > img {
+  height: 180px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+}
+
 .catalogImages {
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -77,7 +95,6 @@
   line-height: 14px;
   color: #ffffff;
 }
-
 
 @media screen and (max-width: 768px) {
   .changeCat {

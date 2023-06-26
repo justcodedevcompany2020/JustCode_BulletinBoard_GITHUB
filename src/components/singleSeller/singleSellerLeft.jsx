@@ -23,12 +23,12 @@ export const SingleSellerLeft = () => {
                 </div>
             </div>
             <div className='singlwSellerButtons'>
-                <button className='textButton' onClick={() => setWriteReview(true)}>Написать отзыв</button>
+                <button className='callButton blueButton' onClick={() => setWriteReview(true)}>Написать отзыв</button>
                 <WriteReview
                     open={writeReview}
                     setOpen={setWriteReview}
                 />
-                <button className='callButton blueButton' onClick={() => setReview(true)}>Отзывы</button>
+                <button className='textButton' onClick={() => setReview(true)}>Отзывы</button>
                 <Reviews
                     open={review}
                     setOpen={setReview}
