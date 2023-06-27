@@ -66,6 +66,14 @@
   gap: 20px;
 }
 
+.carousel {
+  width: 100% !important;
+}
+
+.horizontalSlider___281Ls {
+  overflow: unset !important;
+}
+
 @media screen and (max-width: 768px) {
   .menuCategories > h2 {
     font-size: 20px;

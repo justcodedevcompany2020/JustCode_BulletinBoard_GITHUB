@@ -407,6 +407,9 @@
   .previousArrow {
     display: none;
   }
+  .nextArrow {
+    display: none;
+  }
   .nextArrTop {
     display: none;
   }
@@ -499,9 +502,9 @@
   /* .previousArrow {
     padding: 6px;
   } */
-  .nextArrow {
+  /* .nextArrow {
     padding: 6px;
-  }
+  } */
   .mobileRightPart {
     display: flex;
     flex-direction: column;

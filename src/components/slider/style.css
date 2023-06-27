@@ -120,7 +120,9 @@ swiper-slide {
     margin: 40px 20px;
   }
   .eachSlide {
-    min-width: 290px;
+    /* min-width: 290px; */
+    width: 90%;
+    margin: auto;
   }
   .eachSlide > img {
     width: 80px;

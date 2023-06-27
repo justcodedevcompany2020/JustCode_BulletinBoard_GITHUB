@@ -1,7 +1,9 @@
 import './style.css'
-import { Tooltip } from '@mui/material'
+import 'pure-react-carousel/dist/react-carousel.es.css'
 import { useRef, useState } from 'react'
 import { BiggerSign, Heart, HeartFilled, NextArrow, PreviousArrow } from '../svg'
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
+import { Tooltip } from '@mui/material'
 
 export const MainTop = () => {
     const [advertisement, setAdvertisement] = useState([
@@ -86,111 +88,63 @@ export const MainTop = () => {
 
     return (
         <div className='mainTop'>
-            <div className='topMain'>
+            <div className='topMain' style={{ overflow: 'auto' }}>
                 <div className='pageTitle' style={{ marginTop: '20px' }}>
                     <h2>Топ Обявления</h2>
                     <div className='centerDiv' style={{ marginTop: '5px' }}>
                         <BiggerSign />
                     </div>
                 </div>
-                <div className='topArrowsSlider'>
-                    <div className='previousArrow prevArrTop' onClick={scrollLeft}>
-                        <PreviousArrow />
-                    </div>
-                    <div className='nextArrow nextArrTop' onClick={scrollRight}>
-                        <NextArrow />
-                    </div>
-                </div>
-                <div className='topArrows'>
-                    <div className='menuCategorySlider topMenuSlider' ref={carouselRef}>
-                        {/* <Swiper
-                            onSwiper={setSwiperRef}
-                            all owTouchMove={smallScreen ? true : false}
-                            loop={true}
-                            navigation={smallScreen ? false : true}
-                            modules={[Pagination, Navigation]}
-                            className="mySwiper"
-                            breakpoints={{
-                                320: {
-                                    slidesPerView: 3,
-                                    spaceBetween: 100
-                                },
-                                375: {
-                                    slidesPerView: 6,
-                                    spaceBetween: 100,
-                                },
-                                425: {
-                                    slidesPerView: 6,
-                                    spaceBetween: 150,
-                                },
-                                768: {
-                                    spaceBetween: 180,
-                                },
-                                1024: {
-                                    slidesPerView: 6,
-                                    spaceBetween: 180
-                                },
-                                1440: {
-                                    slidesPerView: 7,
-                                    spaceBetween: 150
-                                }
-        
-                            }}
-                        >
-                            {advertisement.length > 0 && advertisement.map((e, i) => (
-                                <SwiperSlide key={i}>
-                                    <div className='eachMenuAuto' key={i}>
-                                        <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
-                                        <div className='topPadding'>
-                                            <p>{e.price}</p>
-                                            <span>{e.description}</span>
-                                        </div>
-                                        <div className='topLocation'>
-                                            <span>Ереван</span>
-                                        </div>
-                                        {e.liked
-                                            ? <Tooltip title="Удалить из избранного" placement="top-end" arrow>
-                                                <div className='topFavorite' onClick={() => handleFavorite(e)}>
-                                                    <HeartFilled />
-                                                </div>
-                                            </Tooltip>
-                                            : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
-                                                <div className='topFavorite' onClick={() => handleFavorite(e)}>
-                                                    <Heart />
-                                                </div>
-                                            </Tooltip>
-                                        }
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper> */}
+                <CarouselProvider
+                    naturalSlideWidth={100}
+                    naturalSlideHeight={140}
+                    totalSlides={advertisement.length}
+                    infinite={true}
+                    dragEnabled={false}
+                    visibleSlides={
+                        window.matchMedia("(max-width: 500px)").matches ? 2
+                            : window.matchMedia("(max-width: 560px)").matches ? 2.5
+                                : window.matchMedia("(max-width: 768px)").matches ? 3
+                                    : window.matchMedia("(max-width: 890px)").matches ? 2.5
+                                        : window.matchMedia("(max-width: 1250px)").matches ? 3.5
+                                            : window.matchMedia("(max-width: 1220px)").matches ? 4
+                                                : window.matchMedia("(max-width: 1440px)").matches ? 4.5
+                                                    : window.matchMedia("(max-width: 1550px)").matches ? 5
+                                                        : window.matchMedia("(min-width: 1850px)").matches ? 6
+                                                            : 5
+                    }
+                >
+                    <Slider>
                         {advertisement.length > 0 && advertisement.map((e, i) => (
-                            <div className='eachMenuAuto' key={i}>
-                                <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
-                                <div className='topPadding'>
-                                    <p>{e.price}</p>
-                                    <span>{e.description}</span>
+                            <Slide index={i} key={i}>
+                                <div className='eachTopDiv'>
+                                    <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
+                                    <div className='topPadding'>
+                                        <p>{e.price}</p>
+                                        <span>{e.description}</span>
+                                    </div>
+                                    <div className='topLocation'>
+                                        <span>Ереван</span>
+                                    </div>
+                                    {e.liked ?
+                                        <Tooltip title="Удалить из избранного" placement="top-end" arrow>
+                                            <div className='eachTopFav' onClick={() => handleFavorite(e)}>
+                                                <HeartFilled />
+                                            </div>
+                                        </Tooltip>
+                                        : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
+                                            <div className='eachTopFav' onClick={() => handleFavorite(e)}>
+                                                <Heart />
+                                            </div>
+                                        </Tooltip>
+                                    }
                                 </div>
-                                <div className='topLocation'>
-                                    <span>Ереван</span>
-                                </div>
-                                {e.liked ?
-                                    <Tooltip title="Удалить из избранного" placement="top-end" arrow>
-                                        <div className='topFavorite' onClick={() => handleFavorite(e)}>
-                                            <HeartFilled />
-                                        </div>
-                                    </Tooltip>
-                                    : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
-                                        <div className='topFavorite' onClick={() => handleFavorite(e)}>
-                                            <Heart />
-                                        </div>
-                                    </Tooltip>
-                                }
-                            </div>
+                            </Slide>
                         ))}
-                    </div>
-                </div>
-
+                    </Slider>
+                    <ButtonBack><div className='previousArrow' style={{ top: '45%' }}><PreviousArrow /></div></ButtonBack>
+                    <ButtonNext><div className='nextArrow' style={{ top: '45%', right: 0 }}><NextArrow /></div></ButtonNext>
+                </CarouselProvider>
             </div>
         </div>
     )

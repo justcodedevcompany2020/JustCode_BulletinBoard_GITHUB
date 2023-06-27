@@ -1,11 +1,13 @@
 import './style.css'
 import "swiper/css"
 import 'swiper/css/navigation'
+import 'pure-react-carousel/dist/react-carousel.es.css'
 import Context from '../context'
+import { useContext, useState } from 'react'
 import { NextArrow, PreviousArrow } from '../svg'
-import { useContext, useRef, useState } from 'react'
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
 
-export const Slider = () => {
+export const MainSlider = () => {
     const [slides, setSlides] = useState([
         {
             title: 'Сделано в Армении',
@@ -54,99 +56,37 @@ export const Slider = () => {
         },
     ])
     const context = useContext(Context)
-    const carouselRef = useRef(null)
     const smallScreen = window.matchMedia('(max-width: 425px)').matches
-    const bigScreen = window.matchMedia('(min-width: 425px)').matches
-    const [swiperRef, setSwiperRef] = useState(null);
-
-    const scrollRight = () => {
-        carouselRef.current.scrollBy({
-            top: 0,
-            left: bigScreen ? 345 : context.windowSize.innerWidth - 20,
-            behavior: 'smooth'
-        })
-        // const newSlides = [...slides]
-        // const eachSlide = newSlides.shift()
-        // newSlides.push(eachSlide)
-        // setSlides(newSlides)
-    }
-
-    const scrollLeft = () => {
-        carouselRef.current.scrollBy({
-            top: 0,
-            left: - 345,
-            behavior: 'smooth'
-        })
-        // const newSlides = [...slides]
-        // const eachSlide = newSlides.pop()
-        // newSlides.unshift(eachSlide)
-        // setSlides(newSlides)
-    }
 
     return (
         <div className='mainSlider' >
-            <div className='mainSliderArrows'>
-                <div className='mainSliderPrev' onClick={scrollLeft}>
-                    <PreviousArrow />
-                </div>
-                <div className='nextArrow mainSliderNext' onClick={scrollRight}>
-                    <NextArrow />
-                </div>
-            </div>
-            <div className='slider' ref={carouselRef}>
-                {slides.length > 0 && slides.map((e, i) => (
-                    <div className='eachSlide' key={i} style={{ background: `${e.background}`, minWidth: smallScreen && context.windowSize.innerWidth - 40 }}>
-                        <span>{e.title}</span>
-                        <img alt='' src={require(`../../public/${e.image}`)} />
-                    </div>
-                ))}
-            </div>
-
-            {/* <div className='slider' >
-                <Swiper
-                    onSwiper={setSwiperRef}
-                    allowTouchMove={smallScreen ? true : false}
-                    loop={true}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="mySwiper"
-                    // breakpoints={{
-                    //     320: {
-                    //         slidesPerView: 3,
-                    //         spaceBetween: 100
-                    //     },
-                    //     375: {
-                    //         slidesPerView: 6,
-                    //         spaceBetween: 100,
-                    //     },
-                    //     425: {
-                    //         slidesPerView: 6,
-                    //         spaceBetween: 150,
-                    //     },
-                    //     768: {
-                    //         spaceBetween: 180,
-                    //     },
-                    //     1024: {
-                    //         slidesPerView: 6,
-                    //         spaceBetween: 180
-                    //     },
-                    //     1440: {
-                    //         slidesPerView: 7,
-                    //         spaceBetween: 150
-                    //     }
-
-                    // }}
-                >
+            <CarouselProvider
+                naturalSlideWidth={100}
+                naturalSlideHeight={40}
+                totalSlides={slides.length}
+                infinite={true}
+                dragEnabled={false}
+                visibleSlides={
+                    window.matchMedia("(max-width: 500px)").matches ? 1
+                        : window.matchMedia("(max-width: 768px)").matches ? 1.5
+                            : window.matchMedia("(max-width: 1024px)").matches ? 2
+                                : window.matchMedia("(min-width: 1440px)").matches ? 4
+                                    : 3
+                }
+            >
+                <Slider>
                     {slides.length > 0 && slides.map((e, i) => (
-                        <SwiperSlide  key={i}>
-                            <div className='eachSlide' style={{ background: `${e.background}`, minWidth: smallScreen && context.windowSize.innerWidth - 40 }}>
+                        <Slide index={i} key={i}>
+                            <div className='eachSlide' key={i} style={{ background: `${e.background}`, minWidth: smallScreen && context.windowSize.innerWidth - 40 }}>
                                 <span>{e.title}</span>
                                 <img alt='' src={require(`../../public/${e.image}`)} />
                             </div>
-                        </SwiperSlide>
+                        </Slide>
                     ))}
-                </Swiper>
-            </div> */}
+                </Slider>
+                <ButtonBack><div className='previousArrow' style={{ top: '45%', left: 0 }}><PreviousArrow /></div></ButtonBack>
+                <ButtonNext><div className='nextArrow' style={{ top: '45%', right: 0 }}><NextArrow /></div></ButtonNext>
+            </CarouselProvider>
         </div>
     )
 }

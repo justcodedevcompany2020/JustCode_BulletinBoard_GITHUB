@@ -1,17 +1,17 @@
 import './style.css'
-import { Slider } from '../../components/slider'
+import { Link } from 'react-router-dom'
+import { MainSlider } from '../../components/slider'
 import { MainTop } from '../../components/mainTop'
 import { Appartments } from '../../components/mainApartments'
 import { AutoService } from '../../components/mainAutoService'
 import { MainCategories } from '../../components/mainPageCategories'
 import { MainBusinessAccounts } from '../../components/mainPageBusinessAccounts'
 import { FooterFacebook, FooterInstagram, FooterLinkedIn } from '../../components/svg'
-import { Link } from 'react-router-dom'
 
 export const Main = () => {
     return (
         <div className='main'>
-            <Slider />
+            <MainSlider />
             <div className='mainAndBusiness'>
                 <MainCategories />
                 <MainBusinessAccounts />

@@ -1,6 +1,8 @@
 import './style.css'
-import { useRef, useState } from 'react'
+import 'pure-react-carousel/dist/react-carousel.es.css'
+import { useState } from 'react'
 import { BiggerSign, NextArrow, PreviousArrow } from '../svg'
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
 
 export const MainBusinessAccounts = () => {
     const [advertisement, setAdvertisement] = useState([
@@ -65,23 +67,6 @@ export const MainBusinessAccounts = () => {
             image: 'business.png'
         },
     ])
-    const carouselRef = useRef(null)
-
-    const scrollRight = () => {
-        carouselRef.current.scrollBy({
-            top: 0,
-            left: carouselRef.current.offsetWidth / advertisement.length * 5,
-            behavior: 'smooth'
-        })
-    }
-
-    const scrollLeft = () => {
-        carouselRef.current.scrollBy({
-            top: 0,
-            left: - carouselRef.current.offsetWidth / advertisement.length * 5,
-            behavior: 'smooth'
-        })
-    }
 
     return (
         <div className='businessCategories'>
@@ -91,20 +76,35 @@ export const MainBusinessAccounts = () => {
                     <BiggerSign />
                 </div>
             </div>
-            <div className='businessArrows'>
-                <div className='menuCategorySlider' ref={carouselRef}>
-                    <div className='previousArrow prevArrBusiness' onClick={scrollLeft}>
-                        <PreviousArrow />
-                    </div>
-                    <div className='infiniteBusinessSlider'>
+            <div className='businessArrows' style={{ overflow: 'auto' }}>
+                <CarouselProvider
+                    naturalSlideWidth={100}
+                    naturalSlideHeight={window.matchMedia("(max-width: 1024px)").matches ? 80 : 100}
+                    totalSlides={advertisement.length}
+                    infinite={true}
+                    dragEnabled={false}
+                    visibleSlides={
+                        window.matchMedia("(max-width: 425px)").matches ? 2.5
+                            : window.matchMedia("(max-width: 500px)").matches ? 3
+                                : window.matchMedia("(max-width: 540px)").matches ? 3.5
+                                    : window.matchMedia("(max-width: 650px)").matches ? 4
+                                        : window.matchMedia("(max-width: 768px)").matches ? 5
+                                            : window.matchMedia("(max-width: 1100px)").matches ? 4
+                                                : window.matchMedia("(max-width: 1350px)").matches ? 4
+                                                    : window.matchMedia("(min-width: 1850px)").matches ? 7
+                                                        : 6
+                    }
+                >
+                    <Slider>
                         {advertisement.length > 0 && advertisement.map((e, i) => (
-                            <img alt='' className='eachMenuBusiness' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
+                            <Slide index={i} key={i}>
+                                <img alt='' className='eachMenuBusiness' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
+                            </Slide>
                         ))}
-                    </div>
-                    <div className='nextArrow nextArrBusiness' onClick={scrollRight}>
-                        <NextArrow />
-                    </div>
-                </div>
+                    </Slider>
+                    <ButtonBack><div className='eachBusDivLeft'><PreviousArrow /></div></ButtonBack>
+                    <ButtonNext><div className='eachBusDiv'><NextArrow /></div></ButtonNext>
+                </CarouselProvider>
             </div>
         </div>
     )
