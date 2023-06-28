@@ -142,8 +142,8 @@ export const MainTop = () => {
                             </Slide>
                         ))}
                     </Slider>
-                    <ButtonBack><div className='previousArrow' style={{ top: '45%' }}><PreviousArrow /></div></ButtonBack>
-                    <ButtonNext><div className='nextArrow' style={{ top: '45%', right: 0 }}><NextArrow /></div></ButtonNext>
+                    <ButtonBack><div className='previousArrow' style={{ top: '40%' }}><PreviousArrow /></div></ButtonBack>
+                    <ButtonNext><div className='nextArrow' style={{ top: '40%', right: 0 }}><NextArrow /></div></ButtonNext>
                 </CarouselProvider>
             </div>
         </div>

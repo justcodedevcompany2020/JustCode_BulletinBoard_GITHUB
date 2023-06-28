@@ -114,10 +114,6 @@ textarea::placeholder {
   padding: 0 !important;
 }
 
-.stepper {
-  width: 70%;
-}
-
 .swiper-slide,
 swiper-slide {
   width: fit-content !important;
@@ -179,14 +175,15 @@ swiper-slide {
   height: 50px !important;
 }
 
+.css-0 {
+  width: 70% !important;
+}
+
 @media screen and (max-width: 768px) {
   .css-1hv8oq8-MuiStepLabel-label {
     font-size: 12px !important;
   }
-}
-
-@media screen and (max-width: 425px) {
-  .stepper {
-    width: 100%;
+  .css-0 {
+    width: 100% !important;
   }
 }

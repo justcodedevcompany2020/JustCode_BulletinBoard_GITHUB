@@ -3,6 +3,7 @@
   overflow: hidden;
   max-width: 1440px;
   margin: 30px auto;
+  height: 150px;
 }
 
 .slider {
@@ -17,7 +18,7 @@
 }
 
 .eachSlide {
-  min-width: 360px;
+  width: 95%;
   height: 150px;
   border-radius: 20px;
   position: relative;
@@ -83,13 +84,6 @@
   max-width: 1440px;
 }
 
-/* .swiper-slide,
-swiper-slide {
-  width: 370px !important;
-  height: 150px !important;
-  margin-right: 10px !important;
-} */
-
 @media screen and (min-width: 1780px) {
   .mainSliderPrev {
     left: 0;
@@ -120,7 +114,6 @@ swiper-slide {
     margin: 40px 20px;
   }
   .eachSlide {
-    /* min-width: 290px; */
     width: 90%;
     margin: auto;
   }
@@ -139,6 +132,6 @@ swiper-slide {
     left: 20px;
   }
   .mainSlider {
-    margin: auto;
+    margin: 20px auto;
   }
 }

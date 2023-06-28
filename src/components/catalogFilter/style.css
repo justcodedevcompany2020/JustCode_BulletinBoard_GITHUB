@@ -47,6 +47,7 @@
   display: flex;
   gap: 5px;
   cursor: pointer;
+  width: fit-content;
 }
 
 .subCategory > label > input {
@@ -94,6 +95,32 @@
 .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
     color: #ffffff !important;
 } */
+
+.radioButtonSelected {
+  width: 20px;
+  height: 20px;
+  background: #7791f7;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radioButtonSelected > div {
+  background: #ffffff;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.radioButton {
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #ebebeb;
+}
 
 @media screen and (max-width: 768px) {
   .catalogFilter {

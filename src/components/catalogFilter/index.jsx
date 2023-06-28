@@ -45,6 +45,7 @@ export const CatalogFilter = () => {
     const [sale, setSale] = useState(true)
     const [shop, setShop] = useState(false)
     const [placement, setPlacement] = useState(true)
+    const [selectedRadio, setSelectedRadio] = useState(3)
 
     function handleCheck(event) {
         let item = [...brands]
@@ -161,14 +162,23 @@ export const CatalogFilter = () => {
                     setPlacement(!placement)
                 }}>Срок размещения {placement ? <GreaterThan /> : <LessThan />}</h3>
                 {placement && <>
-                    <label>
-                        <input type='radio' name='placement' /> За 24 часа
+                    <label onClick={() => setSelectedRadio(1)}>
+                        <div className={selectedRadio === 1 ? 'radioButtonSelected' : 'radioButton'}>
+                            <div />
+                        </div>
+                        За 24 часа
                     </label>
-                    <label>
-                        <input type='radio' name='placement' defaultChecked /> За 7 дней
+                    <label onClick={() => setSelectedRadio(2)}>
+                        <div className={selectedRadio === 2 ? 'radioButtonSelected' : 'radioButton'}>
+                            <div />
+                        </div>
+                        За 7 дней
                     </label>
-                    <label>
-                        <input type='radio' name='placement' />За всё время
+                    <label onClick={() => setSelectedRadio(3)}>
+                        <div className={selectedRadio === 3 ? 'radioButtonSelected' : 'radioButton'}>
+                            <div />
+                        </div>
+                        За всё время
                     </label>
                 </>}
             </div>

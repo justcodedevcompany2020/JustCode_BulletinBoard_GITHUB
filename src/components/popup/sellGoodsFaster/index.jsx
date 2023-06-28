@@ -6,7 +6,7 @@ import { BlueCheckmark, CloseIcon } from '../../svg'
 
 export const SellGoodsFaster = ({ open, setOpen, onClickHomeBtn, onClickTopBtn, onClickLabelBtn, selectedLabel, setSelectedLabel }) => {
     return (
-        <div className={open ? 'active' : 'inactive'}>
+        <div className={open ? 'activePopup' : 'inactive'}>
             <div className='pop' style={{ width: '570px' }}>
                 <div className='close' onClick={() => {
                     setOpen(null)

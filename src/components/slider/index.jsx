@@ -66,6 +66,8 @@ export const MainSlider = () => {
                 totalSlides={slides.length}
                 infinite={true}
                 dragEnabled={false}
+                isPlaying={true}
+                interval={5000}
                 visibleSlides={
                     window.matchMedia("(max-width: 500px)").matches ? 1
                         : window.matchMedia("(max-width: 768px)").matches ? 1.5
@@ -84,8 +86,8 @@ export const MainSlider = () => {
                         </Slide>
                     ))}
                 </Slider>
-                <ButtonBack><div className='previousArrow' style={{ top: '45%', left: 0 }}><PreviousArrow /></div></ButtonBack>
-                <ButtonNext><div className='nextArrow' style={{ top: '45%', right: 0 }}><NextArrow /></div></ButtonNext>
+                <ButtonBack><div className='previousArrow' style={{ top: '36%', left: 0 }}><PreviousArrow /></div></ButtonBack>
+                <ButtonNext><div className='nextArrow' style={{ top: '36%', right: 0 }}><NextArrow /></div></ButtonNext>
             </CarouselProvider>
         </div>
     )

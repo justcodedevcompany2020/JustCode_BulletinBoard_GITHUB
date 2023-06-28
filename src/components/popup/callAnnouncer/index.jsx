@@ -3,7 +3,7 @@ import { CloseIcon, Star, Viber, Whatsapp } from '../../svg'
 
 export const CallAnnouncer = ({ open, setOpen }) => {
     return (
-        <div className={open ? 'active' : 'inactive'}>
+        <div className={open ? 'activePopup' : 'inactive'}>
             <div className='pop' style={{ width: '370px' }}>
                 <div className='close' onClick={() => setOpen(false)}>
                     <CloseIcon />

@@ -6,7 +6,7 @@ export const AccountType = ({ open, setOpen }) => {
     const [accountType, setAccountType] = useState(0)
 
     return (
-        <div className={open ? 'active' : 'inactive'}>
+        <div className={open ? 'activePopup' : 'inactive'}>
             <div className='pop' style={{ width: '570px' }}>
                 <div className='close' onClick={() => setOpen(false)}>
                     <CloseIcon />

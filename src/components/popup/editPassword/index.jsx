@@ -11,7 +11,7 @@ export const EditPassword = ({ open, setOpen }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
 
     return (
-        <div className={open ? 'active' : 'inactive'}>
+        <div className={open ? 'activePopup' : 'inactive'}>
             <div className='pop' style={{ width: '570px' }}>
                 <div className='close' onClick={() => {
                     setOpen(false)
