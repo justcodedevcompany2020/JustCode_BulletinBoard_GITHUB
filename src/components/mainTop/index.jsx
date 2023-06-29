@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { BiggerSign, Heart, HeartFilled, NextArrow, PreviousArrow } from '../svg'
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
 import { Tooltip } from '@mui/material'
+import { useEffect } from 'react'
 
 export const MainTop = () => {
     const [advertisement, setAdvertisement] = useState([
@@ -85,6 +86,12 @@ export const MainTop = () => {
         item.find(e => e === event).liked = !item.find(e => e === event).liked
         setAdvertisement(item)
     }
+
+    useEffect(() => {
+        if (document.querySelector('eachTopDiv')) {
+            document.querySelector('eachTopDiv').parentElement.style.outline = 'none'
+        }
+    }, [])
 
     return (
         <div className='mainTop'>

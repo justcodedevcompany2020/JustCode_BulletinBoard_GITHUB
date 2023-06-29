@@ -179,6 +179,15 @@ swiper-slide {
   width: 70% !important;
 }
 
+.buttonBack___1mlaL,
+.buttonFirst___2rhFr,
+.buttonLast___2yuh0,
+.buttonNext___2mOCa,
+.buttonNext___3Lm3s,
+.dot___3c3SI {
+  border: none !important;
+}
+
 @media screen and (max-width: 768px) {
   .css-1hv8oq8-MuiStepLabel-label {
     font-size: 12px !important;

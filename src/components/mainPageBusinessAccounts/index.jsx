@@ -76,7 +76,7 @@ export const MainBusinessAccounts = () => {
                     <BiggerSign />
                 </div>
             </div>
-            <div className='businessArrows' style={{overflowX: 'auto'}}>
+            <div className='businessArrows'>
                 <CarouselProvider
                     naturalSlideWidth={100}
                     naturalSlideHeight={window.matchMedia("(max-width: 1024px)").matches ? 80 : 100}

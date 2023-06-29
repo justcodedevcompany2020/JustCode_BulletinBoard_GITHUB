@@ -34,6 +34,8 @@
 
 .businessArrows {
   position: relative;
+  overflow-x: auto;
+  height: 200px;
 }
 
 .prevArrBusiness {
@@ -84,5 +86,14 @@
   .eachMenuBusiness {
     width: 110px;
     height: 110px;
+  }
+  .eachBusDiv {
+    display: none;
+  }
+  .eachBusDivLeft {
+    display: none;
+  }
+  .businessArrows {
+    height: 120px;
   }
 }

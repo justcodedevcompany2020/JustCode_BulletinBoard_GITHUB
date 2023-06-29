@@ -108,7 +108,7 @@ export const MainCategories = () => {
     return (
         <div className='menuCategories'>
             <h2>Выберите категорию</h2>
-            <div style={{ overflow: 'auto' }}>
+            <div className='mainMenuCat'>
                 <CarouselProvider
                     naturalSlideWidth={100}
                     naturalSlideHeight={90}

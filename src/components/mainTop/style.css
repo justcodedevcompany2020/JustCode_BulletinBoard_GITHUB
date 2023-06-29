@@ -192,6 +192,12 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .mainTop {
+    height: 280px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .eachTopFav {
     top: 105px;
