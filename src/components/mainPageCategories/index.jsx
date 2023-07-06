@@ -11,44 +11,39 @@ export const MainCategories = () => {
             id: 1
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Легковые автомобили',
+            image: 'z2.png',
             id: 2
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Услуги исполнителей',
+            image: 'z3.png',
             id: 3
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Заявка на услуги',
+            image: 'z4.png',
             id: 4
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Женский гардероб',
+            image: 'z5.png',
             id: 5
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Телефоны и планшеты',
+            image: 'z6.png',
             id: 6
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Запчасти и автотовары',
+            image: 'z7.png',
             id: 7
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Детский гардероб',
+            image: 'z8.png',
             id: 8
-        },
-        {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
-            id: 9
         },
         {
             title: 'Недвижимость',
@@ -56,44 +51,39 @@ export const MainCategories = () => {
             id: 1
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Легковые автомобили',
+            image: 'z2.png',
             id: 2
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Услуги исполнителей',
+            image: 'z3.png',
             id: 3
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Заявка на услуги',
+            image: 'z4.png',
             id: 4
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Женский гардероб',
+            image: 'z5.png',
             id: 5
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Телефоны и планшеты',
+            image: 'z6.png',
             id: 6
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Запчасти и автотовары',
+            image: 'z7.png',
             id: 7
         },
         {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
+            title: 'Детский гардероб',
+            image: 'z8.png',
             id: 8
-        },
-        {
-            title: 'Недвижимость',
-            image: 'realEstate.png',
-            id: 9
         },
     ]
 

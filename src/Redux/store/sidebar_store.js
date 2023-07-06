@@ -2,5 +2,6 @@
 export default {
     openCategories: false,
     changeMenu: '',
-    changeWalletMenu: null
+    changeWalletMenu: null,
+    openSearch: false
 }

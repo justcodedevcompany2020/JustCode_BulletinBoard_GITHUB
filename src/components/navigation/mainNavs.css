@@ -111,6 +111,37 @@
   align-items: center;
 }
 
+.myAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobileTopAvatar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .mainNavs {
+    display: none;
+  }
+  .mobileNavigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mobileNavs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+  }
+}
+
 @media screen and (max-width: 830px) {
   .navGreyButton {
     padding: 10px;
@@ -121,18 +152,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .mainNavs {
-    display: none;
-  }
-
-  .mobileNavs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-  }
-
   .mobileCamera {
     width: 30px;
     height: 30px;
@@ -142,14 +161,7 @@
     justify-content: center;
     align-items: center;
   }
-
   .navigation {
     width: 90%;
-  }
-
-  .mobileNavigation {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
   }
 }

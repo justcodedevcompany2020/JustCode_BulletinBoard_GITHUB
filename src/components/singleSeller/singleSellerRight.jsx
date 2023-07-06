@@ -151,7 +151,7 @@ export const SingleSellerRight = () => {
                         <span>{e.location}</span>
                     </div>
                     {e.urgent &&
-                        <div className='autoUrgent'>
+                        <div className='autoUrgent mainAutoUrge'>
                             <span>Срочно !</span>
                         </div>
                     }

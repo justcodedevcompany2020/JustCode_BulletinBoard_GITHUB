@@ -23,3 +23,15 @@ export const ChangeWalletMenu = (menuIndex) => {
         payload: menuIndex,
     }
 }
+
+export const OpenSearch = () => {
+    return {
+        type: 'openSearch',
+    }
+}
+
+export const CloseSearch = () => {
+    return {
+        type: 'closeSearch',
+    }
+}

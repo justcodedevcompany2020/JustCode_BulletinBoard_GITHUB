@@ -7,7 +7,7 @@
   left: 10px;
   background: rgba(36, 111, 255, 0.4);
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 3px 10px;
 }
 
 .buyMe > span {
@@ -15,4 +15,44 @@
   font-size: 10px;
   line-height: 14px;
   color: #ffffff;
+}
+
+.mainAutoUrge {
+  top: 155px;
+}
+
+.mainAutoBuy {
+  top: 155px;
+}
+
+.mainAppBuy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 155px;
+  left: 10px;
+  background: rgba(36, 111, 255, 0.4);
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+
+.mainAppBuy > span {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #ffffff;
+}
+
+.mainAutoFav {
+  top: 165px;
+}
+
+@media screen and (max-width: 768px) {
+  /* .mainAutoUrge {
+    top: 105px;
+  }
+  .mainAutoFav {
+    top: 115px;
+  } */
 }

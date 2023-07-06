@@ -80,7 +80,7 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
                                         onClick={() => {
                                             window.location = `/catalog/${e?.id}`
                                         }}>
-                                        <span>{e?.title}</span>
+                                        <p>{e?.title}</p>
                                     </div>
                                 ))}
                             </div>

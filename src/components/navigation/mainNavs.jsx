@@ -25,8 +25,8 @@ export const MainNavs = () => {
                     <button className='navGreenButton' onClick={() => window.location = '/create'}>Разместить обьявление</button>
                 </div>
                 {user
-                    ? <div className='eachMainNav'>
-                        <button className='navGreyButton' onClick={() => window.location = '/profile'}>Мой профиль</button>
+                    ? <div className='eachMainNav myAvatar'>
+                        <img alt='' src={require('../../public/userDefault.png')} onClick={() => window.location = '/profile/profile'}/>
                     </div>
                     : <div className='eachMainNav'>
                         <button className='navGreyButton' onClick={() => window.location = '/auth/login'}>Войти</button>
@@ -36,3 +36,4 @@ export const MainNavs = () => {
         </div>
     )
 }
+

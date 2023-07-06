@@ -15,6 +15,12 @@ export const Sidebar_reducer = (state = store, action) => {
         case 'changeWalletMenu':
             temp.changeWalletMenu = action.payload
             break;
+        case 'openSearch':
+            temp.openSearch = true
+            break;
+        case 'closeSearch':
+            temp.openSearch = false
+            break;
         default:
             return temp;
     }

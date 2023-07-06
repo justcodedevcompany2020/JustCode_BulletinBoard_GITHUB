@@ -451,11 +451,11 @@
   .postLicense {
     flex-direction: column;
   }
-  .autoServiceSlider {
+  /* .autoServiceSlider {
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 20px;
-  }
+  } */
   .similar {
     width: 90%;
   }

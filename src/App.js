@@ -26,12 +26,17 @@ function App() {
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (document.querySelector('.littleNavs') && document.querySelector('.navigationShadow')) {
-        if (window.scrollY >= 50 && windowSize.innerWidth > 425) {
+        if (window.scrollY >= 50 && windowSize.innerWidth > 1024) {
           document.querySelector('.littleNavs').style.visibility = 'hidden'
           document.querySelector('.navigationShadow').style.position = 'sticky'
           document.querySelector('.navigationShadow').style.top = '-40px'
           document.querySelector('.navigationShadow').style.zIndex = '3'
-        } else if (windowSize.innerWidth <= 425) {
+        } else if (window.scrollY >= 50 && windowSize.innerWidth < 1024) {
+          document.querySelector('.littleNavs').style.visibility = 'hidden'
+          document.querySelector('.navigationShadow').style.position = 'sticky'
+          document.querySelector('.navigationShadow').style.top = '0px'
+          document.querySelector('.navigationShadow').style.zIndex = '3'
+        } else if (windowSize.innerWidth <= 1024) {
           document.querySelector('.navigationShadow').style.position = 'sticky'
           document.querySelector('.navigationShadow').style.top = '0px'
           document.querySelector('.navigationShadow').style.zIndex = '3'

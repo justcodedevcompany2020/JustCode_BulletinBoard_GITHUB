@@ -148,6 +148,16 @@
   .eachMenuTop {
     min-width: 170px;
   }
+  .autoAndApartment {
+    flex-direction: column;
+    width: 90%;
+  }
+  .autoAndApartmentLeftPart {
+    width: 100%;
+  }
+  .autoAndApartmentRightPart {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -206,14 +216,7 @@
     width: 140px;
     height: 182px;
   }
-  .autoAndApartment {
-    flex-direction: column;
-    width: 90%;
-  }
   .autoAndApartmentLeftPart {
-    width: 100%;
-  }
-  .autoAndApartmentRightPart {
     width: 100%;
   }
   .topMain {

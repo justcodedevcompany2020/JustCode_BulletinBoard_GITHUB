@@ -95,16 +95,16 @@ export const Appartments = () => {
                             <span>{e.location}</span>
                         </div>
                         {e.urgent &&
-                            <div className='autoUrgent' style={{ top: '155px'}}>
+                            <div className='autoUrgent mainAutoUrge'>
                                 <span>Срочно !</span>
                             </div>
                         }
                         {e.buyMe &&
-                            <div className='buyMe' style={{ top: '155px'}}>
+                            <div className='mainAppBuy mainAutoBuy'>
                                 <span>Купи меня</span>
                             </div>
                         }
-                        <div className='topFavorite' onClick={() => handleFavorite(e)} style={{ top: '170px' }}>
+                        <div className='topFavorite mainAutoFav' onClick={() => handleFavorite(e)}>
                             {e.liked ?
                                 <HeartFilled />
                                 : <Heart />

@@ -32,7 +32,7 @@ export const MobileMenu = ({ open, setOpen }) => {
 
     useEffect(() => {
         if (open) {
-            if ((document.querySelector('.pageBg') || document.querySelector('.main')) && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
+            if ((document.querySelector('.pageBg') || document.querySelector('.main') || document.querySelector('.mobileCategoriesPopup')) && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
                 if (document.querySelector('.pageBg')) {
                     document.querySelector('.pageBg').style.display = 'none'
                 } else {
@@ -43,8 +43,7 @@ export const MobileMenu = ({ open, setOpen }) => {
             }
         }
         else {
-            if ((document.querySelector('.pageBg') || document.querySelector('.main')) && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
-                console.log('asd');
+            if ((document.querySelector('.pageBg') || document.querySelector('.main') || document.querySelector('.mobileCategoriesPopup')) && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
                 if (document.querySelector('.pageBg')) {
                     document.querySelector('.pageBg').style.display = 'block'
                 } else {

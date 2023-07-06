@@ -70,10 +70,10 @@ export const AutoService = () => {
                             <p>{e.price}</p>
                             <span>{e.description}</span>
                         </div>
-                        <div className='autoUrgent' style={{ top: '155px' }}>
+                        <div className='autoUrgent mainAutoUrge'>
                             <span>Срочно !</span>
                         </div>
-                        <div className='topFavorite' onClick={() => handleFavorite(e)} style={{ top: '170px' }}>
+                        <div className='topFavorite mainAutoFav' onClick={() => handleFavorite(e)}>
                             {e.liked ?
                                 <HeartFilled />
                                 : <Heart />

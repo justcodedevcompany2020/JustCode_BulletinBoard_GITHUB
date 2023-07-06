@@ -36,8 +36,7 @@
   gap: 10px;
   position: relative;
   background: #ffffff;
-  flex: 1;
-  max-width: 200px;
+  width: 22%;
 }
 
 .eachMenuAuto > img {
@@ -47,11 +46,38 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 768px) {
-  .autoUrgent {
-    top: 100px;
+@media screen and (max-width: 1260px) {
+  .eachMenuAuto {
+    max-width: 220px;
   }
+}
+
+@media screen and (max-width: 870px) {
+  .eachMenuAuto {
+    width: 30%;
+    max-width: 220px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .buyMe {
-    top: 100px;
+    top: 105px;
+  }
+  .eachMenuAuto {
+    min-width: 48%;
+    max-width: min-content;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .eachMenuAuto {
+    min-width: 45%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .eachMenuAuto {
+    min-width: 46%;
   }
 }

@@ -5,7 +5,7 @@ import { BlueArrowRight, BlueCloseIcon } from '../../svg'
 export const MobileCategoriesPopup = ({ open, setOpen, setSelectedCategoryTitle, onSelectCategory, categories }) => {
     useEffect(() => {
         if (open) {
-            if ((document.querySelector('.pageBg') || document.querySelector('.main')) && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
+            if ((document.querySelector('.pageBg') || document.querySelector('.main') || document.querySelector('.mobileCategoriesPopup')) && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
                 if (document.querySelector('.pageBg')) {
                     document.querySelector('.pageBg').style.display = 'none'
                 } else {
@@ -16,8 +16,7 @@ export const MobileCategoriesPopup = ({ open, setOpen, setSelectedCategoryTitle,
             }
         }
         else {
-            if ((document.querySelector('.pageBg') || document.querySelector('.main')) && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
-                console.log('asd');
+            if ((document.querySelector('.pageBg') || document.querySelector('.main') || document.querySelector('.mobileCategoriesPopup')) && document.querySelector('.navigationShadow') && document.querySelector('.footerShadow')) {
                 if (document.querySelector('.pageBg')) {
                     document.querySelector('.pageBg').style.display = 'block'
                 } else {
