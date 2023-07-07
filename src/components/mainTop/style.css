@@ -36,7 +36,7 @@
 
 .mainTop {
   width: 100%;
-  max-width: 1440px;
+  /* max-width: 1264px; */
   margin: auto;
   background: #fffbe7;
   height: 370px;
@@ -157,6 +157,9 @@
   }
   .autoAndApartmentRightPart {
     width: 100%;
+  }
+  .topMain {
+    width: 90%;
   }
 }
 

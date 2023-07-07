@@ -1,12 +1,17 @@
+.main {
+  position: relative;
+  width: 100%;
+}
+
 .mainAndBusiness {
-  width: 80%;
+  width: 92%;
   margin: auto;
-  max-width: 1440px;
+  max-width: 1264px;
 }
 
 .autoAndApartment {
-  width: 80%;
-  max-width: 1440px;
+  width: 92%;
+  max-width: 1264px;
   margin: 40px auto;
   display: flex;
   justify-content: space-between;
@@ -55,6 +60,12 @@
 
 .mobileAd {
   display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .webAd {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 425px) {

@@ -3,11 +3,17 @@
   margin: 0 auto;
   display: flex;
   position: relative;
+  max-width: 1264px;
 }
 
 .mainCats {
   display: flex;
   flex-direction: column;
+}
+
+.mainCatsRad {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .selectBorder {

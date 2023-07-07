@@ -24,8 +24,9 @@
 .eachMenuCategory {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: center;
   align-items: center;
+  gap: 30px;
   width: 101px;
   height: 101px;
   background: #ebebeb;
@@ -51,6 +52,8 @@
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
+  position: absolute;
+  bottom: -15px;
 }
 
 .eachMenuCategory > img {

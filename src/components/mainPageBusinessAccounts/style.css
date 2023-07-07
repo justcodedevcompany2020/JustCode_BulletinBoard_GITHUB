@@ -35,7 +35,7 @@
 .businessArrows {
   position: relative;
   overflow-x: auto;
-  height: 200px;
+  min-height: 200px;
 }
 
 .prevArrBusiness {
@@ -97,5 +97,6 @@
   }
   .businessArrows {
     height: 120px;
+    min-height: fit-content;
   }
 }

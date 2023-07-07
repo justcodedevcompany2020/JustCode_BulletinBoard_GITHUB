@@ -2,7 +2,7 @@ import './mainNavs.css'
 import { Searchbar } from '../searchbar'
 import { useSelector } from 'react-redux'
 import { Categories } from '../menuCategories'
-import { NavbarLogo } from '../svg'
+import { DefaultUser, NavbarLogo } from '../svg'
 
 export const MainNavs = () => {
     const user = useSelector(st => st.Auth_reducer.user)
@@ -25,8 +25,8 @@ export const MainNavs = () => {
                     <button className='navGreenButton' onClick={() => window.location = '/create'}>Разместить обьявление</button>
                 </div>
                 {user
-                    ? <div className='eachMainNav myAvatar'>
-                        <img alt='' src={require('../../public/userDefault.png')} onClick={() => window.location = '/profile/profile'}/>
+                    ? <div className='eachMainNav myAvatar' onClick={() => window.location = '/profile/profile'}>
+                        <DefaultUser />
                     </div>
                     : <div className='eachMainNav'>
                         <button className='navGreyButton' onClick={() => window.location = '/auth/login'}>Войти</button>

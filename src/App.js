@@ -1,10 +1,14 @@
 import './App.css'
 import Context from './components/context'
 import { MyRouter } from './MyRouter'
+import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
+import { DownloadApp } from './components/popup/downloadApp'
+import { OpenDownloadApp } from './Redux/action/sidebar_action'
 
 function App() {
   const [windowSize, setWindowSize] = useState(getWindowSize())
+  const dispatch = useDispatch()
 
   function getWindowSize() {
     const { innerWidth, innerHeight } = window
@@ -22,7 +26,6 @@ function App() {
   }, [])
 
   // window.scrollY ete es pahi ira arjeqic poqranuma - verevi navbary cuyc tal, ete mecanuma - cuyc chtal
-
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (document.querySelector('.littleNavs') && document.querySelector('.navigationShadow')) {
@@ -54,8 +57,13 @@ function App() {
     windowSize, setWindowSize
   }
 
+  setTimeout(() => {
+    dispatch(OpenDownloadApp())
+  }, 15000)
+
   return (
     <Context.Provider value={value}>
+      <DownloadApp />
       <MyRouter />
     </Context.Provider>
   )

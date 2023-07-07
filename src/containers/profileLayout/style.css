@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  width: 80%;
+  width: 92%;
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1264px;
 }
 
 .profileLayoutOutline {
-  width: 80%;
+  width: 92%;
 }
 
 .mobileSidebarDisplay {

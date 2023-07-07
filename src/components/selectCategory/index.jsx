@@ -31,7 +31,7 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
                 <div onClick={(e) => e.stopPropagation()} className='selectCategory'>
                     <div className='mainCats'>
                         {categories.length > 0 && categories.map((e, i) => (
-                            <div key={i} className='eachCreateCat' onMouseOver={() => {
+                            <div key={i} className='eachCreateCat eachCreateCatRad' onMouseOver={() => {
                                 setSubcategories(e?.subCategories)
                                 setActiveSubcategory(null)
                                 setSubSubcategories(e?.subCategories[0].subSubcategories)
@@ -71,7 +71,7 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
                             }}>
                                 <h2>{activeSubcategoryTitle}</h2>
                                 {subSubCategories.map((e, i) => (
-                                    <div className='eachCreateCat'
+                                    <div className='eachCreateCat mainCatsRad'
                                         key={i}
                                         style={{ background: activeSubSubcategory === i && '#f5f5f5' }}
                                         onMouseOver={() => {

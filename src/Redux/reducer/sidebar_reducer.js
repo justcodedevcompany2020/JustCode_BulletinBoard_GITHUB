@@ -21,6 +21,12 @@ export const Sidebar_reducer = (state = store, action) => {
         case 'closeSearch':
             temp.openSearch = false
             break;
+        case 'openDownloadApp':
+            temp.openDownloadApp = true
+            break;
+        case 'closeDownloadApp':
+            temp.openDownloadApp = false
+            break;
         default:
             return temp;
     }

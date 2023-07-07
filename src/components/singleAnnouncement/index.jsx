@@ -7,7 +7,7 @@ import { SingleAnnouncementRightPart } from './rightPart'
 export const SingleAnnouncement = () => {
     return (
         <div className='pageBg'>
-            <NavPath width={'80%'} padding={'15px 0 0 0'} />
+            <NavPath width={'92%'} padding={'15px 0 0 0'} />
             <div className='singleMainPart'>
                 <SingleAnnouncementLeftPart />
                 <SingleAnnouncementRightPart />

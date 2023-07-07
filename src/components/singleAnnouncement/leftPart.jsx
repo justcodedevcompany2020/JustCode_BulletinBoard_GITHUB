@@ -2,6 +2,8 @@ import './style.css'
 import { MobileHeart } from '../svg'
 import { Carousel } from 'react-carousel-minimal'
 import { MobileRightPart } from './mobileRightPart'
+import { Maps } from '../popup/maps'
+import { useState } from 'react'
 
 export const SingleAnnouncementLeftPart = () => {
     const images = [
@@ -33,6 +35,7 @@ export const SingleAnnouncementLeftPart = () => {
             image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
         }
     ]
+    const [openMaps, setOpenMaps] = useState(false)
 
     const slideNumberStyle = {
         fontSize: '20px',
@@ -41,6 +44,10 @@ export const SingleAnnouncementLeftPart = () => {
 
     return (
         <div className='singleMainLeft'>
+            <Maps
+                open={openMaps}
+                setOpen={setOpenMaps}
+            />
             <div className='nameBlock'>
                 <h1>Шкафы купе от производителя</h1>
                 <span>Добавить в избранное</span>
@@ -71,7 +78,7 @@ export const SingleAnnouncementLeftPart = () => {
                     <span>Местоположение</span>
                     <div className='showOnMap'>
                         <span>Ереван</span>
-                        <p>Показать на карте</p>
+                        <p onClick={() => setOpenMaps(true)}>Показать на карте</p>
                     </div>
                 </div>
                 <div className='loginSeparator' />

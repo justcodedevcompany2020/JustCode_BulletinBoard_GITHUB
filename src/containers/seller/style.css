@@ -1,8 +1,8 @@
 .singleSeller {
   display: flex;
   gap: 20px;
-  width: 80%;
-  max-width: 1440px;
+  width: 92%;
+  max-width: 1264px;
   margin: 0 auto;
   padding-bottom: 50px;
 }

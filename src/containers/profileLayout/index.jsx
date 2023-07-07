@@ -69,7 +69,7 @@ export const ProfileLayout = () => {
 
     return (
         <div className='pageBg'>
-            <NavPath width={'80%'} padding={'15px 0'} />
+            <NavPath width={'92%'} padding={'15px 0'} />
             <div className='mobileSidebarDisplay'>
                 <MobileSidebar sidebar={sidebar} active={active} setActive={setActive} />
                 <ProfileUser />

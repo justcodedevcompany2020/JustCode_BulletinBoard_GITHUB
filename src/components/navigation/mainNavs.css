@@ -1,6 +1,6 @@
 .navigation {
-  width: 80%;
-  max-width: 1440px;
+  width: 92%;
+  max-width: 1264px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -21,14 +21,19 @@
 .navGreenButton {
   background: #88be45;
   border-radius: 10px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
   color: #ffffff;
   border: none;
   cursor: pointer;
-  padding: 10px 20px;
+  height: 32px;
+  padding: 4px 15px;
   min-width: max-content;
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 24px;
 }
 
 .navGreyButton {
@@ -40,6 +45,10 @@
   border: none;
   cursor: pointer;
   padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
 }
 
 .navigationShadow {

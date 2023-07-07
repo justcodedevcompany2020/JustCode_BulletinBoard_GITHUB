@@ -38,9 +38,9 @@ export const Main = () => {
                         <img alt='' src={require('../../public/ad.png')} />
                         <img alt='' src={require('../../public/ad.png')} />
                     </div>
-                    <div className='mobileAd'>
+                    {/* <div className='mobileAd'>
                         <img alt='' src={require('../../public/mobileAd.png')} />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -1,0 +1,28 @@
+.layout {
+  position: relative;
+}
+
+.mobAddAnn {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .mobAddAnn {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    bottom: 20px;
+    transition: background-color 0.2s ease-in-out 0s,
+      box-shadow 0.2s ease-in-out 0s;
+  }
+  .mobAddAnn > button {
+    width: 237px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 16px 0px;
+    background: rgb(112, 146, 254);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+}

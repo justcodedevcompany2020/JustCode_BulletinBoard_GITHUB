@@ -1,7 +1,7 @@
 .mainSlider {
   position: relative;
   overflow: hidden;
-  max-width: 1440px;
+  max-width: 1264px;
   margin: 30px auto;
   height: 150px;
 }
@@ -12,7 +12,7 @@
   gap: 20px;
   position: relative;
   overflow: hidden;
-  max-width: 1440px;
+  max-width: 1264px;
   width: 100%;
   margin: auto;
 }
@@ -40,11 +40,6 @@
   position: absolute;
   bottom: 30px;
   right: 30px;
-}
-
-.main {
-  position: relative;
-  width: 100%;
 }
 
 .mainSliderPrev {
@@ -77,11 +72,11 @@
 }
 
 .mainSliderArrows {
-  width: 80%;
+  width: 92%;
   position: relative;
   top: 60px;
   margin: auto;
-  max-width: 1440px;
+  max-width: 1264px;
 }
 
 @media screen and (min-width: 1780px) {
@@ -93,13 +88,13 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1264px) {
   .mainSliderArrows {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1264px) {
   .mainSliderArrows {
     width: 100%;
   }

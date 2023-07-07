@@ -35,3 +35,15 @@ export const CloseSearch = () => {
         type: 'closeSearch',
     }
 }
+
+export const OpenDownloadApp = () => {
+    return {
+        type: 'openDownloadApp'
+    }
+}
+
+export const CloseDownloadApp = () => {
+    return {
+        type: 'closeDownloadApp'
+    }
+}

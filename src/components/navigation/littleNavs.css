@@ -13,14 +13,19 @@
 }
 
 .eachLittleNav > span {
+  line-height: 16px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 19px;
+  font-size: 12px;
+  letter-spacing: 0.2px;
 }
 
 .ReactFlagsSelect-module_selectBtn__19wW7 {
   border: none !important;
   padding: 0 !important;
+  line-height: 16px !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.2px !important;
 }
 
 .ReactFlagsSelect-module_flagsSelect__2pfa2 {
