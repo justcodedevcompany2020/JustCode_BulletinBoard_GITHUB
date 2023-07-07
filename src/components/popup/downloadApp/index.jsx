@@ -5,7 +5,7 @@ import { CloseDownloadApp } from '../../../Redux/action/sidebar_action'
 export const DownloadApp = () => {
     const open = useSelector(st => st.Sidebar_reducer.openDownloadApp)
     const dispatch = useDispatch()
-    
+
     return (
         <div className={open ? 'activePopup' : 'inactive'}>
             <div className='downloadApp'>

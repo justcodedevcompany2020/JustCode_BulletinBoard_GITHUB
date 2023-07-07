@@ -103,6 +103,7 @@
   width: 80%;
   margin: auto;
   position: relative;
+  max-width: 1264px;
 }
 
 .eachTopDiv {
@@ -156,7 +157,7 @@
     width: 100%;
   }
   .autoAndApartmentRightPart {
-    width: 100%;
+    display: none;
   }
   .topMain {
     width: 90%;

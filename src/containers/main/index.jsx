@@ -6,9 +6,17 @@ import { Appartments } from '../../components/mainApartments'
 import { AutoService } from '../../components/mainAutoService'
 import { MainCategories } from '../../components/mainPageCategories'
 import { MainBusinessAccounts } from '../../components/mainPageBusinessAccounts'
+import { useDispatch } from 'react-redux'
+import { OpenDownloadApp } from '../../Redux/action/sidebar_action'
 import { FooterFacebook, FooterInstagram, FooterLinkedIn } from '../../components/svg'
 
 export const Main = () => {
+    const dispatch = useDispatch()
+
+    setTimeout(() => {
+        dispatch(OpenDownloadApp())
+    }, 15000)
+
     return (
         <div className='main'>
             <MainSlider />

@@ -68,7 +68,7 @@
   }
   .mobileCC {
     display: flex;
-    width: 90%;
+    width: fit-content;
     margin: 0 auto 20px auto;
   }
   .mobileCC > span {
