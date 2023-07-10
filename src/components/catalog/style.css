@@ -31,7 +31,6 @@
   gap: 10px;
   position: relative;
   background: #ffffff;
-  flex: 1;
   max-width: 48%;
 }
 
@@ -105,6 +104,9 @@
   }
   .profileTopFavorite {
     top: 170px;
+  }
+  .catalogImages {
+    width: 47%;
   }
 }
 

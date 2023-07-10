@@ -1,9 +1,9 @@
 .selectCategory {
-  width: 80%;
+  width: 92%;
+  max-width: 1264px;
   margin: 0 auto;
   display: flex;
   position: relative;
-  max-width: 1264px;
 }
 
 .mainCats {

@@ -6,7 +6,6 @@ export const NavPath = ({ width, padding }) => {
     const [navPath, setNavPath] = useState([])
 
     useEffect(() => {
-        console.log(window.location.pathname.split('/')[1])
         if (window.location.pathname.split('/')[2] === 'profile') {
             setNavPath([{
                 path: 'Главная',

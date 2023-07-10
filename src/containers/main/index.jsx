@@ -1,21 +1,48 @@
 import './style.css'
+import Context from '../../components/context'
+import { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { MainSlider } from '../../components/slider'
+import { useDispatch } from 'react-redux'
 import { MainTop } from '../../components/mainTop'
+import { MainSlider } from '../../components/slider'
 import { Appartments } from '../../components/mainApartments'
 import { AutoService } from '../../components/mainAutoService'
+import { OpenDownloadApp } from '../../Redux/action/sidebar_action'
 import { MainCategories } from '../../components/mainPageCategories'
 import { MainBusinessAccounts } from '../../components/mainPageBusinessAccounts'
-import { useDispatch } from 'react-redux'
-import { OpenDownloadApp } from '../../Redux/action/sidebar_action'
 import { FooterFacebook, FooterInstagram, FooterLinkedIn } from '../../components/svg'
 
 export const Main = () => {
     const dispatch = useDispatch()
+    const context = useContext(Context)
 
-    setTimeout(() => {
-        dispatch(OpenDownloadApp())
-    }, 15000)
+    useEffect(() => {
+        setTimeout(() => {
+            dispatch(OpenDownloadApp())
+        }, 15000)
+    }, [dispatch])
+
+    console.log(document?.querySelector('.autoServiceSlider')?.offsetHeight)
+
+    if (context.windowSize.innerWidth < 1024) {
+        let lastScrollPosition = window.pageYOffset
+        window.addEventListener('scroll', function () {
+            const currentScrollPosition = window.pageYOffset
+            if (currentScrollPosition > lastScrollPosition) {
+                if (currentScrollPosition - 800 >= document?.querySelector('.main')?.offsetHeight) {
+                    document.querySelector('.mobAddAnn').style.display = 'none'
+                } else {
+                    document.querySelector('.mobAddAnn').style.transform = 'translateY(200%)'
+                    document.querySelector('.mobAddAnn').style.transition = 'transform 200ms ease-in-out 0s'
+                    document.querySelector('.mobAddAnn').style.display = 'flex'
+                }
+            } else {
+                document.querySelector('.mobAddAnn').style.transform = 'none'
+                document.querySelector('.mobAddAnn').style.transition = 'transform 200ms ease-in-out 0s'
+            }
+            lastScrollPosition = currentScrollPosition
+        })
+    }
 
     return (
         <div className='main'>
@@ -50,6 +77,9 @@ export const Main = () => {
                         <img alt='' src={require('../../public/mobileAd.png')} />
                     </div> */}
                 </div>
+            </div>
+            <div className='mobAddAnn'>
+                <button>Разместить объявление</button>
             </div>
         </div>
     )

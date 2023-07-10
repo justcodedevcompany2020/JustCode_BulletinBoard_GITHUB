@@ -87,7 +87,7 @@
 
 .mainMenuCat {
   overflow-x: auto;
-  height: 200px;
+  min-height: 200px;
 }
 
 @media screen and (max-width: 768px) {

@@ -4,6 +4,7 @@ import { NavPath } from '../../components/navPath'
 import { CatalogItems } from '../../components/catalog'
 import { GreaterThan, LessThan } from '../../components/svg'
 import { CatalogFilter } from '../../components/catalogFilter'
+import { CatalogTop } from '../../components/catalogTop'
 
 export const Catalog = () => {
     const [search, setSearch] = useState('')
@@ -69,6 +70,7 @@ export const Catalog = () => {
                                 </div>
                             </div>
                         </div>
+                        <CatalogTop />
                         <CatalogItems />
                         <span>Измените условия поиска, чтобы увидеть больше товаров</span>
                     </div>

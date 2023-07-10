@@ -9,7 +9,7 @@ export const MobileSidebar = ({ sidebar, active, setActive }) => {
 
     return (
         <div className='MobileSidebar'>
-            <div className='mobileSidebar' onClick={() => setOpen(!open)}>
+            <div className='mobileSidebar' onClick={() => setOpen(!open)} id='mobileSidebar'>
                 <div className='selectedMenu'>
                     <img alt='' src={require(`../../public/${active?.active_image}`)} />
                     <span>{active?.title}</span>

@@ -11,7 +11,7 @@ export const MobileTabs = ({ tabList }) => {
 
     return (
         <div className='MobileSidebar'>
-            <div className='mobileSidebar' onClick={() => setOpen(!open)}>
+            <div className='mobileSidebar' onClick={() => setOpen(!open)} id='mobileTabs'>
                 <div className='selectedMenu selectedTab'>
                     <span>{selected}</span>
                 </div>

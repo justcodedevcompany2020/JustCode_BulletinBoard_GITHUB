@@ -197,8 +197,6 @@
 }
 
 .mainImage .slidingBox > img {
-  /* width: 100%;
-  height: 100%; */
   object-position: center;
   flex-shrink: 0;
 }
@@ -243,7 +241,6 @@
   align-items: center;
   position: absolute;
   cursor: pointer;
-  /* height: fit-content; */
 }
 
 .nextArrSingle {
@@ -261,7 +258,6 @@
   align-items: center;
   position: absolute;
   cursor: pointer;
-  /* height: fit-content; */
 }
 
 .prevArrSingle {
@@ -276,8 +272,6 @@
 .urgent {
   background: #e21003;
   border-radius: 5px;
-  /* padding: 10px; */
-  /* width: fit-content; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -499,12 +493,6 @@
   .prevArrSingle {
     left: -5px;
   }
-  /* .previousArrow {
-    padding: 6px;
-  } */
-  /* .nextArrow {
-    padding: 6px;
-  } */
   .mobileRightPart {
     display: flex;
     flex-direction: column;

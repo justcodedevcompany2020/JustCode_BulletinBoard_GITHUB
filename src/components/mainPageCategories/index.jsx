@@ -48,42 +48,42 @@ export const MainCategories = () => {
         {
             title: 'Недвижимость',
             image: 'realEstate.png',
-            id: 1
+            id: 9
         },
         {
             title: 'Легковые автомобили',
             image: 'z2.png',
-            id: 2
+            id: 10
         },
         {
             title: 'Услуги исполнителей',
             image: 'z3.png',
-            id: 3
+            id: 11
         },
         {
             title: 'Заявка на услуги',
             image: 'z4.png',
-            id: 4
+            id: 12
         },
         {
             title: 'Женский гардероб',
             image: 'z5.png',
-            id: 5
+            id: 13
         },
         {
             title: 'Телефоны и планшеты',
             image: 'z6.png',
-            id: 6
+            id: 14
         },
         {
             title: 'Запчасти и автотовары',
             image: 'z7.png',
-            id: 7
+            id: 15
         },
         {
             title: 'Детский гардероб',
             image: 'z8.png',
-            id: 8
+            id: 16
         },
     ]
 

@@ -1,6 +1,6 @@
 import './style.css'
 import 'pure-react-carousel/dist/react-carousel.es.css'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { BiggerSign, Heart, HeartFilled, NextArrow, PreviousArrow } from '../svg'
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel'
 import { Tooltip } from '@mui/material'
@@ -63,23 +63,6 @@ export const MainTop = () => {
             description: 'Квартира 56 кв. м.'
         },
     ])
-    const carouselRef = useRef(null)
-
-    const scrollRight = () => {
-        carouselRef.current.scrollBy({
-            top: 0,
-            left: carouselRef.current.offsetWidth / advertisement.length * 5,
-            behavior: 'smooth'
-        })
-    }
-
-    const scrollLeft = () => {
-        carouselRef.current.scrollBy({
-            top: 0,
-            left: - carouselRef.current.offsetWidth / advertisement.length * 5,
-            behavior: 'smooth'
-        })
-    }
 
     function handleFavorite(event) {
         let item = [...advertisement]
@@ -149,8 +132,8 @@ export const MainTop = () => {
                             </Slide>
                         ))}
                     </Slider>
-                    <ButtonBack><div className='previousArrow' style={{ top: '40%' }}><PreviousArrow /></div></ButtonBack>
-                    <ButtonNext><div className='nextArrow' style={{ top: '40%', right: 0 }}><NextArrow /></div></ButtonNext>
+                    {/* <ButtonBack><div className='previousArrow' style={{ top: '40%', left: 0 }}><PreviousArrow /></div></ButtonBack>
+                    <ButtonNext><div className='nextArrow' style={{ top: '40%', right: 0 }}><NextArrow /></div></ButtonNext> */}
                 </CarouselProvider>
             </div>
         </div>

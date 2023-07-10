@@ -9,7 +9,7 @@ export const MainNavs = () => {
 
     return (
         <div className='mainNavs'>
-            <div className='mainNavLeft' style={{ width: '70%' }}>
+            <div className='mainNavLeft' style={{ width: '70%', flex: 1 }}>
                 <div className='eachMainNav' onClick={() => window.location = '/'}>
                     <NavbarLogo />
                 </div>

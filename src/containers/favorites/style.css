@@ -1,3 +1,13 @@
 .mrgBtm {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
+}
+
+#favCat {
+  min-width: 220px;
+}
+
+@media screen and (max-width: 768px) {
+  #favCat {
+    min-width: auto;
+  }
 }

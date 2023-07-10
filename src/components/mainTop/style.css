@@ -36,7 +36,6 @@
 
 .mainTop {
   width: 100%;
-  /* max-width: 1264px; */
   margin: auto;
   background: #fffbe7;
   height: 370px;
@@ -139,11 +138,15 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 1790px) {
+.slideInner___2mfX9 {
+  height: fit-content !important;
+}
+
+/* @media screen and (min-width: 1790px) {
   .topMain {
     width: 100%;
   }
-}
+} */
 
 @media screen and (max-width: 1024px) {
   .eachMenuTop {

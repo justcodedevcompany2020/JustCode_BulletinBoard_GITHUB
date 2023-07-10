@@ -86,8 +86,8 @@ export const MainSlider = () => {
                         </Slide>
                     ))}
                 </Slider>
-                <ButtonBack><div className='previousArrow' style={{ top: '36%', left: 0 }}><PreviousArrow /></div></ButtonBack>
-                <ButtonNext><div className='nextArrow' style={{ top: '36%', right: 0 }}><NextArrow /></div></ButtonNext>
+                <ButtonBack><div className='previousArrow' id='previousSliderArrow'><PreviousArrow /></div></ButtonBack>
+                <ButtonNext><div className='nextArrow' id='nextSliderArrow'><NextArrow /></div></ButtonNext>
             </CarouselProvider>
         </div>
     )
