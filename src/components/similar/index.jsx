@@ -65,7 +65,7 @@ export const Similar = () => {
             <h2>Похожие объявления</h2>
             <div className='autoServiceSlider'>
                 {advertisement.length > 0 && advertisement.map((e, i) => (
-                    <div className='eachMenuTop' key={i} style={{ minWidth: 'inherit' }}>
+                    <div className='eachMenuAuto' key={i}>
                         <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
                             <p>{e.price}</p>

@@ -121,7 +121,7 @@ export const CatalogItems = () => {
     }
 
     return (
-        <div className='catalogItems'>
+        <div className='catalogItems catItems'>
             {advertisement.length > 0 && advertisement.map((e, i) => (
                 <div className='eachMenuCatalog' key={i}>
                     <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />

@@ -2,28 +2,27 @@ import './style.css'
 import { useState, useEffect } from 'react'
 
 export const SelectCategory = ({ categories, openCategories, setOpenCategories }) => {
-    const [subcategories, setSubcategories] = useState([])
-    const [subSubCategories, setSubSubcategories] = useState(null)
-    const [activeCategory, setActiveCategory] = useState(categories[0])
-    const [activeCategoryTitle, setActiveCategoryTitle] = useState('')
-    const [activeSubcategory, setActiveSubcategory] = useState(null)
-    const [activeSubcategoryTitle, setActiveSubcategoryTitle] = useState('')
-    const [activeSubSubcategory, setActiveSubSubcategory] = useState(null)
-    const [currentImage, setCurrentImage] = useState(null)
+    const [subcategories, setSubcategories] = useState(categories[0]?.subCategories)
+    const [subSubCategories, setSubSubcategories] = useState(categories[0]?.subCategories[0]?.subSubcategories)
+    const [activeCategory, setActiveCategory] = useState(categories[0]?.id)
+    const [activeCategoryTitle, setActiveCategoryTitle] = useState(categories[0]?.title)
+    const [activeSubcategory, setActiveSubcategory] = useState(categories[0]?.subCategories[0]?.id)
+    const [activeSubcategoryTitle, setActiveSubcategoryTitle] = useState(categories[0]?.subCategories[0]?.title)
+    const [currentImage, setCurrentImage] = useState(categories[0]?.subCategories[0]?.image)
     const bigScreen = window.matchMedia("(min-width: 768px)").matches
 
     useEffect(() => {
         if (!openCategories) {
-            setSubcategories([])
-            setSubSubcategories(null)
-            setActiveCategory(categories[0])
-            setActiveCategoryTitle('')
-            setActiveSubcategory(null)
-            setActiveSubcategoryTitle('')
-            setActiveSubSubcategory(null)
-            setCurrentImage(null)
+            setSubcategories(categories[0]?.subCategories)
+            setSubSubcategories(categories[0]?.subCategories[0]?.subSubcategories)
+            setActiveCategory(categories[0]?.id)
+            setActiveCategoryTitle(categories[0]?.title)
+            setActiveSubcategory(categories[0]?.subCategories[0]?.id)
+            setActiveSubcategoryTitle(categories[0]?.subCategories[0]?.title)
+            setCurrentImage(categories[0]?.subCategories[0]?.image)
         }
     }, [openCategories])
+
 
     return (
         <>
@@ -33,14 +32,14 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
                         {categories.length > 0 && categories.map((e, i) => (
                             <div key={i} className='eachCreateCat eachCreateCatRad' onMouseOver={() => {
                                 setSubcategories(e?.subCategories)
-                                setActiveSubcategory(null)
+                                setActiveSubcategory(e?.subCategories[0].id)
                                 setSubSubcategories(e?.subCategories[0].subSubcategories)
-                                setActiveCategory(i)
+                                setActiveCategory(e?.id)
                                 setActiveCategoryTitle(e?.title)
                                 setActiveSubcategoryTitle(e?.subCategories[0].title)
-                                setCurrentImage(e?.image)
+                                setCurrentImage(e?.subCategories[0]?.image)
                             }}
-                                style={{ background: activeCategory === i && '#f5f5f5' }}
+                                style={{ background: activeCategory === e?.id && '#f5f5f5' }}
                             >
                                 {e?.image && <img alt='' src={require(`../../public/${e?.image}`)} />}
                                 <span>{e?.title}</span>
@@ -53,10 +52,11 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
                                 <h2>{activeCategoryTitle}</h2>
                                 {subcategories?.map((e, i) => (
                                     <div className='eachCreateCat' key={i} onMouseOver={() => {
-                                        setActiveSubcategory(i)
+                                        setActiveSubcategory(e?.id)
                                         setSubSubcategories(e?.subSubcategories)
                                         setActiveSubcategoryTitle(e?.title)
-                                    }} style={{ background: activeSubcategory === i && '#f5f5f5' }}>
+                                        setCurrentImage(e?.image)
+                                    }} style={{ background: activeSubcategory === e?.id && '#f5f5f5' }}>
                                         <span>{e?.title}</span>
                                     </div>
                                 ))}
@@ -66,17 +66,12 @@ export const SelectCategory = ({ categories, openCategories, setOpenCategories }
                     <div className='mainCats'>
                         {subSubCategories?.length > 0 &&
                             <div onMouseLeave={() => {
-                                setActiveSubSubcategory(null)
                                 setSubSubcategories(null)
                             }}>
                                 <h2>{activeSubcategoryTitle}</h2>
                                 {subSubCategories.map((e, i) => (
                                     <div className='eachCreateCat mainCatsRad'
                                         key={i}
-                                        style={{ background: activeSubSubcategory === i && '#f5f5f5' }}
-                                        onMouseOver={() => {
-                                            setActiveSubSubcategory(i)
-                                        }}
                                         onClick={() => {
                                             window.location = `/catalog/${e?.id}`
                                         }}>

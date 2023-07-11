@@ -98,7 +98,16 @@
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1366px) {
+  #previousSliderArrow {
+    left: 20px;
+  }
+  #nextSliderArrow {
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
   #previousSliderArrow {
     left: 40px;
   }

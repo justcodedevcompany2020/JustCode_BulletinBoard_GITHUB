@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px 2%;
 }
 
 .catalogItems > img {
@@ -14,6 +14,7 @@
   align-items: center;
   flex-direction: column;
   gap: 30px;
+  max-width: 947px;
 }
 
 .changeCat > span {
@@ -31,7 +32,7 @@
   gap: 10px;
   position: relative;
   background: #ffffff;
-  max-width: 48%;
+  width: 23%;
 }
 
 .eachMenuCatalog > img {
@@ -95,12 +96,24 @@
   color: #ffffff;
 }
 
+.catItems {
+  background: #fff;
+  padding: 20px;
+  border-radius: 13px;
+}
+
+@media screen and (max-width: 1150px) {
+  .eachMenuCatalog {
+    width: 32%;
+  }
+  .catalogItems {
+    gap: 15px 2%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .changeCat {
     margin-top: 20px;
-  }
-  .catalogItems {
-    gap: 10px;
   }
   .profileTopFavorite {
     top: 170px;
@@ -110,8 +123,34 @@
   }
 }
 
+@media screen and (max-width: 550px) {
+  .eachMenuCatalog {
+    width: 48%;
+  }
+  .catalogItems {
+    justify-content: space-between;
+  }
+  .eachMenuCatalog > img {
+    height: 124px;
+  }
+  .profileUrgent {
+    left: 5px;
+    top: 95px;
+  }
+  .profileBuyMe {
+    left: 5px;
+    top: 95px;
+  }
+  .profileTopFavorite {
+    top: 110px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .catalogItems {
     justify-content: space-between;
+  }
+  .catItems {
+    padding: 10px;
   }
 }

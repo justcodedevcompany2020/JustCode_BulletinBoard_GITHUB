@@ -62,6 +62,10 @@
   display: none;
 }
 
+.webAd {
+  max-width: 240px;
+}
+
 @media screen and (max-width: 1024px) {
   .webAd {
     display: none;

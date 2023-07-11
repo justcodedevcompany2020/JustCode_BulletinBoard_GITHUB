@@ -23,7 +23,7 @@
 
 .autoServiceSlider {
   display: flex;
-  gap: 20px;
+  gap: 20px 5%;
   padding: 20px 0;
   flex-wrap: wrap;
 }
@@ -36,7 +36,7 @@
   gap: 10px;
   position: relative;
   background: #ffffff;
-  width: 22%;
+  width: 30%;
 }
 
 .eachMenuAuto > img {
@@ -46,16 +46,12 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (min-width: 1024px) {
   .eachMenuAuto {
-    max-width: 220px;
+    width: 23.5%;
   }
-}
-
-@media screen and (max-width: 870px) {
-  .eachMenuAuto {
-    width: 30%;
-    max-width: 220px;
+  .autoServiceSlider {
+    gap: 15px 2%;
   }
 }
 
@@ -64,15 +60,17 @@
     top: 105px;
   }
   .eachMenuAuto {
-    min-width: 48%;
     max-width: min-content;
     height: 250px;
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 578px) {
   .eachMenuAuto {
     min-width: 45%;
+  }
+  .autoServiceSlider {
+    justify-content: space-between;
   }
 }
 

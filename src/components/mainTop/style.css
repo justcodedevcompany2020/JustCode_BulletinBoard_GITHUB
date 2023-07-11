@@ -38,7 +38,6 @@
   width: 100%;
   margin: auto;
   background: #fffbe7;
-  height: 370px;
 }
 
 .topLocation {
@@ -99,10 +98,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 80%;
+  width: 92%;
   margin: auto;
   position: relative;
   max-width: 1264px;
+  padding: 20px 0;
 }
 
 .eachTopDiv {
@@ -142,11 +142,12 @@
   height: fit-content !important;
 }
 
-/* @media screen and (min-width: 1790px) {
-  .topMain {
-    width: 100%;
-  }
-} */
+.topDisplay {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  overflow-x: auto;
+}
 
 @media screen and (max-width: 1024px) {
   .eachMenuTop {
@@ -186,7 +187,7 @@
     min-width: 147px;
   }
   .topFavorite {
-    top: 120px;
+    top: 170px;
     width: 25px;
     height: 25px;
   }

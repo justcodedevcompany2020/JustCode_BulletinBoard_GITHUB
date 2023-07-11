@@ -34,7 +34,7 @@ export const AuthLayout = () => {
                     <Link>Лицензионное соглашение</Link>
                     <Link
                     >Помощь</Link>
-                    <Link>Реклама на Юле</Link>
+                    <Link>Реклама на JustCode</Link>
                 </div>
                 <span>© 2023 JustCode</span>
             </div>

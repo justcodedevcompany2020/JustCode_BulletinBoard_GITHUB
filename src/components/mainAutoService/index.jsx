@@ -13,6 +13,12 @@ export const AutoService = () => {
         {
             price: '300.000 Драм',
             image: 'auto.png',
+            liked: false,
+            description: 'Прокат машин'
+        },
+        {
+            price: '300.000 Драм',
+            image: 'auto.png',
             liked: true,
             description: 'Прокат машин'
         },

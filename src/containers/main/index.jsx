@@ -1,8 +1,8 @@
 import './style.css'
 import Context from '../../components/context'
-import { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { useContext, useEffect } from 'react'
 import { MainTop } from '../../components/mainTop'
 import { MainSlider } from '../../components/slider'
 import { Appartments } from '../../components/mainApartments'
@@ -19,26 +19,21 @@ export const Main = () => {
     useEffect(() => {
         setTimeout(() => {
             dispatch(OpenDownloadApp())
-        }, 15000)
+        }, 25000)
     }, [dispatch])
-
-    console.log(document?.querySelector('.autoServiceSlider')?.offsetHeight)
 
     if (context.windowSize.innerWidth < 1024) {
         let lastScrollPosition = window.pageYOffset
         window.addEventListener('scroll', function () {
             const currentScrollPosition = window.pageYOffset
             if (currentScrollPosition > lastScrollPosition) {
-                if (currentScrollPosition - 800 >= document?.querySelector('.main')?.offsetHeight) {
-                    document.querySelector('.mobAddAnn').style.display = 'none'
-                } else {
-                    document.querySelector('.mobAddAnn').style.transform = 'translateY(200%)'
-                    document.querySelector('.mobAddAnn').style.transition = 'transform 200ms ease-in-out 0s'
-                    document.querySelector('.mobAddAnn').style.display = 'flex'
-                }
+                document.querySelector('.mobAddAnn').style.transform = 'translateY(220%)'
+                document.querySelector('.mobAddAnn').style.transition = 'transform 200ms ease-in-out 0s'
             } else {
                 document.querySelector('.mobAddAnn').style.transform = 'none'
-                document.querySelector('.mobAddAnn').style.transition = 'transform 200ms ease-in-out 0s'
+            }
+            if (document.body?.offsetHeight - (window.innerHeight + document.querySelector('.footerShadow').offsetHeight + 50) <= currentScrollPosition) {
+                document.querySelector('.mobAddAnn').style.transform = 'translateY(-20%)'
             }
             lastScrollPosition = currentScrollPosition
         })
@@ -79,7 +74,7 @@ export const Main = () => {
                 </div>
             </div>
             <div className='mobAddAnn'>
-                <button>Разместить объявление</button>
+                <button onClick={() => window.location = '/create'}>Разместить объявление</button>
             </div>
         </div>
     )

@@ -33,9 +33,9 @@
 }
 
 .businessArrows {
-  position: relative;
+  display: flex;
+  gap: 20px;
   overflow-x: auto;
-  min-height: 200px;
 }
 
 .prevArrBusiness {
@@ -94,9 +94,5 @@
   }
   .eachBusDivLeft {
     display: none;
-  }
-  .businessArrows {
-    height: 120px;
-    min-height: fit-content;
   }
 }

@@ -12,7 +12,7 @@ export const Footer = () => {
                 <div className='eachFooterColumn'>
                     <p>Лицензионное соглашение</p>
                     <p>Помощь</p>
-                    <p>Реклама на Юле</p>
+                    <p>Реклама на JustCode</p>
                 </div>
                 <div className='mobileFooterLang'>
                     <ReactFlagsSelect

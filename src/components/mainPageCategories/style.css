@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  position: relative;
-  height: 200px;
 }
 
 .menuCategories > h2 {
@@ -38,13 +36,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 125px;
-  height: 125px;
+  gap: 10px;
 }
+
 .hoverDiv {
   width: 125px;
-  min-height: 125px;
+  height: 145px;
   position: absolute;
+  z-index: 1;
 }
 
 .hoverBg > span {
@@ -52,8 +51,6 @@
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  position: absolute;
-  bottom: -15px;
 }
 
 .eachMenuCategory > img {
@@ -86,8 +83,9 @@
 }
 
 .mainMenuCat {
+  display: flex;
+  gap: 40px;
   overflow-x: auto;
-  min-height: 200px;
 }
 
 @media screen and (max-width: 768px) {
