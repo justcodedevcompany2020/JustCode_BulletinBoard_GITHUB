@@ -115,7 +115,7 @@ export const Favorites = () => {
         <div className='catalogItems mrgBtm'>
             {advertisement.length > 0
                 ? advertisement.map((e, i) => (
-                    <div className='eachMenuTop catalogImages' id='favCat' key={i} >
+                    <div className='catalogImages' key={i} >
                         <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
                             <p>{e.price}</p>

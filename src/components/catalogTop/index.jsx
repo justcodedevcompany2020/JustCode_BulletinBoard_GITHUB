@@ -1,10 +1,10 @@
+import './style.css'
 import { useState } from 'react'
 import { Heart, HeartFilled } from '../svg'
-import './style.css'
 
 export const CatalogTop = () => {
     const [catalogTopItems, setCatalogTopItems] = useState([
-        { 
+        {
             price: '950.000 $',
             image: 'apartment.png',
             liked: true,
@@ -50,6 +50,7 @@ export const CatalogTop = () => {
 
     return (
         <div className='catalogTop'>
+            <h2>Топ объявления</h2>
             <div className='catalogItems'>
                 {catalogTopItems.length > 0 && catalogTopItems.map((e, i) => (
                     <div className='eachMenuCatalog' key={i}>
@@ -62,12 +63,12 @@ export const CatalogTop = () => {
                             <span>{e.location}</span>
                         </div>
                         {e.urgent &&
-                            <div className='profileUrgent'>
+                            <div className='profileUrgent profileCatalogUrgent'>
                                 <span>Срочно !</span>
                             </div>
                         }
                         {e.buyMe &&
-                            <div className='profileBuyMe'>
+                            <div className='profileBuyMe profileCatalogUrgent'>
                                 <span>Купи меня</span>
                             </div>
                         }

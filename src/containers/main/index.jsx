@@ -3,12 +3,16 @@ import Context from '../../components/context'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useContext, useEffect } from 'react'
+import { Houses } from '../../components/Houses'
 import { MainTop } from '../../components/mainTop'
 import { MainSlider } from '../../components/slider'
+import { MainCars } from '../../components/mainCars'
+import { RentHouses } from '../../components/RentHouses'
 import { Appartments } from '../../components/mainApartments'
 import { AutoService } from '../../components/mainAutoService'
 import { OpenDownloadApp } from '../../Redux/action/sidebar_action'
 import { MainCategories } from '../../components/mainPageCategories'
+import { RentAppartments } from '../../components/mainApartmentsRent'
 import { MainBusinessAccounts } from '../../components/mainPageBusinessAccounts'
 import { FooterFacebook, FooterInstagram, FooterLinkedIn } from '../../components/svg'
 
@@ -21,6 +25,19 @@ export const Main = () => {
             dispatch(OpenDownloadApp())
         }, 25000)
     }, [dispatch])
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            console.log(window.scrollY > 1592)
+            if (window.scrollY >= 1792) {
+                document.getElementById('webAd').style.position = 'sticky';
+                document.getElementById('webAd').style.top = '90px';
+            } else {
+                document.getElementById('webAd').style.position = 'relative';
+                document.getElementById('webAd').style.top = '0';
+            }
+        })
+    }, [])
 
     if (context.windowSize.innerWidth < 1024) {
         let lastScrollPosition = window.pageYOffset
@@ -49,8 +66,12 @@ export const Main = () => {
             <MainTop />
             <div className='autoAndApartment'>
                 <div className='autoAndApartmentLeftPart'>
+                    <MainCars />
                     <AutoService />
+                    <RentAppartments />
                     <Appartments />
+                    <RentHouses />
+                    <Houses />
                 </div>
                 <div className='autoAndApartmentRightPart'>
                     <div className='findUs'>
@@ -64,8 +85,10 @@ export const Main = () => {
                         <Link to=''>Реклама на Justcode</Link>
                         <Link to=''>Помощь</Link>
                     </div>
-                    <div className='webAd'>
+                    <div className='webAd' >
                         <img alt='' src={require('../../public/ad.png')} />
+                    </div>
+                    <div className='webAd' id='webAd'>
                         <img alt='' src={require('../../public/ad.png')} />
                     </div>
                     {/* <div className='mobileAd'>

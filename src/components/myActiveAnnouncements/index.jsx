@@ -9,16 +9,6 @@ export const MyActiveAnnouncements = () => {
         {
             price: '950.000 $',
             image: 'apartment.png',
-            liked: true,
-            description: 'Прокат машин',
-            buyMe: false,
-            urgent: true,
-            location: 'Ереван',
-            id: 1
-        },
-        {
-            price: '950.000 $',
-            image: 'apartment.png',
             liked: false,
             description: 'Прокат машин',
             buyMe: false,

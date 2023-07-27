@@ -50,6 +50,7 @@
   position: relative;
   background: #ffffff;
   flex: 1;
+  max-width: 23.5%;
 }
 
 .catalogImages > img {
@@ -111,6 +112,12 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .catalogImages {
+    max-width: 32%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .changeCat {
     margin-top: 20px;
@@ -119,7 +126,7 @@
     top: 170px;
   }
   .catalogImages {
-    width: 47%;
+    max-width: 49%;
   }
 }
 
@@ -133,11 +140,11 @@
   .eachMenuCatalog > img {
     height: 124px;
   }
-  .profileUrgent {
+  .profileCatalogUrgent {
     left: 5px;
     top: 95px;
   }
-  .profileBuyMe {
+  .profileCatalogUrgent {
     left: 5px;
     top: 95px;
   }
@@ -152,5 +159,8 @@
   }
   .catItems {
     padding: 10px;
+  }
+  .catalogImages {
+    max-width: 49%;
   }
 }

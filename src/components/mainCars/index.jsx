@@ -2,7 +2,7 @@ import './style.css'
 import { useState } from 'react'
 import { BiggerSign, Heart, HeartFilled } from '../svg'
 
-export const AutoService = () => {
+export const MainCars = () => {
     const [advertisement, setAdvertisement] = useState([
         {
             price: '300.000 Драм',
@@ -63,7 +63,7 @@ export const AutoService = () => {
     return (
         <div>
             <div className='pageTitle'>
-                <h2>Автосервисы</h2>
+                <h2>Автомобили</h2>
                 <div className='centerDiv' style={{ marginTop: '5px' }}>
                     <BiggerSign />
                 </div>

@@ -2,7 +2,7 @@ import './style.css'
 import { useState } from 'react'
 import { BiggerSign, Heart, HeartFilled } from '../svg'
 
-export const Appartments = () => {
+export const RentAppartments = () => {
     const [advertisement, setAdvertisement] = useState([
         {
             price: '950.000 $',
@@ -21,7 +21,8 @@ export const Appartments = () => {
             buyMe: false,
             urgent: true,
             location: 'Ереван'
-        }, {
+        },
+        {
             price: '950.000 $',
             image: 'apartment.png',
             liked: false,
@@ -86,7 +87,7 @@ export const Appartments = () => {
     return (
         <div className='autoService'>
             <div className='pageTitle'>
-                <h2>Продажа квартир</h2>
+                <h2>Аренда квартир</h2>
                 <div className='centerDiv' style={{ marginTop: '5px' }}>
                     <BiggerSign />
                 </div>

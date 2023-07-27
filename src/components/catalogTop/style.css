@@ -3,4 +3,11 @@
   background: #fff6c9;
   padding: 20px;
   border-radius: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.catalogTop > h2 {
+  font-size: 18px;
 }
