@@ -72,7 +72,7 @@ export const MessageRight = ({ currentMemberId, setCurrentMemberId, currentMembe
 
             setSelected(selectedFiles)
             document.body.querySelector('.photoListDiv')?.append(postPhoto)
-            console.log(selectedFiles, 66)
+            console.log('selectedFiles', selectedFiles)
         })
     }
 

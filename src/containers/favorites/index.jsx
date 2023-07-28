@@ -118,13 +118,19 @@ export const Favorites = () => {
                     <div className='catalogImages' key={i} >
                         <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
                         <div className='topPadding'>
-                            <p>{e.price}</p>
-                            <span>{e.description}</span>
+                            {e?.price.length > 14
+                                ? <p>{e?.price.slice(0, 14) + '...'}</p>
+                                : <p>{e?.price}</p>
+                            }
+                            {e?.description.length > 20
+                                ? <span>{e?.description.slice(0, 20) + '...'}</span>
+                                : <span>{e?.description}</span>
+                            }
                         </div>
                         <div className='topLocation'>
                             <span>{e.location}</span>
                         </div>
-                        <div className='topFavorite' onClick={() => handleFavorite(e)} style={{top: '170px'}}>
+                        <div className='topFavorite' onClick={() => handleFavorite(e)} style={{ top: '170px' }}>
                             {e.liked ?
                                 <HeartFilled />
                                 : <Heart />

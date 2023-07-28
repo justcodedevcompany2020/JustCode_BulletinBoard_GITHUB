@@ -56,7 +56,8 @@ export const MessageLeft = ({ currentMemberId, setCurrentMemberId }) => {
                             </div>
                             {e?.lastMessage.length > 23
                                 ? <p>{e?.lastMessage.slice(0, 23) + '...'}</p>
-                                : <p>{e?.lastMessage}</p>}
+                                : <p>{e?.lastMessage}</p>
+                            }
                         </div>
                     </div>
                 ))

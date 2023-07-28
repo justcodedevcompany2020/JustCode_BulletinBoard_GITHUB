@@ -39,11 +39,16 @@
   width: 30%;
 }
 
-.eachMenuAuto > img {
+.eachMenuAuto > div {
+  position: relative;
+}
+
+.eachMenuAuto > div > img {
   height: 180px;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
   object-fit: cover;
+  width: 100%;
 }
 
 @media screen and (min-width: 1024px) {
@@ -59,23 +64,13 @@
   .buyMe {
     top: 105px;
   }
-  .eachMenuAuto {
-    max-width: min-content;
-    height: 250px;
-  }
 }
 
 @media screen and (max-width: 578px) {
-  .eachMenuAuto {
-    min-width: 45%;
-  }
   .autoServiceSlider {
-    justify-content: space-between;
+    gap: 10px 5%;
   }
-}
-
-@media screen and (max-width: 425px) {
-  .eachMenuAuto {
-    min-width: 46%;
+  .eachMenuAuto > div > img {
+    height: 124px;
   }
 }

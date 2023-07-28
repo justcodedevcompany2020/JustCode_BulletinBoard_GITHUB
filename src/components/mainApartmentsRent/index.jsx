@@ -95,28 +95,36 @@ export const RentAppartments = () => {
             <div className='autoServiceSlider'>
                 {advertisement.length > 0 && advertisement.map((e, i) => (
                     <div className='eachMenuAuto' key={i}>
-                        <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
+                        <div>
+                            <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
+                            {e.urgent &&
+                                <div className='urgentTag'>
+                                    <span>Срочно !</span>
+                                </div>
+                            }
+                            {e.buyMe &&
+                                <div className='buyTag'>
+                                    <span>Купи меня</span>
+                                </div>
+                            }
+                            <div className='favoriteTag' onClick={() => handleFavorite(e)}>
+                                {e.liked ?
+                                    <HeartFilled />
+                                    : <Heart />
+                                }
+                            </div>
+                            <div className='locationTag' >
+                                <span>{e.location}</span>
+                            </div>
+                        </div>
                         <div className='topPadding'>
-                            <p>{e.price}</p>
-                            <span>{e.description}</span>
-                        </div>
-                        <div className='topLocation' >
-                            <span>{e.location}</span>
-                        </div>
-                        {e.urgent &&
-                            <div className='autoUrgent mainAutoUrge'>
-                                <span>Срочно !</span>
-                            </div>
-                        }
-                        {e.buyMe &&
-                            <div className='mainAppBuy mainAutoBuy'>
-                                <span>Купи меня</span>
-                            </div>
-                        }
-                        <div className='topFavorite mainAutoFav' onClick={() => handleFavorite(e)}>
-                            {e.liked ?
-                                <HeartFilled />
-                                : <Heart />
+                            {e?.price.length > 14
+                                ? <p>{e?.price.slice(0, 14) + '...'}</p>
+                                : <p>{e?.price}</p>
+                            }
+                            {e?.description.length > 20
+                                ? <span>{e?.description.slice(0, 20) + '...'}</span>
+                                : <span>{e?.description}</span>
                             }
                         </div>
                     </div>

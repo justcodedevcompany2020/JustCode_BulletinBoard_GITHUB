@@ -134,9 +134,6 @@
   .eachMenuCatalog {
     width: 48%;
   }
-  .catalogItems {
-    justify-content: space-between;
-  }
   .eachMenuCatalog > img {
     height: 124px;
   }

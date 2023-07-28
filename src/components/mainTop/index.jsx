@@ -79,30 +79,33 @@ export const MainTop = () => {
                 </div>
                 <div className='topDisplay'>
                     {advertisement.length > 0 && advertisement.map((e, i) => (
-                        <div key={i}>
-                            <div className='eachTopDiv'  >
-                                <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
-                                <div className='topPadding'>
-                                    <p>{e.price}</p>
-                                    <span>{e.description}</span>
-                                </div>
-                                <div className='topLocation'>
-                                    <span>Ереван</span>
-                                </div>
-                                {e.liked ?
-                                    <Tooltip title="Удалить из избранного" placement="top-end" arrow>
-                                        <div className='eachTopFav' onClick={() => handleFavorite(e)}>
-                                            <HeartFilled />
-                                        </div>
-                                    </Tooltip>
-                                    : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
-                                        <div className='eachTopFav' onClick={() => handleFavorite(e)}>
-                                            <Heart />
-                                        </div>
-                                    </Tooltip>
+                        <div className='eachTopDiv' key={i}>
+                            <img alt='' src={require(`../../public/${e.image}`)} onClick={() => window.location = '/item/1'} />
+                            <div className='topPadding'>
+                                {e?.price.length > 14
+                                    ? <p>{e?.price.slice(0, 14) + '...'}</p>
+                                    : <p>{e?.price}</p>
+                                }
+                                {e?.description.length > 20
+                                    ? <span>{e?.description.slice(0, 20) + '...'}</span>
+                                    : <span>{e?.description}</span>
                                 }
                             </div>
-
+                            <div className='topLocation'>
+                                <span>Ереван</span>
+                            </div>
+                            {e.liked ?
+                                <Tooltip title="Удалить из избранного" placement="top-end" arrow>
+                                    <div className='eachTopFav' onClick={() => handleFavorite(e)}>
+                                        <HeartFilled />
+                                    </div>
+                                </Tooltip>
+                                : <Tooltip title="Добавить в избранное" placement="top-end" arrow>
+                                    <div className='eachTopFav' onClick={() => handleFavorite(e)}>
+                                        <Heart />
+                                    </div>
+                                </Tooltip>
+                            }
                         </div>
                     ))}
                 </div>

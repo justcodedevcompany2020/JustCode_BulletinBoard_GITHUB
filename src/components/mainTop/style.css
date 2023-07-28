@@ -113,6 +113,7 @@
   gap: 10px;
   position: relative;
   background: #ffffff;
+  min-width: 218px;
   width: 218px;
   height: 256px;
 }
@@ -147,6 +148,7 @@
   align-items: center;
   gap: 20px;
   overflow-x: auto;
+  padding-bottom: 10px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -196,7 +198,8 @@
     height: 15px;
   }
   .eachTopDiv {
-    width: 150px;
+    min-width: 147px;
+    width: 147px;
     height: 182px;
   }
   .eachTopFav {
@@ -210,11 +213,11 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .mainTop {
     height: 280px;
   }
-}
+} */
 
 @media screen and (max-width: 425px) {
   .eachTopFav {

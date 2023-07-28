@@ -28,7 +28,6 @@ export const Main = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            console.log(window.scrollY > 1592)
             if (window.scrollY >= 1792) {
                 document.getElementById('webAd').style.position = 'sticky';
                 document.getElementById('webAd').style.top = '90px';

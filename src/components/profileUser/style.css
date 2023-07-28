@@ -40,9 +40,6 @@
   .profileUser {
     flex-direction: column;
   }
-}
-
-@media screen and (max-width: 425px) {
   .profileUser {
     align-items: flex-start;
     flex-direction: row;
