@@ -3,6 +3,7 @@
   flex-direction: column;
   margin: 30px 0;
   gap: 20px;
+  position: relative;
 }
 
 .pageTitle {
@@ -37,6 +38,7 @@
   gap: 20px;
   overflow-x: auto;
   height: 170px;
+  position: relative;
 }
 
 .prevArrBusiness {

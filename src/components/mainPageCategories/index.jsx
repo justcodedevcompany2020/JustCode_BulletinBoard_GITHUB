@@ -1,4 +1,7 @@
 import './style.css'
+import Context from '../context'
+import { useContext, useRef } from 'react';
+import { NextArrow, PreviousArrow } from '../svg';
 
 export const MainCategories = () => {
     const categories = [
@@ -92,10 +95,35 @@ export const MainCategories = () => {
         }
     }
 
+    const carouselRef = useRef()
+    const context = useContext(Context)
+
+    const scrollRight = () => {
+        carouselRef.current.scrollBy({
+            top: 0,
+            left: context.windowSize.innerWidth / (categories.length) + 200,
+            behavior: 'smooth'
+        })
+    }
+
+    const scrollLeft = () => {
+        carouselRef.current.scrollBy({
+            top: 0,
+            left: - 345,
+            behavior: 'smooth'
+        })
+    }
+
     return (
         <div className='menuCategories'>
             <h2>Выберите категорию</h2>
-            <div className='mainMenuCat'>
+            <div className='mainSliderPrev' onClick={scrollLeft}>
+                <PreviousArrow />
+            </div>
+            <div className='mainSliderNext' onClick={scrollRight}>
+                <NextArrow />
+            </div>
+            <div className='mainMenuCat' ref={carouselRef}>
                 {categories.length > 0 && categories.map((e, i) => (
                     <div key={i} className='cursor hoverBg' onMouseOver={() => changeBg('in', e?.id)} onMouseLeave={() => changeBg('out', e?.id)}>
                         <div className='eachMenuCategory' id={`id${e?.id}`} >
