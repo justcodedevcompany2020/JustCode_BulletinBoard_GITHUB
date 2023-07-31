@@ -59,10 +59,10 @@ export const Main = () => {
         <div className='main'>
             <MainSlider />
             <div className='mainAndBusiness'>
-                <MainCategories />
                 <MainBusinessAccounts />
+                <MainCategories />
             </div>
-            <MainTop />
+            {/* <MainTop /> */}
             <div className='autoAndApartment'>
                 <div className='autoAndApartmentLeftPart'>
                     <MainCars />
