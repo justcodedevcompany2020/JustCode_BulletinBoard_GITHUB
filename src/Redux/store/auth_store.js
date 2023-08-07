@@ -2,4 +2,5 @@
 export default {
     user: {},
     openMask: false,
+    loginError: false
 }

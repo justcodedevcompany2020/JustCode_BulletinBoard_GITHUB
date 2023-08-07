@@ -1,9 +1,9 @@
 import './style.css'
-import { MobileHeart } from '../svg'
+import { useState } from 'react'
+import { Maps } from '../popup/maps'
+import { CarouselLeft, CarouselRight, MobileHeart } from '../svg'
 import { Carousel } from 'react-carousel-minimal'
 import { MobileRightPart } from './mobileRightPart'
-import { Maps } from '../popup/maps'
-import { useState } from 'react'
 
 export const SingleAnnouncementLeftPart = () => {
     const images = [
@@ -37,9 +37,6 @@ export const SingleAnnouncementLeftPart = () => {
         {
             image: "https://images.ctfassets.net/bth3mlrehms2/6Ypj2Qd3m3jQk6ygmpsNAM/61d2f8cb9f939beed918971b9bc59bcd/Scotland.jpg?w=750&h=422&fl=progressive&q=50&fm=jpg",
         },
-        {
-            image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
-        }
     ]
     const [openMaps, setOpenMaps] = useState(false)
 
@@ -47,6 +44,20 @@ export const SingleAnnouncementLeftPart = () => {
         fontSize: '20px',
         fontWeight: 'bold',
     }
+
+    // const scrollRight = () => {
+    //     document.querySelector('.thumbnails').scrollBy({
+    //         left: (images.length) + 500,
+    //         behavior: 'smooth'
+    //     })
+    // }
+
+    // const scrollLeft = () => {
+    //     document.querySelector('.thumbnails').scrollBy({
+    //         left: - ((images.length) + 500),
+    //         behavior: 'smooth'
+    //     })
+    // }
 
     return (
         <div className='singleMainLeft'>
@@ -61,20 +72,30 @@ export const SingleAnnouncementLeftPart = () => {
                     <MobileHeart />
                 </div>
             </div>
-            <Carousel
-                data={images}
-                time={2000}
-                width="850px"
-                height="500px"
-                radius="10px"
-                slideNumber={true}
-                slideNumberStyle={slideNumberStyle}
-                captionPosition="bottom"
-                slideBackgroundColor="transparent"
-                slideImageFit="cover"
-                thumbnails={true}
-                thumbnailWidth="90px"
-            />
+            <div className='singleCarousel'>
+                <Carousel
+                    data={images}
+                    time={2000}
+                    width="850px"
+                    height="500px"
+                    radius="10px"
+                    slideNumber={true}
+                    slideNumberStyle={slideNumberStyle}
+                    captionPosition="bottom"
+                    slideBackgroundColor="transparent"
+                    slideImageFit="cover"
+                    // thumbnails={true}
+                    // thumbnailWidth="90px"
+                />
+                {/* {images.length >= 10 && <>
+                    <div className='carouselLeftArrow' onClick={scrollLeft}>
+                        <CarouselLeft />
+                    </div>
+                    <div className='carouselRightArrow' onClick={scrollRight}>
+                        <CarouselRight />
+                    </div>
+                </>} */}
+            </div>
             <div className='urgent'>
                 <span>Срочно!</span>
             </div>

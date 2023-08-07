@@ -1,17 +1,28 @@
 import './style.css'
-import InputMask from 'react-input-mask'
+// import InputMask from 'react-input-mask'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ClosedEye, FacebookIcon, GoogleIcon, GreaterThan, JustCode, LessThan, MailIcon, OpenEye, VkIcon } from '../../components/svg'
-import { CloseMask, OpenMask } from '../../Redux/action/auth_action'
+import { CloseMask, LoginError, OpenMask } from '../../Redux/action/auth_action'
 
 export const Login = () => {
     const dispatch = useDispatch()
-    const openMask = useSelector(st => st.Auth_reducer.openMask)
-    const [phone, setPhone] = useState('')
+    const errorLogin = useSelector(st => st.Auth_reducer.loginError)
+    // const openMask = useSelector(st => st.Auth_reducer.openMask)
+    // const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
-    const [selectedCountry, setSelectedCountry] = useState('am')
+    // const [selectedCountry, setSelectedCountry] = useState('am')
+    const [email, setEmail] = useState('')
+
+    function login() {
+        console.log('sdjhcbv jh');
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+            dispatch(LoginError(false))
+        } else {
+            dispatch(LoginError(true))
+        }
+    }
 
     return (
         <div className='loginPage'>
@@ -29,7 +40,7 @@ export const Login = () => {
                 </div>
                 <div className='loginSeparator' />
                 <div className='loginInputs'>
-                    <div className='phoneMask' >
+                    {/* <div className='phoneMask' >
                         <div className='chooseMask' onClick={(e) => {
                             e.stopPropagation()
                             openMask ? dispatch(CloseMask()) : dispatch(OpenMask())
@@ -57,6 +68,9 @@ export const Login = () => {
                                 <span>Россия</span>
                             </div>
                         </div>
+                    </div> */}
+                    <div className='inputEye'>
+                        <input type='email' placeholder='Эл. почта' value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className='inputEye'>
                         <input type={showPassword ? 'text' : 'password'} placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -64,12 +78,13 @@ export const Login = () => {
                             {showPassword ? <OpenEye /> : <ClosedEye />}
                         </div>
                     </div>
+                    {errorLogin && <span className='error'>Неверный ввод данных. Повторите попытку.</span>}
                 </div>
                 <div className='loginForgotPassword'>
                     <span onClick={() => window.location = '/auth/forgotPassword'}>Забыли пароль?</span>
                 </div>
                 <div className='loginButton'>
-                    <button className='blueButton'>Войти</button>
+                    <button className='blueButton' onClick={login} disabled={email.length < 1 || password.length < 1}>Войти</button>
                 </div>
                 <div className='loginSeparator' style={{ margin: '20px 0' }} />
                 <div className='loginViaSocialMedia'>

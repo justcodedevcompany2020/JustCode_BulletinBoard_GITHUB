@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export const GetUser = () => {
     return async (dispatch) => {
         dispatch({
@@ -19,4 +17,14 @@ export const CloseMask = () => {
     return {
         type: 'closeMask'
     }
+}
+
+export const LoginError = (bool) => {
+    return {
+        type: bool ? 'loginError' : 'loginErrorFixed'
+    }
+}
+
+export const Register = () => {
+
 }

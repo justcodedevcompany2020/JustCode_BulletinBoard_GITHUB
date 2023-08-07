@@ -606,3 +606,27 @@ export const BlackSearch = () => {
         </svg>
     )
 }
+
+export const ScrollUp = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" id="Слой_1" viewBox="0 0 14.73 26" width={30} height={30}>
+            <path d="M8.07.29a1,1,0,0,0-1.41,0L.29,6.66a1,1,0,0,0,0,1.41,1,1,0,0,0,1.42,0L7.36,2.41,13,8.07a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.41ZM8.36,26V1h-2V26Z" style={{ fill: '#fff' }} />
+        </svg>
+    )
+}
+
+export const CarouselRight = () => {
+    return (
+        <svg style={{ color: '#fff' }} xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
+            <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" fill="white" />
+        </svg>
+    )
+}
+
+export const CarouselLeft = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16" style={{ color: '#fff' }}>
+            <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg>
+    )
+}

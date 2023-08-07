@@ -1,5 +1,5 @@
 import './style.css'
-import InputMask from 'react-input-mask'
+// import InputMask from 'react-input-mask'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { CloseMask, OpenMask } from '../../Redux/action/auth_action'
@@ -7,8 +7,8 @@ import { Checkbox, ClosedEye, GreaterThan, JustCode, LessThan, OpenEye } from '.
 
 export const Register = () => {
     const dispatch = useDispatch()
-    const openMask = useSelector(st => st.Auth_reducer.openMask)
-    const [phone, setPhone] = useState('')
+    // const openMask = useSelector(st => st.Auth_reducer.openMask)
+    // const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [checked, setChecked] = useState(false)
@@ -18,7 +18,8 @@ export const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
     const [code, setCode] = useState('')
-    const [selectedCountry, setSelectedCountry] = useState('am')
+    // const [selectedCountry, setSelectedCountry] = useState('am')
+    const [email, setEmail] = useState('')
 
     function handleEmailPage() {
         setEmailPage(false)
@@ -57,7 +58,7 @@ export const Register = () => {
                 }
                 <div className='loginInputs'>
                     {emailPage && <>
-                        <div className='phoneMask' >
+                        {/* <div className='phoneMask' >
                             <div className='chooseMask' onClick={(e) => {
                                 e.stopPropagation()
                                 openMask ? dispatch(CloseMask()) : dispatch(OpenMask())
@@ -85,6 +86,9 @@ export const Register = () => {
                                     <span>Россия</span>
                                 </div>
                             </div>
+                        </div> */}
+                        <div className='inputEye'>
+                            <input type='email' placeholder='Эл. почта' value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className='inputEye'>
                             <input type={showPassword ? 'text' : 'password'} placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} />

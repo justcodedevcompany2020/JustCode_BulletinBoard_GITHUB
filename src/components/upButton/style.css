@@ -1,0 +1,29 @@
+.upButton {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: #7791f7;
+  border: none;
+  border-radius: 50%;
+  left: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  opacity: 0.9;
+  position: fixed;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .upButton {
+    left: 5px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .upButton > svg {
+    width: 20px;
+    height: 20px;
+  }
+}

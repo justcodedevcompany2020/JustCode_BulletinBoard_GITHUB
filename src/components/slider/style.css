@@ -57,6 +57,11 @@
   cursor: pointer;
 }
 
+.slick-arrow {
+  background: #ffffff !important;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.15) !important;
+}
+
 .mainSliderNext {
   right: -20px;
   top: 52%;

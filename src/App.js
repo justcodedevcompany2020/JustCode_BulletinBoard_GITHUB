@@ -54,8 +54,6 @@ function App() {
     windowSize, setWindowSize
   }
 
-
-
   return (
     <Context.Provider value={value}>
       <DownloadApp />

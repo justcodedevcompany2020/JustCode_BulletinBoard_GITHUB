@@ -18,6 +18,12 @@ export const Auth_reducer = (state = store, action) => {
         case 'closeMask':
             temp.openMask = false
             break;
+        case 'loginError':
+            temp.loginError = true
+            break;
+        case 'loginErrorFixed':
+            temp.loginError = false
+            break;
         default:
             return temp;
     }

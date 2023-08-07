@@ -397,6 +397,42 @@
   cursor: pointer !important;
 }
 
+.singleCarousel {
+  position: relative;
+}
+
+.carouselLeftArrow {
+  position: absolute;
+  left: -5px;
+  bottom: 25px;
+  background: #a9a9a9;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  opacity: 0.7;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carouselRightArrow {
+  position: absolute;
+  right: -10px;
+  bottom: 25px;
+  background: #a9a9a9;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  opacity: 0.7;
+  cursor: pointer;
+  z-index: 1;
+}
+
 @media screen and (max-width: 768px) {
   .previousArrow {
     display: none;

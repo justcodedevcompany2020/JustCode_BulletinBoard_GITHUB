@@ -28,7 +28,7 @@ export const Main = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (window.scrollY >= 1792) {
+            if (window.scrollY >= 1380) {
                 document.getElementById('webAd').style.position = 'sticky';
                 document.getElementById('webAd').style.top = '90px';
             } else {
