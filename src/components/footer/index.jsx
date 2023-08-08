@@ -3,9 +3,10 @@ import { FooterFacebook, FooterInstagram, FooterLinkedIn } from '../svg'
 import ReactFlagsSelect from 'react-flags-select'
 import { useState } from 'react'
 
-
 export const Footer = () => {
     const [selected, setSelected] = useState("RU")
+    localStorage.setItem('lang', "RU")
+
     return (
         <div className='footerShadow'>
             <div className='footer'>
@@ -18,7 +19,10 @@ export const Footer = () => {
                     <ReactFlagsSelect
                         countries={["RU", "AM", "US"]}
                         selected={selected}
-                        onSelect={(code) => setSelected(code)}
+                        onSelect={code => {
+                            setSelected(code)
+                            localStorage.setItem('lang', code)
+                        }}
                         optionsSize={14}
                         className='countries'
                         showOptionLabel={true}

@@ -7,8 +7,9 @@ import { NavbarLogo } from '../../components/svg'
 import { CloseMask } from '../../Redux/action/auth_action'
 
 export const AuthLayout = () => {
-    const [selected, setSelected] = useState("RU")
     const dispatch = useDispatch()
+    const [selected, setSelected] = useState("RU")
+    localStorage.setItem('lang', "RU")
 
     return (
         <div className='logPage' onClick={() => dispatch(CloseMask())}>
@@ -20,7 +21,10 @@ export const AuthLayout = () => {
                     <ReactFlagsSelect
                         countries={["RU", "AM", "US"]}
                         selected={selected}
-                        onSelect={(code) => setSelected(code)}
+                        onSelect={code => {
+                            setSelected(code)
+                            localStorage.setItem('lang', code)
+                        }}
                         optionsSize={14}
                         className='countries'
                         showOptionLabel={true}

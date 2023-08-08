@@ -3,24 +3,27 @@ import './style.css'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ClosedEye, FacebookIcon, GoogleIcon, GreaterThan, JustCode, LessThan, MailIcon, OpenEye, VkIcon } from '../../components/svg'
-import { CloseMask, LoginError, OpenMask } from '../../Redux/action/auth_action'
+import { CloseMask, LoginError, OpenMask, SignIn } from '../../Redux/action/auth_action'
 
 export const Login = () => {
     const dispatch = useDispatch()
-    const errorLogin = useSelector(st => st.Auth_reducer.loginError)
     // const openMask = useSelector(st => st.Auth_reducer.openMask)
+    // const [selectedCountry, setSelectedCountry] = useState('am')
     // const [phone, setPhone] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword] = useState(false)
-    // const [selectedCountry, setSelectedCountry] = useState('am')
-    const [email, setEmail] = useState('')
+    const [errorMessage, setErrorMessage] = useState({ field: '', message: '' })
+    const loginError = useSelector(st => st.Auth_reducer.loginError)
 
-    function login() {
-        console.log('sdjhcbv jh');
-        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-            dispatch(LoginError(false))
+    function signin() {
+        if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
+            setErrorMessage({ field: 'email', message: 'Введите корректный адрес эл. почты.' })
+        } else if (password.length < 6) {
+            setErrorMessage({ field: 'password', message: 'Пароль должен содержать не менее 6-ти символов.' })
         } else {
-            dispatch(LoginError(true))
+            setErrorMessage({ field: '', message: '' })
+            dispatch(SignIn(email, password))
         }
     }
 
@@ -69,22 +72,35 @@ export const Login = () => {
                             </div>
                         </div>
                     </div> */}
-                    <div className='inputEye'>
-                        <input type='email' placeholder='Эл. почта' value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <div className='inputEye' style={{ border: (errorMessage.field === 'email' || loginError) && '1px solid #e21003' }}>
+                        <input
+                            type='email'
+                            placeholder='Эл. почта'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            onKeyDown={e => e.key === 'Enter' && signin()}
+                        />
                     </div>
-                    <div className='inputEye'>
-                        <input type={showPassword ? 'text' : 'password'} placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <div className='inputEye' style={{ border: (errorMessage.field === 'password' || loginError) && '1px solid #e21003' }}>
+                        <input
+                            type={showPassword ? 'text' : 'password'}
+                            placeholder='Пароль'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            onKeyDown={e => e.key === 'Enter' && signin()}
+                        />
                         <div className='cursor' onClick={() => setShowPassword(!showPassword)}>
                             {showPassword ? <OpenEye /> : <ClosedEye />}
                         </div>
                     </div>
-                    {errorLogin && <span className='error'>Неверный ввод данных. Повторите попытку.</span>}
                 </div>
                 <div className='loginForgotPassword'>
                     <span onClick={() => window.location = '/auth/forgotPassword'}>Забыли пароль?</span>
                 </div>
+                {errorMessage.message.length > 0 && <label className='error'>{errorMessage.message}</label>}
+                {loginError && <label className='error'>Неверный логин или пароль.</label>}
                 <div className='loginButton'>
-                    <button className='blueButton' onClick={login} disabled={email.length < 1 || password.length < 1}>Войти</button>
+                    <button className='blueButton' onClick={signin} disabled={!email.length || !password.length}>Войти</button>
                 </div>
                 <div className='loginSeparator' style={{ margin: '20px 0' }} />
                 <div className='loginViaSocialMedia'>

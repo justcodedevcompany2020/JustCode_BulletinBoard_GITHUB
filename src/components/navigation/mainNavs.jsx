@@ -6,6 +6,7 @@ import { DefaultUser, NavbarLogo } from '../svg'
 
 export const MainNavs = () => {
     const user = useSelector(st => st.Auth_reducer.user)
+    console.log(user)
 
     return (
         <div className='mainNavs'>

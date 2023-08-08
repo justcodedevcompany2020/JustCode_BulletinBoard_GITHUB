@@ -8948,9 +8948,9 @@ export const Navigation = () => {
     // const [openMobileSubSubcategories, setOpenMobileSubSubcategories] = useState(false)
     const open = useSelector((st) => st.Auth_reducer.openCategories)
 
-    useEffect(() => {
-        dispatch(GetUser())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(GetUser())
+    // }, [dispatch])
 
     useEffect(() => {
         setOpenCategories(open)

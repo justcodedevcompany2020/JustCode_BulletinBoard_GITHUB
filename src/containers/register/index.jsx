@@ -1,14 +1,15 @@
 import './style.css'
 // import InputMask from 'react-input-mask'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { CloseMask, OpenMask } from '../../Redux/action/auth_action'
+import { CloseMask, ConfirmCode, OpenMask, Registration } from '../../Redux/action/auth_action'
 import { Checkbox, ClosedEye, GreaterThan, JustCode, LessThan, OpenEye } from '../../components/svg'
 
 export const Register = () => {
     const dispatch = useDispatch()
     // const openMask = useSelector(st => st.Auth_reducer.openMask)
     // const [phone, setPhone] = useState('')
+    // const [selectedCountry, setSelectedCountry] = useState('am')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [checked, setChecked] = useState(false)
@@ -18,17 +19,45 @@ export const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
     const [code, setCode] = useState('')
-    // const [selectedCountry, setSelectedCountry] = useState('am')
     const [email, setEmail] = useState('')
+    const [errorMessage, setErrorMessage] = useState({ field: '', message: '' })
+    const regStep1 = useSelector(st => st.Auth_reducer.regStep1)
+    const codeError = useSelector(st => st.Auth_reducer.codeError)
+    const emailError = useSelector(st => st.Auth_reducer.regEmailError)
+    const regStep2 = useSelector(st => st.Auth_reducer.regStep2)
 
-    function handleEmailPage() {
-        setEmailPage(false)
-        setCodePage(true)
+    useEffect(() => {
+        if (regStep1) {
+            setEmailPage(false)
+            setCodePage(true)
+        }
+    }, [regStep1])
+    useEffect(() => {
+        if (regStep2) {
+            setCodePage(false)
+            setSuccessPage(true)
+        }
+    }, [regStep2])
+    useEffect(() => { codeError && setErrorMessage({ field: 'code', message: 'Неверный код.' }) }, [codeError])
+
+    function register() {
+        setErrorMessage({ field: '', message: '' })
+        if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
+            setErrorMessage({ field: 'email', message: 'Введите корректный адрес эл. почты.' })
+        } else if (password.length < 6) {
+            setErrorMessage({ field: 'password', message: 'Пароль должен содержать не менее 6-ти символов.' })
+        } else if (password !== passwordConfirmation) {
+            setErrorMessage({ field: 'password', message: 'Пароли не совпадают.' })
+        } else if (!checked) {
+            setErrorMessage({ field: 'checkbox', message: 'Обязательное поле.' })
+        } else {
+            setErrorMessage({ field: '', message: '' })
+            dispatch(Registration(email, password, passwordConfirmation))
+        }
     }
 
-    function handleCodePage() {
-        setCodePage(false)
-        setSuccessPage(true)
+    function sendCode() {
+        dispatch(ConfirmCode(email, code))
     }
 
     return (
@@ -87,35 +116,67 @@ export const Register = () => {
                                 </div>
                             </div>
                         </div> */}
-                        <div className='inputEye'>
-                            <input type='email' placeholder='Эл. почта' value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <div className='inputEye' style={{ border: (errorMessage.field === 'email' || emailError) && '1px solid #e21003' }}>
+                            <input
+                                type='email'
+                                placeholder='Эл. почта'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                onKeyDown={e => e.key === 'Enter' && register()}
+                            />
                         </div>
-                        <div className='inputEye'>
-                            <input type={showPassword ? 'text' : 'password'} placeholder='Пароль' value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <div className='inputEye' style={{ border: errorMessage.field === 'password' && '1px solid #e21003' }}>
+                            <input
+                                type={showPassword ? 'text' : 'password'}
+                                placeholder='Пароль'
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                onKeyDown={e => e.key === 'Enter' && register()}
+                            />
                             <div className='cursor' onClick={() => setShowPassword(!showPassword)}>
                                 {showPassword ? <OpenEye /> : <ClosedEye />}
                             </div>
                         </div>
-                        <div className='inputEye'>
-                            <input type={showConfirmPassword ? 'text' : 'password'} placeholder='Повторите пароль' value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)} />
+                        <div className='inputEye' style={{ border: errorMessage.field === 'password' && '1px solid #e21003' }}>
+                            <input
+                                type={showConfirmPassword ? 'text' : 'password'}
+                                placeholder='Повторите пароль'
+                                value={passwordConfirmation}
+                                onChange={(e) => setPasswordConfirmation(e.target.value)}
+                                onKeyDown={e => e.key === 'Enter' && register()}
+                            />
                             <div className='cursor' onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
                                 {showConfirmPassword ? <OpenEye /> : <ClosedEye />}
                             </div>
                         </div>
                     </>}
-                    {codePage && <input type='email' placeholder='Код подтверждения' value={code} onChange={(e) => e.target.value <= 999999 && setCode(e.target.value)} />}
+                    {codePage && <input
+                        placeholder='Код подтверждения'
+                        style={{ border: errorMessage.field === 'code' && '1px solid #e21003' }}
+                        value={code}
+                        onChange={(e) => e.target.value <= 999999 && setCode(e.target.value)}
+                        onKeyDown={e => e.key === 'Enter' && sendCode()}
+                    />}
                 </div>
-                {emailPage &&
+                {emailPage && <>
                     <div className='registerCheckbox'>
-                        <div className='checkbox' onClick={() => setChecked(!checked)} style={checked ? { background: '#7791f7' } : {}}>
+                        <div className='checkbox' onClick={() => setChecked(!checked)} style={checked ? { background: '#7791f7' } : errorMessage.field === 'checkbox' ? { border: '1px solid #e21003' } : {}}>
                             <Checkbox />
                         </div>
                         <label>Я соглашаюсь с правилами публикации объявлений и условиями пользования JustCode.</label>
                     </div>
+                    {errorMessage.message.length > 0 && <label className='error'>{errorMessage.message}</label>}
+                    {emailError && <span className='error'>Этот эл. адрес уже зарегистрирован.</span>}
+                </>
+                }
+                {codePage &&
+                    <div className='error' style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '20px' }} >
+                        <span>{errorMessage.message}</span>
+                    </div>
                 }
                 <div className='loginButton'>
-                    {emailPage && <button className='blueButton' onClick={handleEmailPage}>Зарегистрироваться</button>}
-                    {codePage && <button className='blueButton' onClick={handleCodePage}>Подтвердить</button>}
+                    {emailPage && <button className='blueButton' onClick={register} disabled={!email.length || !password.length || !passwordConfirmation.length}>Зарегистрироваться</button>}
+                    {codePage && <button className='blueButton' onClick={sendCode} disabled={code.length < 6}>Подтвердить</button>}
                     {successPage && <button className='blueButton' onClick={() => window.location = '/auth/login'}>Войти</button>}
                 </div>
             </div>

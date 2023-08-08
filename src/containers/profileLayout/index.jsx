@@ -57,13 +57,13 @@ export const ProfileLayout = () => {
             path: '/profile/settings',
             id: 7
         },
-        {
-            title: 'Выход',
-            image: 'logout.png',
-            active_image: 'logout.png',
-            path: '/profile/logout',
-            id: 8
-        },
+        // {
+        //     title: 'Выход',
+        //     image: 'logout.png',
+        //     active_image: 'logout.png',
+        //     path: '/profile/logout',
+        //     id: 8
+        // },
     ]
     const [active, setActive] = useState(sidebar.find(e => e.path === window.location.pathname))
 

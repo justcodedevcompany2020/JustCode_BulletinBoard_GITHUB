@@ -5,6 +5,7 @@ import { Favorites, Message, Wallet } from "../svg"
 
 export const LittleNavs = () => {
     const [selected, setSelected] = useState("RU")
+    localStorage.setItem('lang', "RU")
 
     return (
         <div className='littleNavs'>
@@ -24,7 +25,10 @@ export const LittleNavs = () => {
                 <ReactFlagsSelect
                     countries={["RU", "AM", "US"]}
                     selected={selected}
-                    onSelect={(code) => setSelected(code)}
+                    onSelect={code => {
+                        setSelected(code)
+                        localStorage.setItem('lang', code)
+                    }}
                     optionsSize={14}
                     className='countries'
                     showOptionLabel={true}

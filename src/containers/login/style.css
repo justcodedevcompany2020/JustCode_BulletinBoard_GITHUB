@@ -272,6 +272,7 @@
 }
 
 .error {
+  display: flex;
   height: 20px;
   color: #e21003;
 }
